@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation and Error Messages</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            width: 420px;
+            max-width: 90%;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1e3a8a;
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border-color: #dc2626;
+        }
+
+        input:valid:not(:placeholder-shown) {
+            border-color: #16a34a;
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #1e3a8a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #162d6b;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #1e3a8a;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Registration</h1>
+
+        <form>
+
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+            <div class="error">Name is required.</div>
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+            <div class="error">Please enter a valid email address.</div>
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                minlength="6"
+                required
+            >
+            <div class="error">Password must contain at least 6 characters.</div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <div class="navigation">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Back to Programs</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

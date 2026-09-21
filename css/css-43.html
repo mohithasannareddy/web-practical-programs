@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Tab Navigation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1e293b;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        /* Main container */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+        }
+
+        /* Hide radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Tab buttons */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tabs label {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .tabs label:hover {
+            background: #f1f5f9;
+        }
+
+        /* Tab content */
+        .content {
+            display: none;
+            padding: 25px;
+            line-height: 1.6;
+        }
+
+        /* Show selected tab */
+        #tab1:checked ~ .tab-content #content1,
+        #tab2:checked ~ .tab-content #content2,
+        #tab3:checked ~ .tab-content #content3 {
+            display: block;
+        }
+
+        /* Active tab */
+        #tab1:checked ~ .tabs label[for="tab1"],
+        #tab2:checked ~ .tabs label[for="tab2"],
+        #tab3:checked ~ .tabs label[for="tab3"] {
+            color: #2563eb;
+            border-bottom: 3px solid #2563eb;
+        }
+
+        .content h2 {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Tab Navigation</h1>
+
+        <!-- Radio buttons -->
+        <input type="radio" name="tabs" id="tab1" checked>
+        <input type="radio" name="tabs" id="tab2">
+        <input type="radio" name="tabs" id="tab3">
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <label for="tab1">Home</label>
+            <label for="tab2">About</label>
+            <label for="tab3">Services</label>
+        </div>
+
+        <!-- Tab contents -->
+        <div class="tab-content">
+
+            <div class="content" id="content1">
+                <h2>Home</h2>
+                <p>
+                    Welcome to our website. This is the home tab.
+                </p>
+            </div>
+
+            <div class="content" id="content2">
+                <h2>About</h2>
+                <p>
+                    This tab contains information about the website.
+                </p>
+            </div>
+
+            <div class="content" id="content3">
+                <h2>Services</h2>
+                <p>
+                    We provide different services through this website.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

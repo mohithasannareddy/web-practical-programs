@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mobile Sidebar Navigation Drawer</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        /* Top Navigation */
+        .topbar {
+            height: 70px;
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-btn {
+            font-size: 28px;
+            cursor: pointer;
+            color: #4f46e5;
+            margin-right: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        /* Sidebar Drawer */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -270px;
+            width: 270px;
+            height: 100vh;
+            background: #171b2d;
+            padding: 25px;
+            transition: 0.4s;
+            z-index: 10;
+        }
+
+        /* Open Sidebar */
+        .sidebar:target {
+            left: 0;
+        }
+
+        .sidebar h2 {
+            color: white;
+            margin-bottom: 35px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #d8dbea;
+            text-decoration: none;
+            padding: 14px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+        }
+
+        .sidebar a:hover {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .content {
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .content h1 {
+            font-size: 42px;
+            color: #222;
+        }
+
+        .content h1 span {
+            color: #4f46e5;
+        }
+
+        .content p {
+            max-width: 600px;
+            margin: auto;
+            color: #666;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .open-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 25px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .open-button:hover {
+            background: #3730a3;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .content h1 {
+                font-size: 32px;
+            }
+
+            .sidebar {
+                width: 240px;
+                left: -240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+
+        <a href="#menu" class="menu-btn">
+            â˜°
+        </a>
+
+        <div class="logo">
+            CloudFlow
+        </div>
+
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="menu" class="sidebar">
+
+        <a href="#" class="close">
+            âœ•
+        </a>
+
+        <h2>CloudFlow</h2>
+
+        <a href="#">Dashboard</a>
+        <a href="#">Projects</a>
+        <a href="#">Tasks</a>
+        <a href="#">Team</a>
+        <a href="#">Messages</a>
+        <a href="#">Settings</a>
+
+        <a href="../index.html">Home</a>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <h1>
+            Mobile <span>Navigation Drawer</span>
+        </h1>
+
+        <p>
+            Click the menu button to open the sidebar navigation drawer.
+            Click the close button to hide it.
+        </p>
+
+        <a href="#menu" class="open-button">
+            Open Menu
+        </a>
+
+    </main>
+
+</body>
+</html>

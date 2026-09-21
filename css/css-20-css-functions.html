@@ -1,0 +1,66 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Functions</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f1f5f9;
+        }
+
+        .calc-box {
+            width: calc(100% - 80px);
+            background-color: lightblue;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .min-box {
+            width: min(500px, 80%);
+            background-color: lightgreen;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .max-box {
+            width: max(300px, 50%);
+            background-color: lightpink;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: clamp(25px, 5vw, 50px);
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Functions</h1>
+
+    <div class="calc-box">
+        <h2>calc()</h2>
+        <p>Width is calculated using calc().</p>
+    </div>
+
+    <div class="min-box">
+        <h2>min()</h2>
+        <p>The smaller available value is used.</p>
+    </div>
+
+    <div class="max-box">
+        <h2>max()</h2>
+        <p>The larger available value is used.</p>
+    </div>
+
+    <p>
+        The heading uses <b>clamp()</b> for responsive font size.
+    </p>
+
+</body>
+</html>

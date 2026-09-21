@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Loading Spinner</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 10px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main */
+        .container {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .container h1 {
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            color: #d8dee9;
+        }
+
+        .loader-box {
+            margin: 50px auto;
+            max-width: 500px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid white;
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Loading Dots */
+        .dots {
+            margin-top: 30px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+            background-color: white;
+            border-radius: 50%;
+
+            animation: loading 1.2s infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes loading {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateY(-15px);
+                opacity: 1;
+            }
+        }
+
+        .loading-text {
+            margin-top: 25px;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #ccc;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav {
+                padding: 15px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .loader-box {
+                margin: 30px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>CSS Loading</h2>
+
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="index.html">CSS Programs</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>CSS Loading Spinner</h1>
+
+        <p>
+            Loading animations created using CSS.
+        </p>
+
+        <div class="loader-box">
+
+            <!-- Spinner -->
+            <div class="spinner"></div>
+
+            <h2>Loading...</h2>
+
+            <p class="loading-text">
+                Please wait
+            </p>
+
+            <!-- Loading Dots -->
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        CSS Practical Program 35
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Mini Projects</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background: darkblue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background: #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .project {
+            display: none;
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            text-align: center;
+        }
+
+        .project.active {
+            display: block;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        #calculator button {
+            width: 55px;
+            margin: 3px;
+        }
+
+        #calcDisplay {
+            width: 90%;
+            font-size: 25px;
+            text-align: right;
+        }
+
+        .todo-item, .note-item, .expense-item {
+            background: #eee;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .tic {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+        }
+
+        .cart-item {
+            padding: 8px;
+            margin: 5px;
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Mini Projects</h1>
+    <p>HTML, CSS and JavaScript</p>
+</header>
+
+<nav>
+    <button onclick="showProject('calculator')">1. Calculator</button>
+    <button onclick="showProject('clock')">2. Clock</button>
+    <button onclick="showProject('stopwatch')">3. Stopwatch</button>
+    <button onclick="showProject('countdown')">4. Countdown</button>
+    <button onclick="showProject('todo')">5. To-Do</button>
+    <button onclick="showProject('weather')">6. Weather</button>
+    <button onclick="showProject('quiz')">7. Quiz</button>
+    <button onclick="showProject('guess')">8. Guessing</button>
+    <button onclick="showProject('tictactoe')">9. Tic-Tac-Toe</button>
+    <button onclick="showProject('expense')">10. Expense</button>
+    <button onclick="showProject('marks')">11. Marks</button>
+    <button onclick="showProject('cart')">12. Cart</button>
+    <button onclick="showProject('notes')">13. Notes</button>
+    <button onclick="showProject('password')">14. Password</button>
+    <button onclick="showProject('bmi')">15. BMI</button>
+    <button onclick="showProject('currency')">16. Currency</button>
+    <button onclick="showProject('portfolio')">17. Portfolio</button>
+</nav>
+
+
+<!-- 1. CALCULATOR -->
+
+<div id="calculator" class="project active">
+
+    <h2>Digital Calculator</h2>
+
+    <input type="text" id="calcDisplay" readonly>
+
+    <br><br>
+
+    <button onclick="clearCalc()">C</button>
+    <button onclick="deleteCalc()">⌫</button>
+    <button onclick="calcValue('/')">/</button>
+    <button onclick="calcValue('*')">*</button>
+
+    <br>
+
+    <button onclick="calcValue('7')">7</button>
+    <button onclick="calcValue('8')">8</button>
+    <button onclick="calcValue('9')">9</button>
+    <button onclick="calcValue('-')">-</button>
+
+    <br>
+
+    <button onclick="calcValue('4')">4</button>
+    <button onclick="calcValue('5')">5</button>
+    <button onclick="calcValue('6')">6</button>
+    <button onclick="calcValue('+')">+</button>
+
+    <br>
+
+    <button onclick="calcValue('1')">1</button>
+    <button onclick="calcValue('2')">2</button>
+    <button onclick="calcValue('3')">3</button>
+    <button onclick="calcValue('.')">.</button>
+
+    <br>
+
+    <button onclick="calcValue('0')">0</button>
+    <button onclick="calculate()" style="width:120px">=</button>
+
+</div>
+
+
+<!-- 2. DIGITAL CLOCK -->
+
+<div id="clock" class="project">
+
+    <h2>Digital Clock</h2>
+
+    <h1 id="clockDisplay">00:00:00</h1>
+
+</div>
+
+
+<!-- 3. STOPWATCH -->
+
+<div id="stopwatch" class="project">
+
+    <h2>Stopwatch</h2>
+
+    <h1 id="stopDisplay">00:00:00</h1>
+
+    <button onclick="startStopwatch()">Start</button>
+    <button onclick="stopStopwatch()">Stop</button>
+    <button onclick="resetStopwatch()">Reset</button>
+
+</div>
+
+
+<!-- 4. COUNTDOWN -->
+
+<div id="countdown" class="project">
+
+    <h2>Countdown Timer</h2>
+
+    <input type="number" id="countInput" placeholder="Seconds">
+
+    <button onclick="startCountdown()">Start</button>
+
+    <h1 id="countDisplay">0</h1>
+
+</div>
+
+
+<!-- 5. TO DO -->
+
+<div id="todo" class="project">
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="todoInput" placeholder="Enter task">
+
+    <button onclick="addTodo()">Add</button>
+
+    <div id="todoList"></div>
+
+</div>
+
+
+<!-- 6. WEATHER -->
+
+<div id="weather" class="project">
+
+    <h2>Weather Application</h2>
+
+    <input type="text" id="city" placeholder="Enter city">
+
+    <button onclick="getWeather()">Get Weather</button>
+
+    <p id="weatherResult">
+        Enter a city to check weather.
+    </p>
+
+</div>
+
+
+<!-- 7. QUIZ -->
+
+<div id="quiz" class="project">
+
+    <h2>Quiz Application</h2>
+
+    <h3 id="question"></h3>
+
+    <button onclick="answerQuiz(0)" id="option0"></button>
+    <button onclick="answerQuiz(1)" id="option1"></button>
+    <button onclick="answerQuiz(2)" id="option2"></button>
+    <button onclick="answerQuiz(3)" id="option3"></button>
+
+    <h3 id="quizResult"></h3>
+
+</div>
+
+
+<!-- 8. NUMBER GUESSING -->
+
+<div id="guess" class="project">
+
+    <h2>Number Guessing Game</h2>
+
+    <p>Guess a number between 1 and 10</p>
+
+    <input type="number" id="guessInput">
+
+    <button onclick="checkGuess()">Guess</button>
+
+    <p id="guessResult"></p>
+
+</div>
+
+
+<!-- 9. TIC TAC TOE -->
+
+<div id="tictactoe" class="project">
+
+    <h2>Tic-Tac-Toe</h2>
+
+    <button class="tic" onclick="playTic(0)"></button>
+    <button class="tic" onclick="playTic(1)"></button>
+    <button class="tic" onclick="playTic(2)"></button>
+
+    <br>
+
+    <button class="tic" onclick="playTic(3)"></button>
+    <button class="tic" onclick="playTic(4)"></button>
+    <button class="tic" onclick="playTic(5)"></button>
+
+    <br>
+
+    <button class="tic" onclick="playTic(6)"></button>
+    <button class="tic" onclick="playTic(7)"></button>
+    <button class="tic" onclick="playTic(8)"></button>
+
+    <h3 id="ticResult"></h3>
+
+    <button onclick="resetTic()">Reset</button>
+
+</div>
+
+
+<!-- 10. EXPENSE TRACKER -->
+
+<div id="expense" class="project">
+
+    <h2>Expense Tracker</h2>
+
+    <input type="text" id="expenseName" placeholder="Expense name">
+
+    <input type="number" id="expenseAmount" placeholder="Amount">
+
+    <button onclick="addExpense()">Add Expense</button>
+
+    <div id="expenseList"></div>
+
+    <h3>Total: ₹<span id="totalExpense">0</span></h3>
+
+</div>
+
+
+<!-- 11. MARKS -->
+
+<div id="marks" class="project">
+
+    <h2>Student Marks Calculator</h2>
+
+    <input type="number" id="m1" placeholder="Subject 1">
+    <input type="number" id="m2" placeholder="Subject 2">
+    <input type="number" id="m3" placeholder="Subject 3">
+
+    <br>
+
+    <button onclick="calculateMarks()">Calculate</button>
+
+    <h3 id="marksResult"></h3>
+
+</div>
+
+
+<!-- 12. SHOPPING CART -->
+
+<div id="cart" class="project">
+
+    <h2>Shopping Cart</h2>
+
+    <button onclick="addCart('Laptop',50000)">
+        Laptop - ₹50000
+    </button>
+
+    <button onclick="addCart('Phone',20000)">
+        Phone - ₹20000
+    </button>
+
+    <button onclick="addCart('Headphones',2000)">
+        Headphones - ₹2000
+    </button>
+
+    <h3>Cart</h3>
+
+    <div id="cartList"></div>
+
+    <h3>Total: ₹<span id="cartTotal">0</span></h3>
+
+</div>
+
+
+<!-- 13. NOTES -->
+
+<div id="notes" class="project">
+
+    <h2>Notes Application</h2>
+
+    <textarea id="noteInput" rows="5"
+        placeholder="Write your note"></textarea>
+
+    <br>
+
+    <button onclick="saveNote()">Save Note</button>
+
+    <div id="notesList"></div>
+
+</div>
+
+
+<!-- 14. PASSWORD -->
+
+<div id="password" class="project">
+
+    <h2>Random Password Generator</h2>
+
+    <button onclick="generatePassword()">
+        Generate Password
+    </button>
+
+    <h2 id="passwordResult"></h2>
+
+</div>
+
+
+<!-- 15. BMI -->
+
+<div id="bmi" class="project">
+
+    <h2>BMI Calculator</h2>
+
+    <input type="number" id="height"
+        placeholder="Height in meters">
+
+    <input type="number" id="weight"
+        placeholder="Weight in kg">
+
+    <button onclick="calculateBMI()">Calculate</button>
+
+    <h3 id="bmiResult"></h3>
+
+</div>
+
+
+<!-- 16. CURRENCY -->
+
+<div id="currency" class="project">
+
+    <h2>Currency Converter</h2>
+
+    <input type="number" id="rupees"
+        placeholder="Enter INR">
+
+    <button onclick="convertCurrency()">Convert</button>
+
+    <h3 id="currencyResult"></h3>
+
+</div>
+
+
+<!-- 17. PORTFOLIO -->
+
+<div id="portfolio" class="project">
+
+    <h2>Interactive Portfolio</h2>
+
+    <h1>My Portfolio</h1>
+
+    <h3>Student | CSE</h3>
+
+    <p>
+        Welcome to my portfolio website.
+    </p>
+
+    <button onclick="showPortfolio()">
+        Show About Me
+    </button>
+
+    <p id="portfolioResult"></p>
+
+</div>
+
+
+<script>
+
+/* PROJECT MENU */
+
+function showProject(id) {
+
+    let projects = document.querySelectorAll(".project");
+
+    projects.forEach(function(project) {
+        project.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+}
+
+
+/* 1. CALCULATOR */
+
+function calcValue(value) {
+
+    document.getElementById("calcDisplay").value += value;
+}
+
+function clearCalc() {
+
+    document.getElementById("calcDisplay").value = "";
+}
+
+function deleteCalc() {
+
+    let display = document.getElementById("calcDisplay");
+
+    display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+
+    let display = document.getElementById("calcDisplay");
+
+    try {
+        display.value = eval(display.value);
+    }
+
+    catch {
+        display.value = "Error";
+    }
+}
+
+
+/* 2. DIGITAL CLOCK */
+
+function updateClock() {
+
+    let now = new Date();
+
+    let time = now.toLocaleTimeString();
+
+    document.getElementById("clockDisplay").innerHTML = time;
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
+
+
+/* 3. STOPWATCH */
+
+let stopwatchSeconds = 0;
+let stopwatchInterval;
+
+function startStopwatch() {
+
+    stopwatchInterval = setInterval(function() {
+
+        stopwatchSeconds++;
+
+        displayStopwatch();
+
+    }, 1000);
+}
+
+function stopStopwatch() {
+
+    clearInterval(stopwatchInterval);
+}
+
+function resetStopwatch() {
+
+    clearInterval(stopwatchInterval);
+
+    stopwatchSeconds = 0;
+
+    displayStopwatch();
+}
+
+function displayStopwatch() {
+
+    let hours = Math.floor(stopwatchSeconds / 3600);
+
+    let minutes = Math.floor(
+        (stopwatchSeconds % 3600) / 60
+    );
+
+    let seconds = stopwatchSeconds % 60;
+
+    document.getElementById("stopDisplay").innerHTML =
+        String(hours).padStart(2, "0") + ":" +
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+}
+
+
+/* 4. COUNTDOWN */
+
+let countdownInterval;
+
+function startCountdown() {
+
+    clearInterval(countdownInterval);
+
+    let seconds =
+        Number(document.getElementById("countInput").value);
+
+    document.getElementById("countDisplay").innerHTML = seconds;
+
+    countdownInterval = setInterval(function() {
+
+        seconds--;
+
+        document.getElementById("countDisplay").innerHTML =
+            seconds;
+
+        if (seconds <= 0) {
+
+            clearInterval(countdownInterval);
+
+            alert("Time is up!");
+
+        }
+
+    }, 1000);
+}
+
+
+/* 5. TO DO LIST */
+
+function addTodo() {
+
+    let input = document.getElementById("todoInput");
+
+    if (input.value == "") {
+        return;
+    }
+
+    let item = document.createElement("div");
+
+    item.className = "todo-item";
+
+    item.innerHTML =
+        input.value +
+        " <button onclick='this.parentElement.remove()'>Delete</button>";
+
+    document.getElementById("todoList").appendChild(item);
+
+    input.value = "";
+}
+
+
+/* 6. WEATHER */
+
+async function getWeather() {
+
+    let city =
+        document.getElementById("city").value;
+
+    document.getElementById("weatherResult").innerHTML =
+        "Weather API requires an API key.";
+
+    /*
+       To use a real weather API:
+
+       1. Get an API key.
+       2. Replace the URL below.
+       3. Use fetch() to get weather data.
+    */
+}
+
+
+/* 7. QUIZ */
+
+let questions = [
+
+    {
+        question: "Which language is used for web pages?",
+        options: ["HTML", "Python", "C", "Java"],
+        answer: 0
+    },
+
+    {
+        question: "Which language adds interactivity?",
+        options: ["HTML", "CSS", "JavaScript", "SQL"],
+        answer: 2
+    },
+
+    {
+        question: "Which method selects an element by ID?",
+        options: [
+            "getElementById()",
+            "getClass()",
+            "selectId()",
+            "findId()"
+        ],
+        answer: 0
+    }
+
+];
+
+let currentQuestion = 0;
+let quizScore = 0;
+
+function loadQuiz() {
+
+    let q = questions[currentQuestion];
+
+    document.getElementById("question").innerHTML =
+        q.question;
+
+    for (let i = 0; i < 4; i++) {
+
+        document.getElementById("option" + i).innerHTML =
+            q.options[i];
+    }
+}
+
+function answerQuiz(choice) {
+
+    if (choice == questions[currentQuestion].answer) {
+
+        quizScore++;
+
+    }
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuiz();
+
+    }
+
+    else {
+
+        document.getElementById("quizResult").innerHTML =
+            "Score: " + quizScore + "/" + questions.length;
+    }
+}
+
+loadQuiz();
+
+
+/* 8. NUMBER GUESSING */
+
+let randomNumber =
+    Math.floor(Math.random() * 10) + 1;
+
+function checkGuess() {
+
+    let guess =
+        Number(document.getElementById("guessInput").value);
+
+    if (guess == randomNumber) {
+
+        document.getElementById("guessResult").innerHTML =
+            "Correct! You guessed the number.";
+
+    }
+
+    else if (guess < randomNumber) {
+
+        document.getElementById("guessResult").innerHTML =
+            "Too low! Try again.";
+
+    }
+
+    else {
+
+        document.getElementById("guessResult").innerHTML =
+            "Too high! Try again.";
+    }
+}
+
+
+/* 9. TIC TAC TOE */
+
+let ticBoard =
+    ["", "", "", "", "", "", "", "", ""];
+
+let ticPlayer = "X";
+
+function playTic(index) {
+
+    if (ticBoard[index] != "") {
+        return;
+    }
+
+    ticBoard[index] = ticPlayer;
+
+    document.querySelectorAll(".tic")[index].innerHTML =
+        ticPlayer;
+
+    if (checkWinner()) {
+
+        document.getElementById("ticResult").innerHTML =
+            ticPlayer + " Wins!";
+
+        return;
+    }
+
+    ticPlayer =
+        ticPlayer == "X" ? "O" : "X";
+}
+
+function checkWinner() {
+
+    let combinations = [
+
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+
+        [0,4,8],
+        [2,4,6]
+
+    ];
+
+    for (let combination of combinations) {
+
+        let a = combination[0];
+        let b = combination[1];
+        let c = combination[2];
+
+        if (
+            ticBoard[a] &&
+            ticBoard[a] == ticBoard[b] &&
+            ticBoard[a] == ticBoard[c]
+        ) {
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function resetTic() {
+
+    ticBoard =
+        ["", "", "", "", "", "", "", ""];
+
+    ticPlayer = "X";
+
+    document.querySelectorAll(".tic").forEach(
+        function(button) {
+            button.innerHTML = "";
+        }
+    );
+
+    document.getElementById("ticResult").innerHTML = "";
+}
+
+
+/* 10. EXPENSE TRACKER */
+
+let totalExpense = 0;
+
+function addExpense() {
+
+    let name =
+        document.getElementById("expenseName").value;
+
+    let amount =
+        Number(document.getElementById("expenseAmount").value);
+
+    if (name == "" || amount <= 0) {
+        return;
+    }
+
+    totalExpense += amount;
+
+    let item = document.createElement("div");
+
+    item.className = "expense-item";
+
+    item.innerHTML =
+        name + " - ₹" + amount;
+
+    document.getElementById("expenseList")
+        .appendChild(item);
+
+    document.getElementById("totalExpense")
+        .innerHTML = totalExpense;
+
+}
+
+
+/* 11. MARKS */
+
+function calculateMarks() {
+
+    let a = Number(document.getElementById("m1").value);
+    let b = Number(document.getElementById("m2").value);
+    let c = Number(document.getElementById("m3").value);
+
+    let total = a + b + c;
+
+    let average = total / 3;
+
+    let grade;
+
+    if (average >= 90) {
+        grade = "A";
+    }
+
+    else if (average >= 75) {
+        grade = "B";
+    }
+
+    else if (average >= 60) {
+        grade = "C";
+    }
+
+    else if (average >= 40) {
+        grade = "D";
+    }
+
+    else {
+        grade = "F";
+    }
+
+    document.getElementById("marksResult").innerHTML =
+        "Total: " + total +
+        "<br>Average: " + average.toFixed(2) +
+        "<br>Grade: " + grade;
+}
+
+
+/* 12. SHOPPING CART */
+
+let cartTotal = 0;
+
+function addCart(name, price) {
+
+    cartTotal += price;
+
+    let item = document.createElement("div");
+
+    item.className = "cart-item";
+
+    item.innerHTML =
+        name + " - ₹" + price;
+
+    document.getElementById("cartList")
+        .appendChild(item);
+
+    document.getElementById("cartTotal")
+        .innerHTML = cartTotal;
+}
+
+
+/* 13. NOTES USING LOCAL STORAGE */
+
+function saveNote() {
+
+    let note =
+        document.getElementById("noteInput").value;
+
+    if (note == "") {
+        return;
+    }
+
+    let notes =
+        JSON.parse(localStorage.getItem("notes")) || [];
+
+    notes.push(note);
+
+    localStorage.setItem(
+        "notes",
+        JSON.stringify(notes)
+    );
+
+    document.getElementById("noteInput").value = "";
+
+    displayNotes();
+}
+
+function displayNotes() {
+
+    let notes =
+        JSON.parse(localStorage.getItem("notes")) || [];
+
+    let list =
+        document.getElementById("notesList");
+
+    list.innerHTML = "";
+
+    notes.forEach(function(note, index) {
+
+        let item = document.createElement("div");
+
+        item.className = "note-item";
+
+        item.innerHTML =
+            note +
+            " <button onclick='deleteNote(" +
+            index +
+            ")'>Delete</button>";
+
+        list.appendChild(item);
+
+    });
+}
+
+function deleteNote(index) {
+
+    let notes =
+        JSON.parse(localStorage.getItem("notes")) || [];
+
+    notes.splice(index, 1);
+
+    localStorage.setItem(
+        "notes",
+        JSON.stringify(notes)
+    );
+
+    displayNotes();
+}
+
+displayNotes();
+
+
+/* 14. PASSWORD GENERATOR */
+
+function generatePassword() {
+
+    let characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+        "abcdefghijklmnopqrstuvwxyz" +
+        "0123456789!@#$%^&*";
+
+    let password = "";
+
+    for (let i = 0; i < 10; i++) {
+
+        let random =
+            Math.floor(
+                Math.random() * characters.length
+            );
+
+        password += characters[random];
+    }
+
+    document.getElementById("passwordResult")
+        .innerHTML = password;
+}
+
+
+/* 15. BMI */
+
+function calculateBMI() {
+
+    let height =
+        Number(document.getElementById("height").value);
+
+    let weight =
+        Number(document.getElementById("weight").value);
+
+    if (height <= 0 || weight <= 0) {
+        return;
+    }
+
+    let bmi =
+        weight / (height * height);
+
+    document.getElementById("bmiResult").innerHTML =
+        "BMI: " + bmi.toFixed(2);
+}
+
+
+/* 16. CURRENCY CONVERTER */
+
+function convertCurrency() {
+
+    let rupees =
+        Number(document.getElementById("rupees").value);
+
+    /*
+       Example conversion.
+       Exchange rates change, so use an API
+       for a real-time converter.
+    */
+
+    let dollars = rupees / 83;
+
+    document.getElementById("currencyResult").innerHTML =
+        "Approx. USD: $" + dollars.toFixed(2);
+}
+
+
+/* 17. PORTFOLIO */
+
+function showPortfolio() {
+
+    document.getElementById("portfolioResult").innerHTML =
+        "I am a Computer Science student interested " +
+        "in programming, web development and technology.";
+}
+
+</script>
+
+</body>
+</html>

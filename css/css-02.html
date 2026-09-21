@@ -1,0 +1,119 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+
+    <style>
+
+        /* Universal Selector */
+        * {
+            font-family: Arial;
+        }
+
+        /* Element Selector */
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: lightyellow;
+            padding: 10px;
+            border-left: 5px solid orange;
+        }
+
+        /* ID Selector */
+        #special {
+            color: white;
+            background-color: purple;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 2px solid green;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        /* Grouping Selector */
+        h2, p {
+            margin-left: 20px;
+        }
+
+        .box {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            background-color: darkblue;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Selectors</h1>
+
+    <div class="box">
+
+        <h2>1. Element Selector</h2>
+        <p>The h1 and h2 elements are styled using element selectors.</p>
+
+        <h2>2. Class Selector</h2>
+        <p class="highlight">
+            This paragraph uses a class selector.
+        </p>
+
+        <h2>3. ID Selector</h2>
+        <p id="special">
+            This paragraph uses an ID selector.
+        </p>
+
+        <h2>4. Attribute Selector</h2>
+
+        <input type="text" placeholder="Text input">
+
+        <br><br>
+
+        <input type="email" placeholder="Email input">
+
+        <h2>5. Grouping Selector</h2>
+
+        <p>
+            The h2 and p elements are styled together using a grouping selector.
+        </p>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">ðŸ  Home</a>
+        <a href="index.html">ðŸŽ¨ CSS Programs</a>
+    </nav>
+
+</body>
+</html>
+

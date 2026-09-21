@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pricing Card Component</title>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			padding: 32px;
+			font-family: Arial, sans-serif;
+			background: #eef2ff;
+			color: #172033;
+		}
+
+		.pricing-card {
+			width: min(100%, 360px);
+			position: relative;
+			padding: 32px;
+			background: #ffffff;
+			border: 1px solid #dbe4f0;
+			border-radius: 18px;
+			box-shadow: 0 18px 40px rgba(30, 41, 59, 0.14);
+		}
+
+		.badge {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			padding: 6px 10px;
+			border-radius: 999px;
+			background: #dbeafe;
+			color: #1d4ed8;
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		h1 {
+			margin: 0 0 8px;
+			color: #1d4ed8;
+			font-size: 28px;
+		}
+
+		.description {
+			margin: 0 0 24px;
+			color: #64748b;
+			line-height: 1.6;
+		}
+
+		.price {
+			margin-bottom: 24px;
+			font-size: 42px;
+			font-weight: bold;
+		}
+
+		.price span {
+			color: #64748b;
+			font-size: 15px;
+			font-weight: normal;
+		}
+
+		ul {
+			display: grid;
+			gap: 12px;
+			margin: 0 0 28px;
+			padding: 0;
+			list-style: none;
+			color: #475569;
+		}
+
+		li::before {
+			margin-right: 8px;
+			color: #16a34a;
+			content: "âœ“";
+			font-weight: bold;
+		}
+
+		button {
+			width: 100%;
+			border: 0;
+			border-radius: 9px;
+			padding: 13px;
+			background: #2563eb;
+			color: white;
+			cursor: pointer;
+			font-size: 15px;
+			font-weight: bold;
+		}
+
+		button:hover {
+			background: #1d4ed8;
+		}
+
+		.navigation {
+			margin-top: 24px;
+			text-align: center;
+		}
+
+		.navigation a {
+			color: #2563eb;
+			font-size: 14px;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<article class="pricing-card">
+		<span class="badge">Popular</span>
+		<h1>Pro Plan</h1>
+		<p class="description">Everything a growing team needs to build and launch faster.</p>
+
+		<div class="price">$29 <span>/ month</span></div>
+
+		<ul>
+			<li>Unlimited projects</li>
+			<li>Advanced analytics</li>
+			<li>Priority support</li>
+			<li>Team collaboration</li>
+		</ul>
+
+		<button id="choosePro" type="button">Choose Pro</button>
+
+		<nav class="navigation" aria-label="Lesson navigation">
+			<a href="css-49.html">Previous lesson</a>
+			<a href="css-51.html">Next lesson</a>
+		</nav>
+	</article>
+
+	<script>
+		document.getElementById("choosePro").addEventListener("click", function () {
+			this.textContent = "Plan selected";
+			this.style.background = "#16a34a";
+		});
+	</script>
+</body>
+</html>
+

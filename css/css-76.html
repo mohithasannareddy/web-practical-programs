@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 76 - Loading State</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 35px;
+        }
+
+        .loading-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 60px 30px;
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 25px;
+            border: 6px solid #e2e8f0;
+            border-top: 6px solid #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-box h2 {
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .loading-box p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            margin: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>⏳ Loading State</h1>
+
+    <div class="loading-box">
+
+        <div class="loader"></div>
+
+        <h2>Loading...</h2>
+
+        <p>
+            Please wait while we process your request.
+        </p>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

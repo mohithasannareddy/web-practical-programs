@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Frequency</title>
+</head>
+<body>
+
+    <h1>Character Frequency</h1>
+
+    <label>Enter a string:</label>
+    <input type="text" id="text">
+
+    <button onclick="findFrequency()">Find Frequency</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function findFrequency() {
+            let text = document.getElementById("text").value;
+            let frequency = {};
+
+            for (let char of text) {
+
+                if (char === " ") {
+                    continue;
+                }
+
+                char = char.toLowerCase();
+
+                if (frequency[char]) {
+                    frequency[char]++;
+                } else {
+                    frequency[char] = 1;
+                }
+            }
+
+            let output = "";
+
+            for (let char in frequency) {
+                output += char + " : " + frequency[char] + "<br>";
+            }
+
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>

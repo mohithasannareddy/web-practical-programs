@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dynamic Dropdown</title></head>
+<body>
+  <select id="dynamicDropdown"></select>
+  <button onclick="populateDropdown()">Populate Dropdown</button>
+
+<script>
+function populateDropdown() {
+  let dd = document.getElementById("dynamicDropdown");
+  dd.innerHTML = "";
+  ["Option 1","Option 2","Option 3"].forEach(opt => {
+    let o = document.createElement("option");
+    o.text = opt;
+    dd.add(o);
+  });
+}
+</script>
+</body>
+</html>

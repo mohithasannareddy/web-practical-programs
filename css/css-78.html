@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 78 - Progress Bar</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 35px;
+        }
+
+        .progress-box {
+            max-width: 650px;
+            margin: auto;
+            padding: 35px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .progress {
+            width: 100%;
+            height: 25px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 75%;
+            height: 100%;
+            background: #2563eb;
+            border-radius: 20px;
+            animation: fill 2s ease-in-out;
+        }
+
+        @keyframes fill {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 75%;
+            }
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            margin: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📊 Progress Bar</h1>
+
+    <div class="progress-box">
+
+        <div class="label">
+            <span>Project Progress</span>
+            <span>75%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

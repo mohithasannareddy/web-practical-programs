@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CSS 133 - AI Document Summarizer</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f1f5f9;color:#172033;min-height:100vh}
+header{background:linear-gradient(135deg,#312e81,#2563eb);color:white;padding:28px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+header h1{font-size:25px} header p{opacity:.8;margin-top:5px}
+nav a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+.container{width:86%;max-width:1100px;margin:35px auto}
+.description,.top,.agent-head,.stat,.card,.panel{background:white;border-radius:16px;padding:22px;box-shadow:0 8px 25px #0000000d}
+.description{margin-bottom:22px}
+button{border:0;border-radius:10px;padding:11px 18px;background:#2563eb;color:white;font-weight:bold;cursor:pointer}
+.top,.agent-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.top span{margin-left:20px;color:#64748b}
+.grid,.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:20px}
+.stat small,.card small{color:#64748b}.stat strong{display:block;font-size:30px;margin:10px 0}
+.stat em{color:#16a34a;font-style:normal}
+.panel h2,.panel h3{margin-bottom:18px}
+.chart{height:250px;display:flex;align-items:end;gap:12px;padding:15px;border-bottom:2px solid #e2e8f0}
+.chart i{display:block;flex:1;background:linear-gradient(#60a5fa,#2563eb);border-radius:8px 8px 0 0;min-height:20px}
+.labels{display:flex;justify-content:space-around;color:#64748b;padding-top:10px}
+.ai{display:grid;grid-template-columns:220px 1fr;background:white;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px #00000010;min-height:480px}
+.ai aside{background:#111827;color:white;padding:25px}
+.ai aside a{display:block;padding:14px 0;color:#cbd5e1}
+.ai main{padding:30px}
+.hero{display:flex;gap:15px;align-items:center}
+.bot-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#dbeafe;color:#2563eb;font-size:22px}
+.hero p{color:#64748b;margin-top:5px}
+.messages{margin:30px 0}.msg{max-width:75%;padding:15px;border-radius:14px;margin:12px 0;line-height:1.5}
+.user{margin-left:auto;background:#2563eb;color:white}.bot{background:#f1f5f9;color:#172033}
+.input{display:flex;gap:10px;margin-top:30px}.input input{flex:1;padding:13px;border:1px solid #cbd5e1;border-radius:10px}
+.card b{display:inline-block;margin-top:15px;padding:7px 12px;border-radius:20px;background:#dcfce7;color:#166534}
+.task{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #e2e8f0}
+.task strong{color:#2563eb}
+footer{text-align:center;color:#64748b;padding:30px}
+@media(max-width:750px){
+header,.top,.agent-head{flex-direction:column;align-items:flex-start}
+.grid,.cards{grid-template-columns:1fr}.ai{grid-template-columns:1fr}
+.ai aside{display:flex;gap:15px;overflow:auto}.ai aside a{white-space:nowrap}
+nav a{margin-left:0;margin-right:10px}
+}
+</style></head>
+<body><header><div><h1>CSS Program 133</h1><p>AI Document Summarizer</p></div>
+<nav><a href="../index.html">Home</a><a href="index.html">CSS Programs</a></nav></header>
+<div class="container"><div class="description"><b>Program:</b> AI Document Summarizer<br><br>
+A responsive CSS interface demonstrating AI Document Summarizer.</div>
+<div class="ai"><aside><h3>✦ AI Workspace</h3><a>New Chat</a><a>History</a><a>Saved</a><a>Settings</a></aside>
+<main><div class="hero"><div class="bot-icon">✦</div><div><h2>AI Document Summarizer</h2><p>Modern responsive AI interface demonstration.</p></div></div>
+<div class="messages"><div class="msg user">Show me an example of this interface.</div>
+<div class="msg bot">This demonstration uses cards, navigation, messages and responsive CSS styling.</div></div>
+<div class="input"><input placeholder="Type your prompt..."><button>Send</button></div></main></div></div>
+<footer>HTML • CSS • JavaScript Practical Programs</footer></body></html>

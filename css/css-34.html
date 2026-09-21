@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Keyframe Animations</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 10px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main */
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container h1 {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container p {
+            color: #d8dee9;
+        }
+
+        .animation-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .card {
+            width: 220px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .shape {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        /* Fade Animation */
+        .fade {
+            animation: fadeIn 2s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0.2;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Bounce Animation */
+        .bounce {
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Rotate Animation */
+        .rotate {
+            border-radius: 15px;
+            animation: rotateBox 3s linear infinite;
+        }
+
+        @keyframes rotateBox {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Slide Animation */
+        .slide {
+            animation: slideBox 2s infinite alternate;
+        }
+
+        @keyframes slideBox {
+            from {
+                transform: translateX(-25px);
+            }
+
+            to {
+                transform: translateX(25px);
+            }
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>CSS Animations</h2>
+
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="index.html">CSS Programs</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>CSS Keyframe Animations</h1>
+
+        <p>
+            Different animations created using CSS @keyframes.
+        </p>
+
+        <div class="animation-box">
+
+            <!-- Fade -->
+            <div class="card">
+                <div class="shape fade"></div>
+                <h3>Fade In</h3>
+                <p>Changes the opacity continuously.</p>
+            </div>
+
+            <!-- Bounce -->
+            <div class="card">
+                <div class="shape bounce"></div>
+                <h3>Bounce</h3>
+                <p>Moves the object up and down.</p>
+            </div>
+
+            <!-- Rotate -->
+            <div class="card">
+                <div class="shape rotate"></div>
+                <h3>Rotate</h3>
+                <p>Rotates the object continuously.</p>
+            </div>
+
+            <!-- Slide -->
+            <div class="card">
+                <div class="shape slide"></div>
+                <h3>Slide</h3>
+                <p>Moves the object from left to right.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        CSS Practical Program 34
+    </footer>
+
+</body>
+</html>

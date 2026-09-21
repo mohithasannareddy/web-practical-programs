@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms & Validation Showcase</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f8; margin:20px; }
+    h2 { color:#007bff; margin-top:40px; }
+    form { background:white; padding:20px; margin-bottom:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    input, textarea, select { width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:5px; }
+    button { background:#28a745; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; }
+    button:hover { background:#1e7e34; }
+    .error { color:red; font-size:0.9em; }
+    .success { color:green; font-weight:bold; }
+    .strength { font-weight:bold; }
+    .hidden { display:none; }
+  </style>
+</head>
+<body>
+
+<h1>Forms & Validation Examples</h1>
+
+<!-- Student Registration Form -->
+<h2>Student Registration Form</h2>
+<form id="studentForm">
+  <input type="text" id="studentName" placeholder="Full Name">
+  <div id="studentNameError" class="error"></div>
+  <input type="number" id="studentAge" placeholder="Age">
+  <div id="studentAgeError" class="error"></div>
+  <input type="text" id="studentPhone" placeholder="Mobile Number">
+  <div id="studentPhoneError" class="error"></div>
+  <input type="email" id="studentEmail" placeholder="Email">
+  <div id="studentEmailError" class="error"></div>
+  <input type="password" id="studentPassword" placeholder="Password">
+  <div id="studentPasswordError" class="error"></div>
+  <input type="password" id="studentConfirm" placeholder="Confirm Password">
+  <div id="studentConfirmError" class="error"></div>
+  <input type="date" id="studentDOB">
+  <div id="studentDOBError" class="error"></div>
+  <select id="studentGender">
+    <option value="">Select Gender</option>
+    <option>Male</option><option>Female</option><option>Other</option>
+  </select>
+  <div id="studentGenderError" class="error"></div>
+  <textarea id="studentBio" placeholder="Short Bio"></textarea>
+  <div id="studentBioError" class="error"></div>
+  <button type="submit">Register</button>
+  <p id="studentSuccess" class="success"></p>
+</form>
+
+<!-- Login Form -->
+<h2>Login Form</h2>
+<form id="loginForm">
+  <input type="text" id="loginUser" placeholder="Username">
+  <div id="loginUserError" class="error"></div>
+  <input type="password" id="loginPass" placeholder="Password">
+  <div id="loginPassError" class="error"></div>
+  <button type="submit">Login</button>
+</form>
+
+<!-- Password Strength Meter -->
+<h2>Password Strength Meter</h2>
+<input type="password" id="strengthPass" placeholder="Enter Password">
+<div id="strengthMsg" class="strength"></div>
+<button onclick="togglePassword()">Show/Hide Password</button>
+
+<script>
+// Student Registration Validation
+document.getElementById("studentForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  let valid=true;
+  const name=document.getElementById("studentName").value.trim();
+  const age=document.getElementById("studentAge").value.trim();
+  const phone=document.getElementById("studentPhone").value.trim();
+  const email=document.getElementById("studentEmail").value.trim();
+  const pass=document.getElementById("studentPassword").value;
+  const confirm=document.getElementById("studentConfirm").value;
+  const dob=document.getElementById("studentDOB").value;
+  const gender=document.getElementById("studentGender").value;
+  const bio=document.getElementById("studentBio").value.trim();
+
+  document.getElementById("studentNameError").textContent=/^[A-Za-z ]+$/.test(name)?"" :"Name must contain only alphabets"; if(!/^[A-Za-z ]+$/.test(name)) valid=false;
+  document.getElementById("studentAgeError").textContent=(age>=18 && age<=100)?"" :"Age must be between 18-100"; if(!(age>=18 && age<=100)) valid=false;
+  document.getElementById("studentPhoneError").textContent=/^[0-9]{10}$/.test(phone)?"" :"Enter valid 10-digit phone"; if(!/^[0-9]{10}$/.test(phone)) valid=false;
+  document.getElementById("studentEmailError").textContent=/^[^@]+@[^@]+\.[^@]+$/.test(email)?"" :"Invalid email"; if(!/^[^@]+@[^@]+\.[^@]+$/.test(email)) valid=false;
+  document.getElementById("studentPasswordError").textContent=pass.length>=6?"" :"Password must be 6+ chars"; if(pass.length<6) valid=false;
+  document.getElementById("studentConfirmError").textContent=(pass===confirm)?"" :"Passwords do not match"; if(pass!==confirm) valid=false;
+  document.getElementById("studentDOBError").textContent=dob?"" :"Select DOB"; if(!dob) valid=false;
+  document.getElementById("studentGenderError").textContent=gender?"" :"Select gender"; if(!gender) valid=false;
+  document.getElementById("studentBioError").textContent=bio?"" :"Bio required"; if(!bio) valid=false;
+
+  document.getElementById("studentSuccess").textContent=valid?"Registration Successful!":"";
+});
+
+// Login Validation
+document.getElementById("loginForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const user=document.getElementById("loginUser").value.trim();
+  const pass=document.getElementById("loginPass").value.trim();
+  document.getElementById("loginUserError").textContent=user?"" :"Username required";
+  document.getElementById("loginPassError").textContent=pass.length>=6?"" :"Password must be 6+ chars";
+});
+
+// Password Strength
+document.getElementById("strengthPass").addEventListener("input", e=>{
+  const val=e.target.value;
+  let msg="Weak";
+  if(val.length>=8 && /[A-Z]/.test(val) && /\d/.test(val) && /[^A-Za-z0-9]/.test(val)) msg="Strong";
+  else if(val.length>=6) msg="Medium";
+  document.getElementById("strengthMsg").textContent="Strength: "+msg;
+});
+
+// Show/Hide Password
+function togglePassword(){
+  const pwd=document.getElementById("strengthPass");
+  pwd.type=(pwd.type==="password")?"text":"password";
+}
+</script>
+
+</body>
+</html>

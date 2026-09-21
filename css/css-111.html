@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics Date-Range Filter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .filter {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            background: #222;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .buttons a:hover {
+            background: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Analytics Date-Range Filter</h1>
+
+    <div class="container">
+
+        <div class="filter">
+
+            <div class="field">
+                <label>Start Date</label>
+                <input type="date">
+            </div>
+
+            <div class="field">
+                <label>End Date</label>
+                <input type="date">
+            </div>
+
+        </div>
+
+        <div style="text-align: center;">
+            <button>Apply Filter</button>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </div>
+
+</body>
+</html>

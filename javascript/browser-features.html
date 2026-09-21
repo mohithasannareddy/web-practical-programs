@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Objects & Features</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:20px; background:#f4f6f8; }
+    h2 { color:#007bff; margin-top:30px; }
+    button { margin:5px; padding:8px 12px; background:#28a745; color:white; border:none; border-radius:5px; cursor:pointer; }
+    button:hover { background:#1e7e34; }
+    .box { margin:10px 0; padding:10px; background:white; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+
+<h1>Browser Objects & Features Showcase</h1>
+
+<h2>Window Object</h2>
+<div class="box">
+  <button onclick="alert('Window width: '+window.innerWidth+', height: '+window.innerHeight)">Show Window Size</button>
+</div>
+
+<h2>alert(), confirm(), prompt()</h2>
+<div class="box">
+  <button onclick="alert('Hello! This is an alert.')">Alert</button>
+  <button onclick="confirm('Do you confirm this?')">Confirm</button>
+  <button onclick="let name=prompt('Enter your name:'); if(name) alert('Hello '+name)">Prompt</button>
+</div>
+
+<h2>setTimeout & setInterval</h2>
+<div class="box">
+  <button onclick="setTimeout(()=>alert('Timeout after 2s'),2000)">setTimeout Example</button>
+  <button onclick="setInterval(()=>console.log('Interval log every 2s'),2000)">setInterval Example (check console)</button>
+</div>
+
+<h2>Digital Clock</h2>
+<div class="box">
+  <p id="clock"></p>
+</div>
+
+<h2>Countdown Timer</h2>
+<div class="box">
+  <p id="countdown"></p>
+  <button onclick="startCountdown()">Start Countdown (10s)</button>
+</div>
+
+<h2>Stopwatch</h2>
+<div class="box">
+  <p id="stopwatch">0</p>
+  <button onclick="startStopwatch()">Start</button>
+  <button onclick="stopStopwatch()">Stop</button>
+  <button onclick="resetStopwatch()">Reset</button>
+</div>
+
+<h2>Location Object</h2>
+<div class="box">
+  <button onclick="alert('Current URL: '+location.href)">Show URL</button>
+  <button onclick="location.href='https://www.example.com'">Redirect to Example</button>
+</div>
+
+<h2>History Object</h2>
+<div class="box">
+  <button onclick="history.back()">Back</button>
+  <button onclick="history.forward()">Forward</button>
+  <button onclick="location.reload()">Reload</button>
+</div>
+
+<h2>Navigator Object</h2>
+<div class="box">
+  <button onclick="alert('Browser Info: '+navigator.userAgent)">Show Browser Info</button>
+  <button onclick="alert('Language: '+navigator.language)">Show Language</button>
+  <button onclick="alert('Online: '+navigator.onLine)">Check Online Status</button>
+</div>
+
+<h2>Screen Info</h2>
+<div class="box">
+  <button onclick="alert('Screen Width: '+screen.width+', Height: '+screen.height)">Show Screen Size</button>
+</div>
+
+<h2>Geolocation</h2>
+<div class="box">
+  <button onclick="getLocation()">Get Coordinates</button>
+  <p id="geo"></p>
+</div>
+
+<h2>Online/Offline Events</h2>
+<div class="box">
+  <p id="status">Status: </p>
+</div>
+
+<script>
+// Digital Clock
+setInterval(()=>{
+  document.getElementById("clock").textContent=new Date().toLocaleTimeString();
+},1000);
+
+// Countdown
+function startCountdown(){
+  let time=10;
+  let interval=setInterval(()=>{
+    document.getElementById("countdown").textContent=time;
+    time--;
+    if(time<0){clearInterval(interval);document.getElementById("countdown").textContent="Done";}
+  },1000);
+}
+
+// Stopwatch
+let stopwatchInterval,swTime=0;
+function startStopwatch(){stopwatchInterval=setInterval(()=>{swTime++;document.getElementById("stopwatch").textContent=swTime;},1000);}
+function stopStopwatch(){clearInterval(stopwatchInterval);}
+function resetStopwatch(){swTime=0;document.getElementById("stopwatch").textContent=swTime;}
+
+// Geolocation
+function getLocation(){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(pos=>{
+      document.getElementById("geo").textContent="Lat: "+pos.coords.latitude+", Lon: "+pos.coords.longitude;
+    });
+  } else {
+    document.getElementById("geo").textContent="Geolocation not supported";
+  }
+}
+
+// Online/Offline
+function updateStatus(){
+  document.getElementById("status").textContent="Status: "+(navigator.onLine?"Online":"Offline");
+}
+window.addEventListener("online",updateStatus);
+window.addEventListener("offline",updateStatus);
+updateStatus();
+</script>
+
+</body>
+</html>

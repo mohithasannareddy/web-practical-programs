@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 77 - Skeleton Loading</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .skeleton {
+            background: #e2e8f0;
+            border-radius: 8px;
+            animation: loading 1.5s infinite;
+        }
+
+        .image {
+            width: 100%;
+            height: 220px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            width: 70%;
+            height: 25px;
+            margin-bottom: 15px;
+        }
+
+        .text {
+            width: 90%;
+            height: 15px;
+            margin-bottom: 10px;
+        }
+
+        .text.short {
+            width: 60%;
+        }
+
+        @keyframes loading {
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            margin: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>💀 Skeleton Loading</h1>
+
+    <div class="card">
+
+        <div class="skeleton image"></div>
+
+        <div class="skeleton title"></div>
+
+        <div class="skeleton text"></div>
+
+        <div class="skeleton text"></div>
+
+        <div class="skeleton text short"></div>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

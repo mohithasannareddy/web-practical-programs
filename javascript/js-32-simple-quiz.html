@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .quiz {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz">
+
+        <h1>Simple Quiz</h1>
+
+        <h3>1. Which language is used to make webpages interactive?</h3>
+
+        <input type="radio" name="answer" value="HTML"> HTML<br>
+        <input type="radio" name="answer" value="CSS"> CSS<br>
+        <input type="radio" name="answer" value="JavaScript"> JavaScript<br>
+        <input type="radio" name="answer" value="Python"> Python<br>
+
+        <button onclick="checkAnswer()">Submit</button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        function checkAnswer() {
+
+            let answers = document.getElementsByName("answer");
+            let selectedAnswer = "";
+
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i].checked) {
+                    selectedAnswer = answers[i].value;
+                }
+            }
+
+            if (selectedAnswer === "") {
+                document.getElementById("result").innerHTML =
+                    "Please select an answer.";
+            }
+            else if (selectedAnswer === "JavaScript") {
+                document.getElementById("result").innerHTML =
+                    "Correct Answer!";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    "Wrong Answer!";
+            }
+        }
+    </script>
+
+</body>
+</html>

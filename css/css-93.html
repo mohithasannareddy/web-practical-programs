@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revenue Analytics Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #555;
+        }
+
+        .value {
+            font-size: 30px;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .growth {
+            margin-top: 8px;
+            color: green;
+            font-size: 14px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .panel {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel h2 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        .chart {
+            height: 250px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .bar {
+            width: 45px;
+            background-color: #1e3a8a;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .bar1 {
+            height: 100px;
+        }
+
+        .bar2 {
+            height: 140px;
+        }
+
+        .bar3 {
+            height: 120px;
+        }
+
+        .bar4 {
+            height: 180px;
+        }
+
+        .bar5 {
+            height: 160px;
+        }
+
+        .bar6 {
+            height: 220px;
+        }
+
+        .revenue-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .revenue-item:last-child {
+            border-bottom: none;
+        }
+
+        .revenue-item strong {
+            color: #1e3a8a;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #1e3a8a;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .bar {
+                width: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Revenue Analytics Dashboard</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Revenue</h3>
+                <div class="value">$125,680</div>
+                <div class="growth">↑ 18.5%</div>
+            </div>
+
+            <div class="card">
+                <h3>Monthly Revenue</h3>
+                <div class="value">$24,500</div>
+                <div class="growth">↑ 12.4%</div>
+            </div>
+
+            <div class="card">
+                <h3>Average Revenue</h3>
+                <div class="value">$8,450</div>
+                <div class="growth">↑ 9.8%</div>
+            </div>
+
+            <div class="card">
+                <h3>Profit</h3>
+                <div class="value">$58,240</div>
+                <div class="growth">↑ 15.2%</div>
+            </div>
+
+        </div>
+
+        <div class="dashboard">
+
+            <div class="panel">
+
+                <h2>Monthly Revenue</h2>
+
+                <div class="chart">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                    <div class="bar bar4"></div>
+                    <div class="bar bar5"></div>
+                    <div class="bar bar6"></div>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <h2>Revenue Details</h2>
+
+                <div class="revenue-item">
+                    <span>Product Sales</span>
+                    <strong>$45,000</strong>
+                </div>
+
+                <div class="revenue-item">
+                    <span>Subscriptions</span>
+                    <strong>$32,500</strong>
+                </div>
+
+                <div class="revenue-item">
+                    <span>Services</span>
+                    <strong>$28,200</strong>
+                </div>
+
+                <div class="revenue-item">
+                    <span>Other</span>
+                    <strong>$19,980</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Back to Programs</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

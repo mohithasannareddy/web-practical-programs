@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms & Validation Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f8; margin:20px; }
+    h2 { color:#007bff; }
+    form { background:white; padding:20px; margin-bottom:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    input, textarea, select { width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:5px; }
+    button { background:#28a745; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; }
+    button:hover { background:#1e7e34; }
+    .error { color:red; font-size:0.9em; }
+    .strength { font-weight:bold; }
+  </style>
+</head>
+<body>
+
+<h1>Forms & Validation Examples</h1>
+
+<!-- Student Registration Form -->
+<h2>Student Registration Form</h2>
+<form id="studentForm">
+  <input type="text" id="studentName" placeholder="Full Name">
+  <div id="studentNameError" class="error"></div>
+  <input type="email" id="studentEmail" placeholder="Email">
+  <div id="studentEmailError" class="error"></div>
+  <input type="number" id="studentAge" placeholder="Age">
+  <div id="studentAgeError" class="error"></div>
+  <button type="submit">Register</button>
+</form>
+
+<!-- Login Form -->
+<h2>Login Form</h2>
+<form id="loginForm">
+  <input type="text" id="loginUser" placeholder="Username">
+  <div id="loginUserError" class="error"></div>
+  <input type="password" id="loginPass" placeholder="Password">
+  <div id="loginPassError" class="error"></div>
+  <button type="submit">Login</button>
+</form>
+
+<!-- Password Strength Checker -->
+<h2>Password Strength Checker</h2>
+<input type="password" id="strengthPass" placeholder="Enter Password">
+<div id="strengthMsg" class="strength"></div>
+
+<!-- Signup Form with Confirmation -->
+<h2>Signup Form</h2>
+<form id="signupForm">
+  <input type="password" id="signupPass" placeholder="Password">
+  <input type="password" id="confirmPass" placeholder="Confirm Password">
+  <div id="confirmError" class="error"></div>
+  <button type="submit">Signup</button>
+</form>
+
+<!-- Feedback Form -->
+<h2>Feedback Form</h2>
+<form id="feedbackForm">
+  <textarea id="feedbackText" placeholder="Your feedback"></textarea>
+  <div id="feedbackError" class="error"></div>
+  <button type="submit">Submit Feedback</button>
+</form>
+
+<!-- College Admission Form -->
+<h2>College Admission Form</h2>
+<form id="admissionForm">
+  <input type="text" id="admissionName" placeholder="Full Name">
+  <div id="admissionNameError" class="error"></div>
+  <select id="admissionCourse">
+    <option value="">Select Course</option>
+    <option>B.Sc Computer Science</option>
+    <option>B.A English</option>
+    <option>B.Com</option>
+  </select>
+  <div id="admissionCourseError" class="error"></div>
+  <button type="submit">Apply</button>
+</form>
+
+<script>
+// Student Registration
+document.getElementById("studentForm").addEventListener("submit", e => {
+  e.preventDefault();
+  let valid = true;
+  const name = document.getElementById("studentName").value.trim();
+  const email = document.getElementById("studentEmail").value.trim();
+  const age = document.getElementById("studentAge").value.trim();
+  document.getElementById("studentNameError").textContent = name ? "" : "Name required";
+  document.getElementById("studentEmailError").textContent = email.includes("@") ? "" : "Valid email required";
+  document.getElementById("studentAgeError").textContent = age >= 18 ? "" : "Age must be 18+";
+});
+
+// Login
+document.getElementById("loginForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const user = document.getElementById("loginUser").value.trim();
+  const pass = document.getElementById("loginPass").value.trim();
+  document.getElementById("loginUserError").textContent = user ? "" : "Username required";
+  document.getElementById("loginPassError").textContent = pass.length >= 6 ? "" : "Password must be 6+ chars";
+});
+
+// Password Strength
+document.getElementById("strengthPass").addEventListener("keyup", e => {
+  const val = e.target.value;
+  let msg = "Weak";
+  if (val.length >= 8 && /[A-Z]/.test(val) && /\d/.test(val) && /[^A-Za-z0-9]/.test(val)) msg = "Strong";
+  else if (val.length >= 6) msg = "Medium";
+  document.getElementById("strengthMsg").textContent = "Strength: " + msg;
+});
+
+// Signup Confirmation
+document.getElementById("signupForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const pass = document.getElementById("signupPass").value;
+  const confirm = document.getElementById("confirmPass").value;
+  document.getElementById("confirmError").textContent = pass === confirm ? "" : "Passwords do not match";
+});
+
+// Feedback
+document.getElementById("feedbackForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const feedback = document.getElementById("feedbackText").value.trim();
+  document.getElementById("feedbackError").textContent = feedback ? "" : "Feedback required";
+});
+
+// College Admission
+document.getElementById("admissionForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = document.getElementById("admissionName").value.trim();
+  const course = document.getElementById("admissionCourse").value;
+  document.getElementById("admissionNameError").textContent = name ? "" : "Name required";
+  document.getElementById("admissionCourseError").textContent = course ? "" : "Select a course";
+});
+</script>
+
+</body>
+</html>

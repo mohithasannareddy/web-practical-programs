@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Get Elements</title></head>
+<body>
+  <p id="unique">Unique element</p>
+  <p class="group">Group element 1</p>
+  <p class="group">Group element 2</p>
+  <button onclick="demoGet()">Demo Get</button>
+
+<script>
+function demoGet() {
+  alert(document.getElementById("unique").textContent);
+  let group = document.getElementsByClassName("group");
+  alert("Group count: " + group.length);
+}
+</script>
+</body>
+</html>

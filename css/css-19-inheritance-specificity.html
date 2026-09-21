@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Inheritance and Specificity</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            color: darkblue;
+        }
+
+        p {
+            color: green;
+        }
+
+        .special {
+            color: orange;
+        }
+
+        #important {
+            color: red;
+        }
+
+        .container {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Inheritance and Specificity</h1>
+
+    <div class="container">
+
+        <p>
+            This paragraph gets its color from the element selector.
+        </p>
+
+        <p class="special">
+            This paragraph uses a class selector.
+        </p>
+
+        <p id="important" class="special">
+            This paragraph uses an ID selector, which has higher specificity.
+        </p>
+
+        <p>
+            Font size is inherited from the parent container.
+        </p>
+
+    </div>
+
+</body>
+</html>
+

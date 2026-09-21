@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pie and Donut Chart Analytics</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .charts {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .pie {
+            width: 180px;
+            height: 180px;
+            margin: 20px auto;
+            border-radius: 50%;
+            background: conic-gradient(
+                #2563eb 0% 40%,
+                #60a5fa 40% 70%,
+                #93c5fd 70% 100%
+            );
+        }
+
+        .donut {
+            width: 180px;
+            height: 180px;
+            margin: 20px auto;
+            border-radius: 50%;
+            background: conic-gradient(
+                #2563eb 0% 55%,
+                #60a5fa 55% 80%,
+                #93c5fd 80% 100%
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .donut::after {
+            content: "55%";
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .legend {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .legend p {
+            margin: 8px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            background: #222;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pie and Donut Chart Analytics</h1>
+
+    <div class="charts">
+
+        <div class="card">
+            <h2>Pie Chart</h2>
+
+            <div class="pie"></div>
+
+            <div class="legend">
+                <p>Desktop - 40%</p>
+                <p>Mobile - 30%</p>
+                <p>Tablet - 30%</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Donut Chart</h2>
+
+            <div class="donut"></div>
+
+            <div class="legend">
+                <p>Completed - 55%</p>
+                <p>Pending - 25%</p>
+                <p>Other - 20%</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </div>
+
+</body>
+</html>

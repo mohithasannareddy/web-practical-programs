@@ -1,0 +1,133 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Combinator Selectors</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f5f7fb;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .box {
+            width: 80%;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        /* 1. Descendant Selector */
+        .descendant p {
+            color: blue;
+        }
+
+        /* 2. Child Selector */
+        .child > p {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* 3. Adjacent Sibling Selector */
+        .adjacent h3 + p {
+            color: red;
+        }
+
+        /* 4. General Sibling Selector */
+        .general h3 ~ p {
+            background-color: lightyellow;
+            padding: 8px;
+        }
+
+        nav {
+            text-align: center;
+            margin: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            background-color: darkblue;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Combinator Selectors</h1>
+
+    <div class="box">
+
+        <!-- Descendant Selector -->
+        <div class="descendant">
+            <h2>1. Descendant Selector</h2>
+
+            <p>This paragraph is inside the div.</p>
+
+            <section>
+                <p>This paragraph is also inside the div.</p>
+            </section>
+        </div>
+
+        <hr>
+
+        <!-- Child Selector -->
+        <div class="child">
+            <h2>2. Child Selector</h2>
+
+            <p>This is a direct child paragraph.</p>
+
+            <div>
+                <p>This paragraph is inside another div.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Adjacent Sibling Selector -->
+        <div class="adjacent">
+            <h2>3. Adjacent Sibling Selector</h2>
+
+            <h3>Heading</h3>
+            <p>This paragraph comes immediately after h3.</p>
+            <p>This is another paragraph.</p>
+        </div>
+
+        <hr>
+
+        <!-- General Sibling Selector -->
+        <div class="general">
+            <h2>4. General Sibling Selector</h2>
+
+            <h3>Heading</h3>
+            <p>This paragraph is a sibling of h3.</p>
+            <p>This is another sibling paragraph.</p>
+            <p>This is also a sibling paragraph.</p>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">ðŸ  Home</a>
+        <a href="index.html">ðŸŽ¨ CSS Programs</a>
+    </nav>
+
+</body>
+</html>
+

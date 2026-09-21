@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Multiple Elements</title></head>
+<body>
+  <p class="multi">First</p>
+  <p class="multi">Second</p>
+  <button onclick="changeMultiple()">Change All</button>
+
+<script>
+function changeMultiple() {
+  let elems = document.getElementsByClassName("multi");
+  for (let el of elems) el.style.backgroundColor = "yellow";
+}
+</script>
+</body>
+</html>

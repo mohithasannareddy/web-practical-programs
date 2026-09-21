@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression</title>
+</head>
+<body>
+
+    <h1>Regular Expression Example</h1>
+
+    <label>Enter a string:</label>
+    <input type="text" id="text">
+
+    <button onclick="checkString()">Check</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function checkString() {
+            let text = document.getElementById("text").value;
+
+            // Regular expression: only letters are allowed
+            let pattern = /^[A-Za-z]+$/;
+
+            if (pattern.test(text)) {
+                document.getElementById("result").innerHTML =
+                    "Valid: Only letters are present.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Invalid: Numbers or special characters are present.";
+            }
+        }
+    </script>
+
+</body>
+</html>

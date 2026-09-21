@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS 71 - Command Palette</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 30px;
+        }
+
+        .palette {
+            width: 450px;
+            max-width: 100%;
+            margin: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .search {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-bottom: 1px solid #e2e8f0;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .command {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .command:hover {
+            background: #eef2ff;
+        }
+
+        .command span:first-child {
+            color: #334155;
+        }
+
+        .shortcut {
+            background: #e2e8f0;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #475569;
+        }
+
+        .category {
+            padding: 10px 20px;
+            background: #f8fafc;
+            color: #64748b;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>⌘ Command Palette</h1>
+
+    <div class="palette">
+
+        <input
+            type="text"
+            class="search"
+            placeholder="Search commands..."
+        >
+
+        <div class="category">
+            QUICK ACTIONS
+        </div>
+
+        <div class="command">
+            <span>➕ Create New Project</span>
+            <span class="shortcut">Ctrl + N</span>
+        </div>
+
+        <div class="command">
+            <span>🔍 Search</span>
+            <span class="shortcut">Ctrl + K</span>
+        </div>
+
+        <div class="command">
+            <span>⚙️ Settings</span>
+            <span class="shortcut">Ctrl + ,</span>
+        </div>
+
+        <div class="category">
+            NAVIGATION
+        </div>
+
+        <div class="command">
+            <span>🏠 Dashboard</span>
+            <span class="shortcut">G D</span>
+        </div>
+
+        <div class="command">
+            <span>👤 Profile</span>
+            <span class="shortcut">G P</span>
+        </div>
+
+        <div class="command">
+            <span>📁 Projects</span>
+            <span class="shortcut">G P</span>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

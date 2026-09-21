@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS 72 - Accordion</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 35px;
+        }
+
+        .accordion {
+            width: 700px;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        details {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e293b;
+            background: #ffffff;
+        }
+
+        summary:hover {
+            background: #eef2ff;
+        }
+
+        details p {
+            padding: 0 20px 20px;
+            line-height: 1.6;
+            color: #64748b;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            margin: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📚 Frequently Asked Questions</h1>
+
+    <div class="accordion">
+
+        <details>
+            <summary>What is HTML?</summary>
+            <p>
+                HTML is used to create the structure and content
+                of webpages.
+            </p>
+        </details>
+
+        <details>
+            <summary>What is CSS?</summary>
+            <p>
+                CSS is used to style webpages, including colors,
+                layouts, spacing, fonts and animations.
+            </p>
+        </details>
+
+        <details>
+            <summary>What is JavaScript?</summary>
+            <p>
+                JavaScript is used to add interactivity and
+                dynamic behavior to webpages.
+            </p>
+        </details>
+
+        <details>
+            <summary>What is responsive design?</summary>
+            <p>
+                Responsive design allows a webpage to adjust
+                properly to different screen sizes.
+            </p>
+        </details>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

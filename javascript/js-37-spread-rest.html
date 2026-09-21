@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spread and Rest Operators</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        #output {
+            padding: 20px;
+            border: 2px solid black;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Spread and Rest Operators</h1>
+
+    <div id="output"></div>
+
+    <script>
+
+        // Spread Operator
+        let numbers1 = [10, 20, 30];
+        let numbers2 = [40, 50, 60];
+
+        let combinedNumbers = [...numbers1, ...numbers2];
+
+        // Rest Operator
+        function calculateSum(...numbers) {
+
+            let sum = 0;
+
+            for (let number of numbers) {
+                sum += number;
+            }
+
+            return sum;
+        }
+
+        let result = calculateSum(10, 20, 30, 40);
+
+        document.getElementById("output").innerHTML =
+            "<b>First Array:</b> " + numbers1 + "<br>" +
+            "<b>Second Array:</b> " + numbers2 + "<br><br>" +
+
+            "<b>Using Spread Operator:</b> " +
+            combinedNumbers + "<br><br>" +
+
+            "<b>Using Rest Operator:</b> " +
+            "Sum = " + result;
+
+    </script>
+
+</body>
+</html>

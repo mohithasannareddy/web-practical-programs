@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Storage Showcase</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:20px; background:#f4f6f8; }
+    h2 { color:#007bff; margin-top:30px; }
+    .box { background:white; padding:15px; margin-bottom:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    input, textarea, select { padding:8px; margin:5px 0; width:100%; }
+    button { margin:5px; padding:8px 12px; background:#28a745; color:white; border:none; border-radius:5px; cursor:pointer; }
+    button:hover { background:#1e7e34; }
+    .error { color:red; }
+  </style>
+</head>
+<body>
+
+<h1>Web Storage Examples</h1>
+
+<h2>Basic localStorage Operations</h2>
+<div class="box">
+  <input type="text" id="username" placeholder="Enter username">
+  <button onclick="storeUsername()">Store</button>
+  <button onclick="retrieveUsername()">Retrieve</button>
+  <button onclick="updateUsername()">Update</button>
+  <button onclick="deleteUsername()">Delete</button>
+  <button onclick="clearStorage()">Clear All</button>
+  <p id="userOutput"></p>
+</div>
+
+<h2>Store Array & Object</h2>
+<div class="box">
+  <button onclick="storeArray()">Store Array</button>
+  <button onclick="storeObject()">Store Object</button>
+  <button onclick="showArrayObject()">Show Stored Data</button>
+  <p id="arrayObjectOutput"></p>
+</div>
+
+<h2>Student Record System (CRUD)</h2>
+<div class="box">
+  <input type="text" id="studentName" placeholder="Name">
+  <input type="number" id="studentMarks" placeholder="Marks">
+  <button onclick="addStudent()">Add Student</button>
+  <button onclick="showStudents()">Show Students</button>
+  <div id="studentRecords"></div>
+</div>
+
+<h2>To-Do List</h2>
+<div class="box">
+  <input type="text" id="todoInput" placeholder="New Task">
+  <button onclick="addTodo()">Add</button>
+  <ul id="todoList"></ul>
+</div>
+
+<h2>Notes Application</h2>
+<div class="box">
+  <textarea id="noteInput" placeholder="Write a note"></textarea>
+  <button onclick="saveNote()">Save Note</button>
+  <div id="notes"></div>
+</div>
+
+<h2>Shopping Cart</h2>
+<div class="box">
+  <button onclick="addToCart('Item A',10)">Add Item A ($10)</button>
+  <button onclick="addToCart('Item B',15)">Add Item B ($15)</button>
+  <button onclick="viewCart()">View Cart</button>
+  <div id="cartOutput"></div>
+</div>
+
+<h2>Preferences</h2>
+<div class="box">
+  <button onclick="setTheme('dark')">Dark Theme</button>
+  <button onclick="setTheme('light')">Light Theme</button>
+  <button onclick="setFontSize('20px')">Large Font</button>
+</div>
+
+<h2>Visitor Counter</h2>
+<div class="box">
+  <p id="visitorCount"></p>
+</div>
+
+<h2>Compare localStorage vs sessionStorage</h2>
+<div class="box">
+  <button onclick="sessionStore()">Store in Session</button>
+  <button onclick="sessionRetrieve()">Retrieve from Session</button>
+  <p id="sessionOutput"></p>
+</div>
+
+<h2>Form Persistence</h2>
+<div class="box">
+  <input type="text" id="persistInput" placeholder="Type something...">
+  <p>Refresh the page to see persistence.</p>
+</div>
+
+<script>
+// Basic localStorage
+function storeUsername(){localStorage.setItem("username",document.getElementById("username").value);}
+function retrieveUsername(){document.getElementById("userOutput").textContent=localStorage.getItem("username");}
+function updateUsername(){localStorage.setItem("username","UpdatedUser");}
+function deleteUsername(){localStorage.removeItem("username");}
+function clearStorage(){localStorage.clear();}
+
+// Array & Object
+function storeArray(){let arr=["A","B","C"];localStorage.setItem("myArray",JSON.stringify(arr));}
+function storeObject(){let obj={name:"John",age:25};localStorage.setItem("myObject",JSON.stringify(obj));}
+function showArrayObject(){document.getElementById("arrayObjectOutput").textContent="Array: "+localStorage.getItem("myArray")+" | Object: "+localStorage.getItem("myObject");}
+
+// Student Records CRUD
+function addStudent(){
+  let students=JSON.parse(localStorage.getItem("students"))||[];
+  students.push({name:document.getElementById("studentName").value,marks:document.getElementById("studentMarks").value});
+  localStorage.setItem("students",JSON.stringify(students));
+}
+function showStudents(){
+  let students=JSON.parse(localStorage.getItem("students"))||[];
+  let html="<ul>";
+  students.forEach((s,i)=>{html+="<li>"+s.name+" - "+s.marks+" <button onclick='deleteStudent("+i+")'>Delete</button></li>";});
+  html+="</ul>";
+  document.getElementById("studentRecords").innerHTML=html;
+}
+function deleteStudent(i){
+  let students=JSON.parse(localStorage.getItem("students"))||[];
+  students.splice(i,1);
+  localStorage.setItem("students",JSON.stringify(students));
+  showStudents();
+}
+
+// To-Do List
+function addTodo(){
+  let todos=JSON.parse(localStorage.getItem("todos"))||[];
+  todos.push(document.getElementById("todoInput").value);
+  localStorage.setItem("todos",JSON.stringify(todos));
+  displayTodos();
+}
+function displayTodos(){
+  let todos=JSON.parse(localStorage.getItem("todos"))||[];
+  let html="";
+  todos.forEach((t,i)=>{html+="<li>"+t+" <button onclick='deleteTodo("+i+")'>Delete</button></li>";});
+  document.getElementById("todoList").innerHTML=html;
+}
+function deleteTodo(i){
+  let todos=JSON.parse(localStorage.getItem("todos"))||[];
+  todos.splice(i,1);
+  localStorage.setItem("todos",JSON.stringify(todos));
+  displayTodos();
+}
+displayTodos();
+
+// Notes
+function saveNote(){
+  let notes=JSON.parse(localStorage.getItem("notes"))||[];
+  notes.push(document.getElementById("noteInput").value);
+  localStorage.setItem("notes",JSON.stringify(notes));
+  showNotes();
+}
+function showNotes(){
+  let notes=JSON.parse(localStorage.getItem("notes"))||[];
+  document.getElementById("notes").innerHTML=notes.map(n=>"<p>"+n+"</p>").join("");
+}
+showNotes();
+
+// Shopping Cart
+function addToCart(item,price){
+  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+  cart.push({item,price});
+  localStorage.setItem("cart",JSON.stringify(cart));
+}
+function viewCart(){
+  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+  let total=cart.reduce((sum,c)=>sum+c.price,0);
+  document.getElementById("cartOutput").textContent="Cart: "+cart.map(c=>c.item+"($"+c.price+")").join(", ")+" | Total: $"+total;
+}
+
+// Preferences
+function setTheme(theme){
+  document.body.style.background=(theme==="dark"?"#222":"#f4f6f8");
+  localStorage.setItem("theme",theme);
+}
+function setFontSize(size){
+  document.body.style.fontSize=size;
+  localStorage.setItem("fontSize",size);
+}
+if(localStorage.getItem("theme")) setTheme(localStorage.getItem("theme"));
+if(localStorage.getItem("fontSize")) document.body.style.fontSize=localStorage.getItem("fontSize");
+
+// Visitor Counter
+let count=parseInt(localStorage.getItem("visits")||0);
+count++;
+localStorage.setItem("visits",count);
+document.getElementById("visitorCount").textContent="Visitor Count: "+count;
+
+// SessionStorage
+function sessionStore(){sessionStorage.setItem("sessionData","Hello Session");}
+function sessionRetrieve(){document.getElementById("sessionOutput").textContent=sessionStorage.getItem("sessionData");}
+
+// Form Persistence
+const persistInput=document.getElementById("persistInput");
+persistInput.value=localStorage.getItem("persistData")||"";
+persistInput.addEventListener("input",()=>localStorage.setItem("persistData",persistInput.value));
+</script>
+
+</body>
+</html>

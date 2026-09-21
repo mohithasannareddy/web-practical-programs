@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Input Types</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #e84363;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-top: 8px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #e84363;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 10px;
+            background: #e84363;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c72c4d;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: #6c5ce7;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        .navigation a:hover {
+            background: #4834d4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>⌨️ HTML5 Input Types</h1>
+
+    <p>
+        This program demonstrates different HTML5 input types.
+    </p>
+
+    <form>
+
+        <!-- Email -->
+
+        <label for="email">
+            📧 Email
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+
+
+        <!-- Date -->
+
+        <label for="date">
+            📅 Date
+        </label>
+
+        <input
+            type="date"
+            id="date"
+            name="date"
+        >
+
+
+        <!-- Number -->
+
+        <label for="number">
+            🔢 Number
+        </label>
+
+        <input
+            type="number"
+            id="number"
+            name="number"
+            placeholder="Enter a number"
+            min="1"
+            max="100"
+        >
+
+
+        <!-- Password -->
+
+        <label for="password">
+            🔐 Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
+
+
+        <button type="submit">
+            Submit
+        </button>
+
+    </form>
+
+
+    <div class="navigation">
+
+        <a href="../index.html">
+            🏠 Home
+        </a>
+
+        <a href="index.html">
+            📋 HTML Programs
+        </a>
+
+    </div>
+
+
+    <footer>
+        HTML & CSS Practical Programs
+    </footer>
+
+</div>
+
+</body>
+</html>

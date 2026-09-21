@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Positioning</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .box {
+            padding: 20px;
+            margin: 15px;
+            width: 200px;
+            background-color: lightblue;
+            border: 2px solid blue;
+        }
+
+        .static {
+            position: static;
+        }
+
+        .relative {
+            position: relative;
+            left: 40px;
+        }
+
+        .parent {
+            position: relative;
+            height: 180px;
+            background-color: #eee;
+        }
+
+        .absolute {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: lightgreen;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Positioning</h1>
+
+    <div class="box static">Static Position</div>
+
+    <div class="box relative">Relative Position</div>
+
+    <div class="parent">
+        <div class="box absolute">Absolute Position</div>
+    </div>
+
+    <div class="box sticky">Sticky Position</div>
+
+    <p>Scroll the page to see positioning effects.</p>
+    <p style="height:500px;">
+        This is extra content for scrolling.
+    </p>
+
+    <div class="box fixed">Fixed Position</div>
+
+</body>
+</html>
+

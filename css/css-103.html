@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retention and Cohort Analytics</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .dashboard {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cohort {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .label {
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .bar {
+            flex: 1;
+            height: 30px;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #2563eb;
+            text-align: right;
+            color: white;
+            padding-right: 10px;
+            line-height: 30px;
+            box-sizing: border-box;
+        }
+
+        .p90 {
+            width: 90%;
+        }
+
+        .p75 {
+            width: 75%;
+        }
+
+        .p60 {
+            width: 60%;
+        }
+
+        .p45 {
+            width: 45%;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            background: #222;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Retention & Cohort Analytics</h1>
+
+    <div class="dashboard">
+
+        <div class="cohort">
+            <div class="label">Week 1</div>
+            <div class="bar">
+                <div class="progress p90">90%</div>
+            </div>
+        </div>
+
+        <div class="cohort">
+            <div class="label">Week 2</div>
+            <div class="bar">
+                <div class="progress p75">75%</div>
+            </div>
+        </div>
+
+        <div class="cohort">
+            <div class="label">Week 3</div>
+            <div class="bar">
+                <div class="progress p60">60%</div>
+            </div>
+        </div>
+
+        <div class="cohort">
+            <div class="label">Week 4</div>
+            <div class="bar">
+                <div class="progress p45">45%</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </div>
+
+</body>
+</html>

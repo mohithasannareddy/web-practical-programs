@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browser & Storage Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:20px; background:#f4f6f8; }
+    h2 { color:#007bff; }
+    .section { background:white; padding:20px; margin-bottom:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    button { background:#28a745; color:white; padding:8px 12px; border:none; border-radius:5px; cursor:pointer; margin-top:10px; }
+    button:hover { background:#1e7e34; }
+    .cart { margin-top:10px; }
+    .dark { background:#222; color:white; }
+  </style>
+</head>
+<body>
+
+<h1>Browser & Storage Examples</h1>
+
+<div class="section">
+  <h2>Window Object</h2>
+  <button onclick="showWindow()">Show Window Info</button>
+  <p id="windowInfo"></p>
+</div>
+
+<div class="section">
+  <h2>Navigator Object</h2>
+  <button onclick="showNavigator()">Show Navigator Info</button>
+  <p id="navigatorInfo"></p>
+</div>
+
+<div class="section">
+  <h2>Location Object</h2>
+  <button onclick="showLocation()">Show Location Info</button>
+  <p id="locationInfo"></p>
+</div>
+
+<div class="section">
+  <h2>History Object</h2>
+  <button onclick="goBack()">Go Back</button>
+  <button onclick="goForward()">Go Forward</button>
+</div>
+
+<div class="section">
+  <h2>localStorage Example</h2>
+  <input type="text" id="localInput" placeholder="Enter value">
+  <button onclick="saveLocal()">Save</button>
+  <button onclick="loadLocal()">Load</button>
+  <p id="localOutput"></p>
+</div>
+
+<div class="section">
+  <h2>sessionStorage Example</h2>
+  <input type="text" id="sessionInput" placeholder="Enter value">
+  <button onclick="saveSession()">Save</button>
+  <button onclick="loadSession()">Load</button>
+  <p id="sessionOutput"></p>
+</div>
+
+<div class="section">
+  <h2>Shopping Cart (localStorage)</h2>
+  <button onclick="addToCart('Apple')">Add Apple</button>
+  <button onclick="addToCart('Banana')">Add Banana</button>
+  <button onclick="viewCart()">View Cart</button>
+  <div class="cart" id="cartOutput"></div>
+</div>
+
+<div class="section">
+  <h2>Theme Switcher (localStorage)</h2>
+  <button onclick="toggleTheme()">Toggle Theme</button>
+</div>
+
+<script>
+// Window object
+function showWindow() {
+  document.getElementById("windowInfo").textContent =
+    "Inner Width: " + window.innerWidth + ", Inner Height: " + window.innerHeight;
+}
+
+// Navigator object
+function showNavigator() {
+  document.getElementById("navigatorInfo").textContent =
+    "Browser: " + navigator.userAgent + ", Language: " + navigator.language;
+}
+
+// Location object
+function showLocation() {
+  document.getElementById("locationInfo").textContent =
+    "URL: " + location.href;
+}
+
+// History object
+function goBack() { history.back(); }
+function goForward() { history.forward(); }
+
+// localStorage
+function saveLocal() {
+  localStorage.setItem("localData", document.getElementById("localInput").value);
+}
+function loadLocal() {
+  document.getElementById("localOutput").textContent = localStorage.getItem("localData");
+}
+
+// sessionStorage
+function saveSession() {
+  sessionStorage.setItem("sessionData", document.getElementById("sessionInput").value);
+}
+function loadSession() {
+  document.getElementById("sessionOutput").textContent = sessionStorage.getItem("sessionData");
+}
+
+// Shopping Cart
+function addToCart(item) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(item);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+function viewCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartOutput").textContent = "Cart: " + cart.join(", ");
+}
+
+// Theme Switcher
+function toggleTheme() {
+  let current = localStorage.getItem("theme");
+  if (current === "dark") {
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  } else {
+    document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  }
+}
+// Apply saved theme on load
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 125 - AI-Generated Content Card</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+        }
+
+        .header {
+            background: #4f46e5;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            padding: 25px;
+            background: #6366f1;
+            color: white;
+        }
+
+        .card-header h2 {
+            margin: 0;
+        }
+
+        .card-header p {
+            margin: 8px 0 0;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .ai-badge {
+            display: inline-block;
+            padding: 7px 12px;
+            background: #e0e7ff;
+            color: #4338ca;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .content h2 {
+            color: #1e293b;
+            margin-top: 20px;
+        }
+
+        .content p {
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            color: #475569;
+            line-height: 2;
+        }
+
+        .content ul li::marker {
+            color: #4f46e5;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .actions button {
+            padding: 11px 18px;
+            border: 1px solid #cbd5e1;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .actions button:hover {
+            background: #eef2ff;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 5px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background: #3730a3;
+        }
+
+        @media (max-width: 600px) {
+            .actions {
+                flex-direction: column;
+            }
+
+            .actions button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>AI-Generated Content Card</h1>
+        <p>CSS Practical Program 125</p>
+    </div>
+
+    <div class="container">
+
+        <div class="content-card">
+
+            <div class="card-header">
+                <h2>✨ AI Content Generator</h2>
+                <p>Generated content displayed in a modern card</p>
+            </div>
+
+            <div class="content">
+
+                <span class="ai-badge">🤖 AI Generated</span>
+
+                <h2>Introduction to Web Development</h2>
+
+                <p>
+                    Web development is the process of creating and
+                    maintaining websites. It includes technologies
+                    that help build the structure, design, and
+                    functionality of web pages.
+                </p>
+
+                <h3>Key Technologies</h3>
+
+                <ul>
+                    <li>HTML - Creates the structure</li>
+                    <li>CSS - Styles the webpage</li>
+                    <li>JavaScript - Adds interactivity</li>
+                </ul>
+
+                <div class="actions">
+                    <button>👍 Like</button>
+                    <button>📋 Copy</button>
+                    <button>🔄 Regenerate</button>
+                    <button>↗ Share</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">🏠 Home</a>
+            <a href="index.html">⬅ CSS Programs</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

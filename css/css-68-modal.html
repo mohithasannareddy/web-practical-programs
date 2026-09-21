@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modal Dialog</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .close {
+            background: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Modal Dialog</h1>
+
+    <button onclick="openModal()">
+        Open Modal
+    </button>
+
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <h2>Hello!</h2>
+
+            <p>This is a modal dialog.</p>
+
+            <button class="close" onclick="closeModal()">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("modal")
+                .classList.add("show");
+        }
+
+        function closeModal() {
+            document.getElementById("modal")
+                .classList.remove("show");
+        }
+    </script>
+
+</body>
+</html>

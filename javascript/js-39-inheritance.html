@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inheritance in JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Inheritance in JavaScript</h1>
+
+    <div class="box" id="output"></div>
+
+    <script>
+
+        // Parent class
+        class Person {
+
+            constructor(name) {
+                this.name = name;
+            }
+
+            showName() {
+                return "Name: " + this.name;
+            }
+        }
+
+        // Child class inherits Person
+        class Student extends Person {
+
+            constructor(name, branch) {
+                super(name);
+                this.branch = branch;
+            }
+
+            showDetails() {
+                return this.showName() +
+                       "<br>Branch: " + this.branch;
+            }
+        }
+
+        // Create child object
+        let student1 = new Student("Mohitha", "CSE");
+
+        document.getElementById("output").innerHTML =
+            student1.showDetails();
+
+    </script>
+
+</body>
+</html>

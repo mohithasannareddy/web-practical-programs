@@ -1,0 +1,119 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Gradients</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f5f7fb;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .box {
+            width: 80%;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        /* Linear Gradient */
+        .linear {
+            height: 150px;
+            margin: 20px;
+            border-radius: 15px;
+
+            background: linear-gradient(
+                to right,
+                blue,
+                cyan
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Radial Gradient */
+        .radial {
+            height: 150px;
+            margin: 20px;
+            border-radius: 15px;
+
+            background: radial-gradient(
+                circle,
+                yellow,
+                orange,
+                red
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            text-align: center;
+            margin: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            background-color: darkblue;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Gradients</h1>
+
+    <div class="box">
+
+        <h2>1. Linear Gradient</h2>
+
+        <div class="linear">
+            Linear Gradient
+        </div>
+
+        <h2>2. Radial Gradient</h2>
+
+        <div class="radial">
+            Radial Gradient
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">ðŸ  Home</a>
+        <a href="index.html">ðŸŽ¨ CSS Programs</a>
+    </nav>
+
+</body>
+</html>
+

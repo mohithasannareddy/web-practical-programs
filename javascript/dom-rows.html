@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Table Rows</title></head>
+<body>
+  <table id="myTable" border="1">
+    <tr><td>Row 1</td></tr>
+  </table>
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="deleteRow()">Delete Row</button>
+
+<script>
+function addRow() {
+  let table = document.getElementById("myTable");
+  let row = table.insertRow();
+  let cell = row.insertCell();
+  cell.textContent = "New Row";
+}
+function deleteRow() {
+  let table = document.getElementById("myTable");
+  if (table.rows.length > 0) table.deleteRow(-1);
+}
+</script>
+</body>
+</html>

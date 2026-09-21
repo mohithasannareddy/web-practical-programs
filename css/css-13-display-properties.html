@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Display Properties</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .block {
+            display: block;
+            background-color: lightblue;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .inline {
+            display: inline;
+            background-color: lightgreen;
+            padding: 15px;
+        }
+
+        .inline-block {
+            display: inline-block;
+            background-color: lightpink;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        .flex div {
+            background-color: orange;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .grid div {
+            background-color: violet;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Display Properties</h1>
+
+    <div class="block">Block</div>
+
+    <span class="inline">Inline</span>
+    <span class="inline">Inline</span>
+
+    <br><br>
+
+    <div class="inline-block">Inline Block</div>
+    <div class="inline-block">Inline Block</div>
+
+    <h2>Flex</h2>
+
+    <div class="flex">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+
+    <h2>Grid</h2>
+
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+</body>
+</html>
+

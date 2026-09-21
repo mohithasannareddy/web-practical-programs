@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .box { width: 150px; height: 150px; background: lightblue; margin: 10px; text-align: center; line-height: 150px; }
+    .drag { width: 100px; height: 100px; background: orange; margin: 10px; cursor: grab; }
+    .drop { width: 200px; height: 200px; background: lightgray; margin: 10px; }
+    #gameArea { width: 300px; height: 200px; border: 2px solid black; position: relative; margin-top: 20px; }
+    #player { width: 30px; height: 30px; background: red; position: absolute; top: 80px; left: 130px; }
+  </style>
+</head>
+<body>
+
+<h2>Mouse Events</h2>
+<div class="box" id="mouseBox">Hover/Click me</div>
+
+<h2>Keyboard Events</h2>
+<input type="text" id="keyInput" placeholder="Type something">
+
+<h2>Form Events</h2>
+<form id="demoForm">
+  <input type="text" id="nameField" placeholder="Name"><br><br>
+  <input type="text" id="emailField" placeholder="Email"><br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<h2>Double-Click Event</h2>
+<div class="box" id="dblBox">Double-click me</div>
+
+<h2>Event Bubbling & Capturing</h2>
+<div id="outer" style="padding:20px; background:lightgreen;">
+  Outer Div
+  <div id="inner" style="padding:20px; background:lightcoral;">
+    Inner Div (click me)
+  </div>
+</div>
+
+<h2>Event Delegation</h2>
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<h2>Keyboard Controlled Game</h2>
+<div id="gameArea">
+  <div id="player"></div>
+</div>
+
+<h2>Drag and Drop</h2>
+<div class="drag" id="dragItem" draggable="true">Drag me</div>
+<div class="drop" id="dropZone">Drop here</div>
+
+<script>
+// Mouse events
+const mouseBox = document.getElementById("mouseBox");
+mouseBox.addEventListener("mouseover", () => mouseBox.textContent = "Mouse Over");
+mouseBox.addEventListener("mouseout", () => mouseBox.textContent = "Hover/Click me");
+mouseBox.addEventListener("click", () => mouseBox.textContent = "Clicked!");
+
+// Keyboard events
+const keyInput = document.getElementById("keyInput");
+keyInput.addEventListener("keydown", e => console.log("Key down:", e.key));
+keyInput.addEventListener("keyup", e => console.log("Key up:", e.key));
+
+// Form events
+const form = document.getElementById("demoForm");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Form submitted!");
+});
+document.getElementById("nameField").addEventListener("focus", () => console.log("Name field focused"));
+document.getElementById("nameField").addEventListener("blur", () => console.log("Name field blurred"));
+document.getElementById("emailField").addEventListener("change", () => console.log("Email changed"));
+
+// Double-click
+const dblBox = document.getElementById("dblBox");
+dblBox.addEventListener("dblclick", () => dblBox.style.background = "yellow");
+
+// Bubbling & Capturing
+document.getElementById("outer").addEventListener("click", () => alert("Outer clicked (bubble)"));
+document.getElementById("inner").addEventListener("click", () => alert("Inner clicked (bubble)"));
+document.getElementById("outer").addEventListener("click", () => alert("Outer clicked (capture)"), true);
+
+// Event Delegation
+document.getElementById("list").addEventListener("click", e => {
+  if (e.target.tagName === "LI") alert("You clicked " + e.target.textContent);
+});
+
+// Keyboard-controlled game
+const player = document.getElementById("player");
+let posX = 130, posY = 80;
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowUp") posY -= 10;
+  if (e.key === "ArrowDown") posY += 10;
+  if (e.key === "ArrowLeft") posX -= 10;
+  if (e.key === "ArrowRight") posX += 10;
+  player.style.left = posX + "px";
+  player.style.top = posY + "px";
+});
+
+// Drag and Drop
+const dragItem = document.getElementById("dragItem");
+const dropZone = document.getElementById("dropZone");
+dragItem.addEventListener("dragstart", e => e.dataTransfer.setData("text", e.target.id));
+dropZone.addEventListener("dragover", e => e.preventDefault());
+dropZone.addEventListener("drop", e => {
+  e.preventDefault();
+  const id = e.dataTransfer.getData("text");
+  dropZone.appendChild(document.getElementById(id));
+});
+</script>
+
+</body>
+</html>

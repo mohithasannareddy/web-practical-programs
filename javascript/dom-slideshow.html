@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Image Slideshow</title></head>
+<body>
+  <div id="slideshow">
+    <img id="slide" src="https://via.placeholder.com/200x150?text=1">
+  </div>
+  <button onclick="nextSlide()">Next</button>
+
+<script>
+let slideIndex = 1;
+function nextSlide() {
+  slideIndex++;
+  document.getElementById("slide").src =
+    "https://via.placeholder.com/200x150?text=" + slideIndex;
+}
+</script>
+</body>
+</html>

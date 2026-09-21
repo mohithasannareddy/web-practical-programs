@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Text Using DOM</title>
+</head>
+<body>
+
+    <h1>DOM - Change Text</h1>
+
+    <p id="message">This is the original text.</p>
+
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function changeText() {
+            document.getElementById("message").innerHTML =
+                "The text has been changed using JavaScript!";
+        }
+    </script>
+
+</body>
+</html>

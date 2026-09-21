@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 80 - Timeline and Activity History</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 40px;
+        }
+
+        .timeline {
+            max-width: 700px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #cbd5e1;
+        }
+
+        .event {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 30px;
+        }
+
+        .circle {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .event-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-card h2 {
+            color: #1e293b;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .event-card p {
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .time {
+            display: block;
+            margin-top: 10px;
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .event {
+                padding-left: 55px;
+            }
+
+            .circle {
+                left: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🕒 Activity Timeline</h1>
+
+    <div class="timeline">
+
+        <div class="event">
+            <div class="circle">1</div>
+
+            <div class="event-card">
+                <h2>Project Created</h2>
+                <p>
+                    A new project was created successfully.
+                </p>
+                <span class="time">10:00 AM</span>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="circle">2</div>
+
+            <div class="event-card">
+                <h2>Profile Updated</h2>
+                <p>
+                    User profile information was updated.
+                </p>
+                <span class="time">11:30 AM</span>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="circle">3</div>
+
+            <div class="event-card">
+                <h2>Task Completed</h2>
+                <p>
+                    The assigned task was completed successfully.
+                </p>
+                <span class="time">01:15 PM</span>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="circle">4</div>
+
+            <div class="event-card">
+                <h2>Project Published</h2>
+                <p>
+                    The project was published and is now available.
+                </p>
+                <span class="time">03:00 PM</span>
+            </div>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

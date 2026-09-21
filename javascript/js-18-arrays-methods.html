@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrays and Array Methods</title>
+</head>
+<body>
+
+    <h1>Arrays and Array Methods</h1>
+
+    <script>
+        let fruits = ["Apple", "Banana", "Mango"];
+
+        document.write("Original Array: " + fruits + "<br><br>");
+
+        fruits.push("Orange");
+        document.write("After push(): " + fruits + "<br>");
+
+        fruits.pop();
+        document.write("After pop(): " + fruits + "<br>");
+
+        fruits.unshift("Grapes");
+        document.write("After unshift(): " + fruits + "<br>");
+
+        fruits.shift();
+        document.write("After shift(): " + fruits + "<br>");
+
+        document.write("Array Length: " + fruits.length + "<br>");
+
+        document.write("Joined Array: " + fruits.join(" - "));
+    </script>
+
+</body>
+</html>

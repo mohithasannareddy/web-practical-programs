@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SaaS Card Component</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .card {
+            width: 250px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            color: #2563eb;
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .card button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .card button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>SaaS Card Component</h1>
+
+        <p>Simple pricing cards for a SaaS website.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>Basic</h2>
+                <div class="price">$9</div>
+                <p>Perfect for beginners and small projects.</p>
+                <button>Choose Plan</button>
+            </div>
+
+            <div class="card">
+                <h2>Pro</h2>
+                <div class="price">$19</div>
+                <p>Useful for growing teams and businesses.</p>
+                <button>Choose Plan</button>
+            </div>
+
+            <div class="card">
+                <h2>Premium</h2>
+                <div class="price">$29</div>
+                <p>Advanced features for professional users.</p>
+                <button>Choose Plan</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

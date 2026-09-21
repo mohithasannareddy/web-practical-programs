@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Internal and External CSS</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+
+    <!-- Internal CSS -->
+    <style>
+
+        .internal-box {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+
+            background-color: #fff7ed;
+
+            border: 3px solid #f97316;
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .internal-box h2 {
+            color: #ea580c;
+        }
+
+        .internal-box p {
+            color: #57534e;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .internal-button {
+            display: inline-block;
+
+            background-color: #ea580c;
+            color: white;
+
+            padding: 12px 25px;
+
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        .internal-button:hover {
+            background-color: #c2410c;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- External CSS Section -->
+
+    <div class="external-box">
+
+        <h2>External CSS</h2>
+
+        <p>
+            This section is styled using an external
+            CSS file named style.css.
+        </p>
+
+        <a href="#" class="external-button">
+            External CSS
+        </a>
+
+    </div>
+
+
+    <!-- Internal CSS Section -->
+
+    <div class="internal-box">
+
+        <h2>Internal CSS</h2>
+
+        <p>
+            This section is styled using CSS written
+            inside the style tag of this HTML file.
+        </p>
+
+        <a href="#" class="internal-button">
+            Internal CSS
+        </a>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <div style="text-align: center; margin-top: 30px;">
+
+        <a href="../index.html"
+           style="text-decoration: none;
+                  background: #1e293b;
+                  color: white;
+                  padding: 10px 20px;
+                  border-radius: 25px;
+                  margin: 5px;">
+
+            🏠 Home
+
+        </a>
+
+
+        <a href="index.html"
+           style="text-decoration: none;
+                  background: #7c3aed;
+                  color: white;
+                  padding: 10px 20px;
+                  border-radius: 25px;
+                  margin: 5px;">
+
+            📚 HTML Programs
+
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>
+

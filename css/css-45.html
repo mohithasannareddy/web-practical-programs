@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Pagination</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #334155;
+            background: #e2e8f0;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .pagination a:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .pagination a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .description {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .description h2 {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Pagination Component</h1>
+
+        <p>
+            Pagination allows users to move between different pages.
+        </p>
+
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">&raquo;</a>
+        </div>
+
+        <div class="description">
+            <h2>Current Page: 2</h2>
+            <p>
+                The highlighted number represents the current page.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Elements Dynamically</title>
+</head>
+<body>
+
+    <h1>Remove Elements Dynamically</h1>
+
+    <p id="para1">This is the first paragraph.</p>
+    <p id="para2">This is the second paragraph.</p>
+
+    <button onclick="removeElement()">Remove Second Paragraph</button>
+
+    <script>
+        function removeElement() {
+
+            let paragraph = document.getElementById("para2");
+
+            paragraph.remove();
+        }
+    </script>
+
+</body>
+</html>

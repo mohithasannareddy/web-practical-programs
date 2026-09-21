@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 129 - AI Copilot Interface</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+        }
+
+        .header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto;
+        }
+
+        .copilot {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .copilot-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 22px;
+            background: #4f46e5;
+            color: white;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: #4f46e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .copilot-header h2 {
+            margin: 0;
+        }
+
+        .copilot-header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        .message {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .message strong {
+            color: #4f46e5;
+        }
+
+        .message p {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .suggestions button {
+            padding: 10px 15px;
+            border: 1px solid #cbd5e1;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .suggestions button:hover {
+            background: #eef2ff;
+            border-color: #4f46e5;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 8px;
+        }
+
+        .input-area input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px;
+            font-size: 15px;
+        }
+
+        .input-area button {
+            border: none;
+            background: #4f46e5;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .input-area button:hover {
+            background: #3730a3;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 5px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background: #3730a3;
+        }
+
+        @media (max-width: 600px) {
+            .input-area {
+                flex-direction: column;
+            }
+
+            .input-area button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>AI Copilot Interface</h1>
+        <p>CSS Practical Program 129</p>
+    </div>
+
+    <div class="container">
+
+        <div class="copilot">
+
+            <div class="copilot-header">
+                <div class="logo">🤖</div>
+
+                <div>
+                    <h2>AI Copilot</h2>
+                    <p>Your intelligent assistant</p>
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="message">
+                    <strong>AI Copilot</strong>
+                    <p>
+                        Hello! I can help you understand information,
+                        generate ideas, and organize your work.
+                    </p>
+                </div>
+
+                <h3>Suggested Actions</h3>
+
+                <div class="suggestions">
+                    <button>Summarize</button>
+                    <button>Generate Ideas</button>
+                    <button>Explain</button>
+                    <button>Analyze Data</button>
+                </div>
+
+                <div class="input-area">
+                    <input
+                        type="text"
+                        placeholder="Ask your AI Copilot..."
+                    >
+
+                    <button>Send ➤</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">🏠 Home</a>
+            <a href="index.html">⬅ CSS Programs</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

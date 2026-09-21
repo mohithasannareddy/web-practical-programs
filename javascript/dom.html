@@ -1,0 +1,1012 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Showcase</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f6f8;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        input,
+        textarea,
+        select {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        .box {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid #333;
+            padding: 8px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            background: yellow;
+        }
+
+        .tabs button {
+            margin-right: 5px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+        .accordion button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            background: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        #gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin: 5px;
+        }
+
+        #slide {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DOM Manipulation Examples</h1>
+
+    <!-- 1. Change Text -->
+    <h2>1. Change Text Content</h2>
+    <p id="textBox">Original Text</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <!-- 2. Change innerHTML -->
+    <h2>2. Change innerHTML</h2>
+    <div id="htmlBox">Original <b>HTML</b></div>
+    <button onclick="changeHTML()">Change HTML</button>
+
+    <!-- 3. Change Style -->
+    <h2>3. Change Style</h2>
+    <p id="styleBox">Style me</p>
+    <button onclick="changeStyle()">Change Style</button>
+
+    <!-- 4. Background -->
+    <h2>4. Change Background Color</h2>
+    <div id="bgBox" class="box">Background Box</div>
+    <button onclick="changeBackground()">Change Background</button>
+
+    <!-- 5. Create and Remove -->
+    <h2>5. Create & Remove Elements</h2>
+    <div id="createBox"></div>
+    <button onclick="createElementDemo()">Create Element</button>
+    <button onclick="removeElement()">Remove Element</button>
+
+    <!-- 6. Replace -->
+    <h2>6. Replace Element</h2>
+    <div id="replaceBox">
+        <p id="oldElem">Old Element</p>
+    </div>
+    <button onclick="replaceElement()">Replace</button>
+
+    <!-- 7. Classes -->
+    <h2>7. Add / Remove / Toggle Classes</h2>
+    <p id="classBox">Class Demo</p>
+    <button onclick="addClass()">Add Class</button>
+    <button onclick="removeClass()">Remove Class</button>
+    <button onclick="toggleClass()">Toggle Class</button>
+
+    <!-- 8. Attributes -->
+    <h2>8. Change Attributes</h2>
+    <img id="imgBox"
+         src="https://via.placeholder.com/100"
+         alt="Demo Image">
+    <br>
+    <button onclick="changeImage()">Change Image</button>
+
+    <!-- 9. Dynamic UL -->
+    <h2>9. Dynamic Unordered List</h2>
+    <ul id="ulBox"></ul>
+    <button onclick="createUL()">Create UL</button>
+
+    <!-- 10. Dynamic OL -->
+    <h2>10. Dynamic Ordered List from Input</h2>
+    <input type="text" id="olInput" placeholder="Enter item">
+    <button onclick="addOL()">Add Item</button>
+    <ol id="olBox"></ol>
+
+    <!-- 11. Student Table -->
+    <h2>11. Dynamic Student Table</h2>
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <!-- 12. Edit/Delete -->
+    <h2>12. Edit / Delete Table Rows</h2>
+
+    <table id="editTable">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>
+                <button onclick="deleteRow(this)">Delete</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 13. Search -->
+    <h2>13. Searchable Table</h2>
+
+    <input type="text"
+           id="searchInput"
+           onkeyup="filterTable()"
+           placeholder="Search...">
+
+    <table id="searchTable">
+        <tr>
+            <td>Apple</td>
+        </tr>
+        <tr>
+            <td>Banana</td>
+        </tr>
+        <tr>
+            <td>Cherry</td>
+        </tr>
+        <tr>
+            <td>Mango</td>
+        </tr>
+    </table>
+
+    <!-- 14. Sort -->
+    <h2>14. Sort Table</h2>
+
+    <table id="sortTable">
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <button onclick="sortTable()">Sort</button>
+
+    <!-- 15. Dropdown -->
+    <h2>15. Dynamic Dropdown</h2>
+
+    <select id="dropdown">
+        <option>Select Option</option>
+    </select>
+
+    <button onclick="populateDropdown()">Populate</button>
+
+    <!-- 16. Dependent Dropdown -->
+    <h2>16. Dependent Dropdown</h2>
+
+    <select id="country" onchange="populateStates()">
+        <option value="">Select Country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+    </select>
+
+    <select id="state" onchange="populateCities()">
+        <option value="">Select State</option>
+    </select>
+
+    <select id="city">
+        <option value="">Select City</option>
+    </select>
+
+    <!-- 17. Gallery -->
+    <h2>17. Image Gallery</h2>
+
+    <div id="gallery"></div>
+
+    <button onclick="createGallery()">Create Gallery</button>
+
+    <!-- 18. Slideshow -->
+    <h2>18. Image Slideshow</h2>
+
+    <img id="slide"
+         src="https://via.placeholder.com/150?text=Img1"
+         alt="Slideshow Image">
+
+    <br>
+
+    <button onclick="nextSlide()">Next</button>
+
+    <!-- 19. Password -->
+    <h2>19. Show / Hide Password</h2>
+
+    <input type="password" id="password">
+
+    <button onclick="togglePassword()">Show / Hide</button>
+
+    <!-- 20. Content -->
+    <h2>20. Show / Hide Content</h2>
+
+    <p id="contentBox">This is content</p>
+
+    <button onclick="toggleContent()">Show / Hide</button>
+
+    <!-- 21. Tabs -->
+    <h2>21. Tabs Interface</h2>
+
+    <div class="tabs">
+        <button onclick="openTab('tab1')">Tab 1</button>
+        <button onclick="openTab('tab2')">Tab 2</button>
+    </div>
+
+    <div id="tab1" class="tab-content">
+        Content 1
+    </div>
+
+    <div id="tab2" class="tab-content">
+        Content 2
+    </div>
+
+    <!-- 22. Accordion -->
+    <h2>22. Accordion</h2>
+
+    <div class="accordion">
+
+        <button onclick="toggleAccordion('acc1')">
+            Section 1
+        </button>
+
+        <div id="acc1" class="accordion-content">
+            Accordion Content 1
+        </div>
+
+        <button onclick="toggleAccordion('acc2')">
+            Section 2
+        </button>
+
+        <div id="acc2" class="accordion-content">
+            Accordion Content 2
+        </div>
+
+    </div>
+
+    <!-- 23. Modal -->
+    <h2>23. Modal Popup</h2>
+
+    <button onclick="openModal()">Open Modal</button>
+
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <h3>Modal Popup</h3>
+
+            <p>This is modal content.</p>
+
+            <button onclick="closeModal()">Close</button>
+
+        </div>
+
+    </div>
+
+    <!-- 24. Tooltip -->
+    <h2>24. Tooltip</h2>
+
+    <div class="tooltip">
+        Hover me
+        <span class="tooltiptext">
+            Tooltip text
+        </span>
+    </div>
+
+    <!-- 25. Counter -->
+    <h2>25. Character & Word Counter</h2>
+
+    <textarea id="textArea"
+              onkeyup="countCharsWords()"></textarea>
+
+    <p id="counter">
+        Chars: 0, Words: 0
+    </p>
+
+    <!-- 26. Date -->
+    <h2>26. Current Date & Time</h2>
+
+    <p id="dateTime"></p>
+
+    <button onclick="showDateTime()">
+        Show Date & Time
+    </button>
+
+    <!-- 27. Todo -->
+    <h2>27. To-Do List</h2>
+
+    <input type="text"
+           id="todoInput"
+           placeholder="Enter task">
+
+    <button onclick="addTodo()">Add</button>
+
+    <ul id="todoList"></ul>
+
+
+    <script>
+
+        // 1. Change Text
+        function changeText() {
+            document.getElementById("textBox").textContent =
+                "New Text Content";
+        }
+
+
+        // 2. Change HTML
+        function changeHTML() {
+            document.getElementById("htmlBox").innerHTML =
+                "<i>New HTML Content</i>";
+        }
+
+
+        // 3. Change Style
+        function changeStyle() {
+            let element = document.getElementById("styleBox");
+
+            element.style.color = "red";
+            element.style.fontSize = "25px";
+            element.style.fontWeight = "bold";
+        }
+
+
+        // 4. Change Background
+        function changeBackground() {
+            document.getElementById("bgBox").style.background =
+                "lightgreen";
+        }
+
+
+        // 5. Create Element
+        function createElementDemo() {
+
+            let p = document.createElement("p");
+
+            p.textContent = "New Element Created";
+
+            document.getElementById("createBox")
+                .appendChild(p);
+        }
+
+
+        // Remove Element
+        function removeElement() {
+
+            let box = document.getElementById("createBox");
+
+            if (box.lastElementChild) {
+                box.removeChild(box.lastElementChild);
+            }
+        }
+
+
+        // 6. Replace Element
+        function replaceElement() {
+
+            let oldElement =
+                document.getElementById("oldElem");
+
+            let newElement =
+                document.createElement("p");
+
+            newElement.textContent =
+                "New Element";
+
+            oldElement.parentNode.replaceChild(
+                newElement,
+                oldElement
+            );
+        }
+
+
+        // 7. Add Class
+        function addClass() {
+
+            document.getElementById("classBox")
+                .classList.add("highlight");
+        }
+
+
+        // Remove Class
+        function removeClass() {
+
+            document.getElementById("classBox")
+                .classList.remove("highlight");
+        }
+
+
+        // Toggle Class
+        function toggleClass() {
+
+            document.getElementById("classBox")
+                .classList.toggle("highlight");
+        }
+
+
+        // 8. Change Image
+        function changeImage() {
+
+            document.getElementById("imgBox")
+                .setAttribute(
+                    "src",
+                    "https://via.placeholder.com/150?text=New+Image"
+                );
+        }
+
+
+        // 9. Create UL
+        function createUL() {
+
+            let items = [
+                "One",
+                "Two",
+                "Three"
+            ];
+
+            let ul =
+                document.getElementById("ulBox");
+
+            ul.innerHTML = "";
+
+            items.forEach(function(item) {
+
+                let li =
+                    document.createElement("li");
+
+                li.textContent = item;
+
+                ul.appendChild(li);
+            });
+        }
+
+
+        // 10. Add OL
+        function addOL() {
+
+            let input =
+                document.getElementById("olInput");
+
+            let value =
+                input.value.trim();
+
+            if (value === "") {
+                alert("Please enter an item");
+                return;
+            }
+
+            let li =
+                document.createElement("li");
+
+            li.textContent = value;
+
+            document.getElementById("olBox")
+                .appendChild(li);
+
+            input.value = "";
+        }
+
+
+        // 11. Add Student
+        function addStudent() {
+
+            let name =
+                prompt("Enter student name:");
+
+            let age =
+                prompt("Enter student age:");
+
+            if (!name || !age) {
+                return;
+            }
+
+            let table =
+                document.getElementById("studentTable");
+
+            let row =
+                table.insertRow();
+
+            row.insertCell(0).textContent =
+                name;
+
+            row.insertCell(1).textContent =
+                age;
+        }
+
+
+        // 12. Delete Row
+        function deleteRow(button) {
+
+            let row =
+                button.parentNode.parentNode;
+
+            row.remove();
+        }
+
+
+        // 13. Search Table
+        function filterTable() {
+
+            let input =
+                document.getElementById("searchInput")
+                    .value
+                    .toLowerCase();
+
+            let table =
+                document.getElementById("searchTable");
+
+            let rows = table.rows;
+
+            for (let i = 0; i < rows.length; i++) {
+
+                let text =
+                    rows[i].cells[0].textContent
+                        .toLowerCase();
+
+                if (text.includes(input)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+
+
+        // 14. Sort Table
+        function sortTable() {
+
+            let table =
+                document.getElementById("sortTable");
+
+            let rows =
+                Array.from(table.rows);
+
+            rows.sort(function(a, b) {
+
+                let valueA =
+                    Number(a.cells[0].textContent);
+
+                let valueB =
+                    Number(b.cells[0].textContent);
+
+                return valueA - valueB;
+            });
+
+            rows.forEach(function(row) {
+                table.appendChild(row);
+            });
+        }
+
+
+        // 15. Populate Dropdown
+        function populateDropdown() {
+
+            let select =
+                document.getElementById("dropdown");
+
+            select.innerHTML =
+                '<option>Select Option</option>';
+
+            let options = [
+                "Option 1",
+                "Option 2",
+                "Option 3"
+            ];
+
+            options.forEach(function(item) {
+
+                let option =
+                    document.createElement("option");
+
+                option.textContent = item;
+                option.value = item;
+
+                select.appendChild(option);
+            });
+        }
+
+
+        // 16. States
+        function populateStates() {
+
+            let country =
+                document.getElementById("country").value;
+
+            let state =
+                document.getElementById("state");
+
+            let city =
+                document.getElementById("city");
+
+            state.innerHTML =
+                '<option value="">Select State</option>';
+
+            city.innerHTML =
+                '<option value="">Select City</option>';
+
+            if (country === "India") {
+
+                let states = [
+                    "Maharashtra",
+                    "Karnataka"
+                ];
+
+                states.forEach(function(item) {
+
+                    let option =
+                        document.createElement("option");
+
+                    option.value = item;
+                    option.textContent = item;
+
+                    state.appendChild(option);
+                });
+
+            } else if (country === "USA") {
+
+                let states = [
+                    "California",
+                    "Texas"
+                ];
+
+                states.forEach(function(item) {
+
+                    let option =
+                        document.createElement("option");
+
+                    option.value = item;
+                    option.textContent = item;
+
+                    state.appendChild(option);
+                });
+            }
+        }
+
+
+        // Cities
+        function populateCities() {
+
+            let state =
+                document.getElementById("state").value;
+
+            let city =
+                document.getElementById("city");
+
+            city.innerHTML =
+                '<option value="">Select City</option>';
+
+            let cities = [];
+
+            if (state === "Maharashtra") {
+                cities = ["Mumbai", "Pune"];
+            }
+
+            else if (state === "Karnataka") {
+                cities = ["Bangalore", "Mysore"];
+            }
+
+            else if (state === "California") {
+                cities = ["Los Angeles", "San Francisco"];
+            }
+
+            else if (state === "Texas") {
+                cities = ["Houston", "Dallas"];
+            }
+
+            cities.forEach(function(item) {
+
+                let option =
+                    document.createElement("option");
+
+                option.value = item;
+                option.textContent = item;
+
+                city.appendChild(option);
+            });
+        }
+
+
+        // 17. Gallery
+        function createGallery() {
+
+            let gallery =
+                document.getElementById("gallery");
+
+            gallery.innerHTML = "";
+
+            for (let i = 1; i <= 5; i++) {
+
+                let img =
+                    document.createElement("img");
+
+                img.src =
+                    "https://via.placeholder.com/100?text=Img" + i;
+
+                img.alt =
+                    "Gallery Image " + i;
+
+                gallery.appendChild(img);
+            }
+        }
+
+
+        // 18. Slideshow
+        let slideNumber = 1;
+
+        function nextSlide() {
+
+            slideNumber++;
+
+            if (slideNumber > 5) {
+                slideNumber = 1;
+            }
+
+            document.getElementById("slide").src =
+                "https://via.placeholder.com/150?text=Img"
+                + slideNumber;
+        }
+
+
+        // 19. Password
+        function togglePassword() {
+
+            let password =
+                document.getElementById("password");
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+            } else {
+
+                password.type = "password";
+            }
+        }
+
+
+        // 20. Show / Hide
+        function toggleContent() {
+
+            document.getElementById("contentBox")
+                .classList.toggle("hidden");
+        }
+
+
+        // 21. Tabs
+        function openTab(tabId) {
+
+            let tabs =
+                document.querySelectorAll(".tab-content");
+
+            tabs.forEach(function(tab) {
+                tab.style.display = "none";
+            });
+
+            document.getElementById(tabId)
+                .style.display = "block";
+        }
+
+
+        // 22. Accordion
+        function toggleAccordion(id) {
+
+            let content =
+                document.getElementById(id);
+
+            if (content.style.display === "block") {
+
+                content.style.display = "none";
+
+            } else {
+
+                content.style.display = "block";
+            }
+        }
+
+
+        // 23. Open Modal
+        function openModal() {
+
+            document.getElementById("modal")
+                .style.display = "block";
+        }
+
+
+        // Close Modal
+        function closeModal() {
+
+            document.getElementById("modal")
+                .style.display = "none";
+        }
+
+
+        // 24. Character & Word Counter
+        function countCharsWords() {
+
+            let text =
+                document.getElementById("textArea").value;
+
+            let characters =
+                text.length;
+
+            let words =
+                text.trim() === ""
+                    ? 0
+                    : text.trim().split(/\s+/).length;
+
+            document.getElementById("counter")
+                .textContent =
+                "Chars: " + characters +
+                ", Words: " + words;
+        }
+
+
+        // 25. Date & Time
+        function showDateTime() {
+
+            let now = new Date();
+
+            document.getElementById("dateTime")
+                .textContent =
+                now.toLocaleString();
+        }
+
+
+        // 26. Todo
+        function addTodo() {
+
+            let input =
+                document.getElementById("todoInput");
+
+            let task =
+                input.value.trim();
+
+            if (task === "") {
+
+                alert("Please enter a task");
+
+                return;
+            }
+
+            let li =
+                document.createElement("li");
+
+            li.textContent = task;
+
+            let deleteButton =
+                document.createElement("button");
+
+            deleteButton.textContent =
+                "Delete";
+
+            deleteButton.onclick =
+                function() {
+                    li.remove();
+                };
+
+            li.appendChild(deleteButton);
+
+            document.getElementById("todoList")
+                .appendChild(li);
+
+            input.value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

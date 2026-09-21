@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Image</title>
+</head>
+<body>
+
+    <h1>Change Image Using JavaScript</h1>
+
+    <img id="myImage"
+         src="https://picsum.photos/id/237/300/200"
+         width="300"
+         height="200"
+         alt="Sample Image">
+
+    <br><br>
+
+    <button onclick="changeImage()">Change Image</button>
+
+    <script>
+        function changeImage() {
+            document.getElementById("myImage").src =
+                "https://picsum.photos/id/1025/300/200";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callbacks, Promises and Async Await</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Callbacks, Promises and Async/Await</h1>
+
+    <div class="box" id="output"></div>
+
+    <script>
+
+        // 1. Callback
+        function callbackExample(callback) {
+            setTimeout(function() {
+                callback("Callback executed successfully.");
+            }, 1000);
+        }
+
+        // 2. Promise
+        function promiseExample() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve("Promise resolved successfully.");
+                }, 2000);
+            });
+        }
+
+        // 3. Async/Await
+        async function asyncExample() {
+
+            let result = await promiseExample();
+
+            document.getElementById("output").innerHTML +=
+                "<br>" + result;
+        }
+
+        // Run Callback
+        callbackExample(function(message) {
+
+            document.getElementById("output").innerHTML =
+                "<b>Callback:</b> " + message;
+
+        });
+
+        // Run Async/Await
+        asyncExample();
+
+    </script>
+
+</body>
+</html>

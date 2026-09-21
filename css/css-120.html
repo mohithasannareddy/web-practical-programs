@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 120 - AI-Powered Search Interface</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+        }
+
+        .header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .search-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .search-card h2 {
+            text-align: center;
+            color: #1e293b;
+            margin-top: 0;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 2px solid #6366f1;
+            border-radius: 12px;
+            padding: 6px;
+            background: #f8fafc;
+        }
+
+        .search-icon {
+            font-size: 22px;
+            padding: 0 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 14px 5px;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #4f46e5;
+            color: white;
+            padding: 13px 22px;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #3730a3;
+        }
+
+        .ai-label {
+            margin-top: 25px;
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        .result {
+            padding: 18px;
+            margin-top: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+
+        .result h3 {
+            margin: 0 0 8px;
+            color: #1e293b;
+        }
+
+        .result p {
+            margin: 0;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background: #e0e7ff;
+            color: #4338ca;
+            font-size: 12px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 5px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background: #3730a3;
+        }
+
+        @media (max-width: 600px) {
+            .search-box {
+                flex-wrap: wrap;
+            }
+
+            .search-box input {
+                min-width: 150px;
+            }
+
+            .search-box button {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>AI-Powered Search Interface</h1>
+        <p>CSS Practical Program 120</p>
+    </div>
+
+    <div class="container">
+
+        <div class="search-card">
+
+            <h2>🔍 Search with AI</h2>
+
+            <div class="search-box">
+                <span class="search-icon">🔎</span>
+
+                <input
+                    type="text"
+                    placeholder="Ask a question or search anything..."
+                >
+
+                <button>Search</button>
+            </div>
+
+            <div class="ai-label">
+                ✨ AI Search Results
+            </div>
+
+            <div class="result">
+                <h3>What is CSS?</h3>
+                <p>
+                    CSS stands for Cascading Style Sheets.
+                    It is used to style and design HTML web pages.
+                </p>
+                <span class="tag">CSS</span>
+            </div>
+
+            <div class="result">
+                <h3>CSS Flexbox</h3>
+                <p>
+                    Flexbox is a CSS layout method used to arrange
+                    elements in rows or columns.
+                </p>
+                <span class="tag">Layout</span>
+            </div>
+
+            <div class="result">
+                <h3>CSS Grid</h3>
+                <p>
+                    CSS Grid is a two-dimensional layout system
+                    for creating rows and columns.
+                </p>
+                <span class="tag">Grid</span>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">🏠 Home</a>
+            <a href="index.html">⬅ CSS Programs</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

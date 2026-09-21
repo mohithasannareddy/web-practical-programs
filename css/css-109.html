@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heatmap Analytics</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .card {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .cell {
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .low {
+            background: #dbeafe;
+        }
+
+        .medium {
+            background: #93c5fd;
+        }
+
+        .high {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .very-high {
+            background: #1d4ed8;
+            color: white;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            background: #222;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Heatmap Analytics</h1>
+
+    <div class="card">
+
+        <div class="days">
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            <div>Sun</div>
+        </div>
+
+        <div class="heatmap">
+
+            <div class="low">10</div>
+            <div class="medium">25</div>
+            <div class="high">45</div>
+            <div class="very-high">70</div>
+            <div class="high">50</div>
+            <div class="medium">30</div>
+            <div class="low">15</div>
+
+            <div class="medium">28</div>
+            <div class="high">48</div>
+            <div class="very-high">75</div>
+            <div class="high">55</div>
+            <div class="medium">35</div>
+            <div class="low">20</div>
+            <div class="medium">30</div>
+
+            <div class="high">52</div>
+            <div class="very-high">80</div>
+            <div class="high">60</div>
+            <div class="medium">40</div>
+            <div class="low">18</div>
+            <div class="medium">32</div>
+            <div class="high">50</div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </div>
+
+</body>
+</html>

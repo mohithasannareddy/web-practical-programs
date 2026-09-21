@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Frames and Iframes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #3157a4;
+        }
+
+        h2 {
+            color: #3478c7;
+            margin-top: 30px;
+        }
+
+        p {
+            color: #555;
+            text-align: center;
+        }
+
+        .iframe-box {
+            background: #f2f8ff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: 3px solid #3478c7;
+            border-radius: 12px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            background: #3478c7;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .navigation a:hover {
+            background: #244f91;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🖥️ HTML Frames and Iframes</h1>
+
+    <p>
+        This program demonstrates the use of
+        <b>iframe</b> in HTML.
+    </p>
+
+
+    <div class="iframe-box">
+
+        <h2>🌐 Website using Iframe</h2>
+
+        <iframe
+            src="https://www.wikipedia.org"
+            title="Wikipedia">
+        </iframe>
+
+    </div>
+
+
+    <div class="iframe-box">
+
+        <h2>📄 HTML Content using Iframe</h2>
+
+        <iframe
+            srcdoc="
+                <html>
+                <body style='font-family:Arial;text-align:center;
+                background:#eef5ff;padding:40px;'>
+                <h1 style='color:#3478c7;'>Hello from Iframe!</h1>
+                <p>This content is displayed inside an iframe.</p>
+                <p>Iframe allows another document to be embedded
+                inside a webpage.</p>
+                </body>
+                </html>
+            "
+            title="HTML Content">
+        </iframe>
+
+    </div>
+
+
+    <div class="navigation">
+
+        <a href="../index.html">
+            🏠 Home
+        </a>
+
+        <a href="index.html">
+            📋 HTML Programs
+        </a>
+
+    </div>
+
+
+    <footer>
+        HTML & CSS Practical Programs
+    </footer>
+
+</div>
+
+</body>
+</html>

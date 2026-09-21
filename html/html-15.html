@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Mohitha Sannareddy - Student Portfolio | Programming, Data Structures, Python and Web Development">
+
+    <meta name="keywords"
+          content="Mohitha Sannareddy, Student Portfolio, Python, C, DSA, Web Development, Sai University">
+
+    <meta name="author" content="Mohitha Sannareddy">
+
+    <title>Mohitha Sannareddy | Student Portfolio</title>
+
+    <style>
+
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f1f3f4;
+            color: #202124;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #ddd;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #8b5cf6;
+        }
+
+        .talk-btn {
+            padding: 10px 20px;
+            background: #222;
+            color: white;
+            border-radius: 30px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .talk-btn:hover {
+            background: #8b5cf6;
+        }
+
+
+        
+
+        .hero {
+            min-height: 90vh;
+            padding: 80px 8%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            background:
+                radial-gradient(circle at 80% 20%, #ddd2ff, transparent 30%),
+                #f1f3f4;
+        }
+
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            color: #777;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin-top: 80px;
+        }
+
+        .hello {
+            font-size: 20px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 10vw, 145px);
+            line-height: 0.95;
+            letter-spacing: -6px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #8b5cf6;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .hero-description {
+            max-width: 550px;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #222;
+            color: white;
+        }
+
+        .secondary-btn {
+            border: 1px solid #aaa;
+            background: white;
+        }
+
+        .primary-btn:hover {
+            background: #8b5cf6;
+        }
+
+        .secondary-btn:hover {
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+        }
+
+        .hero-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-top: 70px;
+            padding-top: 20px;
+
+            border-top: 1px solid #ccc;
+        }
+
+
+        
+
+        section {
+            padding: 110px 8%;
+        }
+
+        .section-label {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: clamp(40px, 6vw, 75px);
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+
+        section h2 i {
+            font-family: Georgia, serif;
+            font-weight: normal;
+            color: #8b5cf6;
+        }
+
+
+        
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text {
+            margin-top: 40px;
+            max-width: 650px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            color: #555;
+        }
+
+        .about-card {
+            padding: 40px;
+            background: #f1f3f4;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+        }
+
+        .about-card h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .about-card p {
+            color: #666;
+        }
+
+
+       
+
+        .strengths {
+            background: #202124;
+            color: white;
+        }
+
+        .strengths .section-label {
+            color: #b99cff;
+        }
+
+        .strength-grid {
+            margin-top: 60px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .strength-card {
+            padding: 35px;
+            border: 1px solid #444;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-8px);
+            border-color: #9b75ff;
+        }
+
+        .strength-card span {
+            font-size: 30px;
+        }
+
+        .strength-card h3 {
+            margin: 20px 0 10px;
+        }
+
+        .strength-card p {
+            color: #bbb;
+        }
+
+
+        
+
+        .skills {
+            background: #f1f3f4;
+        }
+
+        .skill-list {
+            margin-top: 60px;
+        }
+
+        .skill {
+            display: grid;
+            grid-template-columns: 80px 1fr 200px;
+
+            align-items: center;
+
+            padding: 25px 0;
+
+            border-bottom: 1px solid #ccc;
+        }
+
+        .skill-number {
+            color: #8b5cf6;
+            font-weight: bold;
+        }
+
+        .skill h3 {
+            font-size: 25px;
+        }
+
+        .skill small {
+            color: #777;
+        }
+
+
+        
+
+        .projects {
+            background: white;
+        }
+
+        .project-list {
+            margin-top: 60px;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 80px 1fr 160px;
+            gap: 30px;
+
+            padding: 45px 0;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .project-number {
+            font-size: 14px;
+            color: #8b5cf6;
+            font-weight: bold;
+        }
+
+        .project-category {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #8b5cf6;
+        }
+
+        .project h3 {
+            font-size: 35px;
+            margin: 10px 0;
+        }
+
+        .project h3 i {
+            font-family: Georgia, serif;
+            color: #8b5cf6;
+            font-weight: normal;
+        }
+
+        .project p {
+            max-width: 650px;
+            color: #666;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tags span {
+            padding: 6px 12px;
+            background: #f1f3f4;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .project-link {
+            font-weight: bold;
+            color: #8b5cf6;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+
+        
+        .education {
+            background: #eee8ff;
+        }
+
+        .education-card {
+            margin-top: 50px;
+
+            display: grid;
+            grid-template-columns: 200px 1fr;
+
+            gap: 50px;
+
+            padding: 45px;
+
+            background: white;
+            border-radius: 25px;
+        }
+
+        .education-year {
+            color: #8b5cf6;
+            font-weight: bold;
+        }
+
+        .education-card h3 {
+            font-size: 35px;
+            margin: 10px 0;
+        }
+
+        .education-card p {
+            color: #666;
+        }
+
+
+        
+        .certificates {
+            background: white;
+        }
+
+        .certificate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 25px 0;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .certificate-number {
+            color: #8b5cf6;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+
+        .certificate-info {
+            flex: 1;
+        }
+
+        .certificate h3 {
+            font-size: 20px;
+        }
+
+        .certificate p {
+            color: #777;
+        }
+
+        .certificate a {
+            color: #8b5cf6;
+            font-weight: bold;
+        }
+
+
+
+        .contact {
+            background: #202124;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-label {
+            color: #b99cff;
+        }
+
+        .contact h2 {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .contact-email {
+            display: inline-block;
+
+            margin-top: 40px;
+
+            font-size: clamp(20px, 4vw, 40px);
+
+            color: #b99cff;
+
+            border-bottom: 2px solid #b99cff;
+        }
+
+        .contact-links {
+            margin-top: 50px;
+
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #ccc;
+        }
+
+        .contact-links a:hover {
+            color: white;
+        }
+
+
+        
+        footer {
+            padding: 30px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: #171717;
+            color: #aaa;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+       
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-top,
+            .hero-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .strength-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill {
+                grid-template-columns: 50px 1fr;
+                gap: 10px;
+            }
+
+            .skill small {
+                grid-column: 2;
+            }
+
+            .project {
+                grid-template-columns: 50px 1fr;
+            }
+
+            .project-link {
+                grid-column: 2;
+            }
+
+            .education-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+
+<header>
+
+    <a href="#home" class="logo">
+        MOHITHA<span>.</span>
+    </a>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+<a href="#contact" class="talk-btn">
+    Let's Talk →
+</a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+    
+
+    <div class="hero-top">
+        <span>PORTFOLIO · 2026</span>
+        <span>SAI UNIVERSITY · INDIA</span>
+    </div>
+
+
+    <div class="hero-content">
+
+        <p class="hello">
+            Hello, I'm
+        </p>
+
+        <h1>
+            Mohitha
+            <span>Sannareddy.</span>
+        </h1>
+
+        <p class="hero-description">
+            A curious student passionate about programming,
+            data structures, web development and building
+            practical technology solutions.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="primary-btn">
+                View My Work
+            </a>
+
+            <a href="#contact" class="secondary-btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <span>
+            CSE · AI & ML
+        </span>
+
+        <span>
+            Programming · DSA · Web Development
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <p class="section-label">
+        01 / ABOUT ME
+    </p>
+
+    <div class="about-grid">
+
+        <div>
+
+            <h2>
+                Learning,
+                <i>building</i>
+                & growing.
+            </h2>
+
+            <div class="about-text">
+
+                <p>
+                    I'm Mohitha Sannareddy, a student at
+                    Sai University with a strong interest in
+                    computer science and technology.
+                </p>
+
+                <p>
+                    I enjoy understanding how things work,
+                    solving programming problems and turning
+                    ideas into useful projects.
+                </p>
+
+                <p>
+                    My current interests include Python,
+                    C programming, Data Structures,
+                    Algorithms and Web Development.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                What I enjoy
+            </h3>
+
+            <p>
+                Learning new technologies, practicing
+                coding problems, developing websites,
+                working on academic projects and improving
+                my problem-solving skills.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STRENGTHS ================= -->
+
+<section class="strengths" id="strengths">
+
+    <p class="section-label">
+        02 / STRENGTHS
+    </p>
+
+    <h2>
+        What I bring
+        <i>to the table.</i>
+    </h2>
+
+
+    <div class="strength-grid">
+
+        <div class="strength-card">
+
+            <span>01</span>
+
+            <h3>
+                Problem Solving
+            </h3>
+
+            <p>
+                I enjoy breaking complex problems into
+                smaller and manageable steps.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <span>02</span>
+
+            <h3>
+                Continuous Learning
+            </h3>
+
+            <p>
+                I actively learn new concepts and improve
+                my technical skills through practice.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <span>03</span>
+
+            <h3>
+                Creativity
+            </h3>
+
+            <p>
+                I like creating simple, useful and
+                visually appealing digital experiences.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <span>04</span>
+
+            <h3>
+                Teamwork
+            </h3>
+
+            <p>
+                I value collaboration, communication and
+                sharing ideas while working on projects.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <span>05</span>
+
+            <h3>
+                Adaptability
+            </h3>
+
+            <p>
+                I'm comfortable learning unfamiliar
+                tools and adapting to new challenges.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <span>06</span>
+
+            <h3>
+                Curiosity
+            </h3>
+
+            <p>
+                I constantly ask questions and explore
+                better ways to solve problems.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="skills" id="skills">
+
+    <p class="section-label">
+        03 / SKILLS
+    </p>
+
+    <h2>
+        My technical
+        <i>toolkit.</i>
+    </h2>
+
+
+    <div class="skill-list">
+
+        <div class="skill">
+
+            <span class="skill-number">01</span>
+
+            <h3>C Programming</h3>
+
+            <small>
+                Programming · Logic Building
+            </small>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">02</span>
+
+            <h3>Python</h3>
+
+            <small>
+                Programming · Automation
+            </small>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">03</span>
+
+            <h3>Data Structures</h3>
+
+            <small>
+                Algorithms · Problem Solving
+            </small>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">04</span>
+
+            <h3>HTML & CSS</h3>
+
+            <small>
+                Web Development · Responsive Design
+            </small>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">05</span>
+
+            <h3>Git & GitHub</h3>
+
+            <small>
+                Version Control · Collaboration
+            </small>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">06</span>
+
+            <h3>Problem Solving</h3>
+
+            <small>
+                Logical Thinking · Algorithms
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="projects">
+
+    <p class="section-label">
+        04 / SELECTED PROJECTS
+    </p>
+
+    <h2>
+        Things I've
+        <i>built.</i>
+    </h2>
+
+
+    <div class="project-list">
+
+
+        <!-- PROJECT 01 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <div>
+
+                <span class="project-category">
+                    WEB DEVELOPMENT
+                </span>
+
+                <h3>
+                    Education Management
+                    <i>System</i>
+                </h3>
+
+                <p>
+                    A student-focused Education Management
+                    System designed to organize academic
+                    information and provide a simple,
+                    user-friendly interface for managing
+                    educational activities.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Web Development</span>
+                </div>
+
+            </div>
+
+            <a href="https://github.com/geethika0111/disaster-management-graph"
+               target="_blank"
+               class="project-link">
+                GitHub ↗
+            </a>
+
+        </article>
+
+
+        <!-- PROJECT 02 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <div>
+
+                <span class="project-category">
+                    C · DATA STRUCTURES
+                </span>
+
+                <h3>
+                    Disaster Management
+                    <i>System</i>
+                </h3>
+
+                <p>
+                    An Emergency Response and Relief
+                    Distribution system developed using
+                    graph concepts in C. The project focuses
+                    on managing routes and representing
+                    connections using an adjacency matrix.
+                </p>
+
+                <div class="tags">
+                    <span>C</span>
+                    <span>Graphs</span>
+                    <span>CRUD</span>
+                    <span>Data Structures</span>
+                </div>
+
+            </div>
+
+            <a href="https://github.com/"
+               target="_blank"
+               class="project-link">
+                GitHub ↗
+            </a>
+
+        </article>
+
+
+        <!-- PROJECT 03 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <div>
+
+                <span class="project-category">
+                    FRONTEND DEVELOPMENT
+                </span>
+
+                <h3>
+                    MANTRA
+                    <i>Educational Website</i>
+                </h3>
+
+                <p>
+                    A responsive educational website created
+                    with HTML, CSS and JavaScript, focusing on
+                    clean design, responsive layouts, SEO,
+                    navigation and user interaction.
+                </p>
+
+                <div class="tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>SEO</span>
+                </div>
+
+            </div>
+
+            <a href="https://mantra-educational-website.netlify.app/"
+               target="_blank"
+               class="project-link">
+                Live Site ↗
+            </a>
+
+        </article>
+
+
+        <!-- PROJECT 04 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                04
+            </div>
+
+            <div>
+
+                <span class="project-category">
+                    PYTHON
+                </span>
+
+                <h3>
+                    Python
+                    <i>Projects</i>
+                </h3>
+
+                <p>
+                    A collection of Python programs and
+                    practice projects covering functions,
+                    data structures, file handling, JSON,
+                    recursion and object-oriented programming.
+                </p>
+
+                <div class="tags">
+                    <span>Python</span>
+                    <span>OOP</span>
+                    <span>JSON</span>
+                    <span>File Handling</span>
+                </div>
+
+            </div>
+
+            <a href="https://github.com/"
+               target="_blank"
+               class="project-link">
+                GitHub ↗
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="education" id="education">
+
+    <p class="section-label">
+        05 / EDUCATION
+    </p>
+
+    <h2>
+        My academic
+        <i>journey.</i>
+    </h2>
+
+
+    <div class="education-card">
+
+        <div class="education-year">
+            2025 — 2029
+        </div>
+
+        <div>
+
+            <span>
+                BACHELOR'S DEGREE
+            </span>
+
+            <h3>
+                Computer Science
+            </h3>
+
+            <h4>
+                Sai University
+            </h4>
+
+            <p>
+                Currently pursuing my undergraduate studies
+                and building a strong foundation in programming,
+                Data Structures, Algorithms, Python, C and
+                Web Development.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATES ================= -->
+
+<section class="certificates" id="certificates">
+
+    <p class="section-label">
+        06 / CERTIFICATES
+    </p>
+
+    <h2>
+        Learning never
+        <i>stops.</i>
+    </h2>
+
+
+    <div style="margin-top:50px;">
+
+
+        <div class="certificate">
+
+            <span class="certificate-number">
+                01
+            </span>
+
+            <div class="certificate-info">
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+                <p>
+                    Problem Solving Certificate
+                </p>
+
+            </div>
+
+            <a href="https://drive.google.com/file/d/1ciRPdd8lF4ZKRUqxb87E98kqDLi8TiEg/view?usp=sharing" target="_blank">
+                View ↗
+            </a>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <span class="certificate-number">
+                02
+            </span>
+
+            <div class="certificate-info">
+
+                <h3>
+                    problem solving intermediate
+                </h3>
+
+                <p>
+                   intermediate certificate
+                </p>
+
+            </div>
+
+            <a href="https://drive.google.com/file/d/1m8yQ9KVtcJ_sDAItQBfMAC6QV98a2l-h/view?usp=sharing" target="_blank">
+                View ↗
+            </a>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <span class="certificate-number">
+                03
+            </span>
+
+            <div class="certificate-info">
+
+                <h3>
+                    MANTRA Summer School
+                </h3>
+
+                <p>
+                    Frontend development project experience
+                </p>
+
+            </div>
+
+            <a href="https://drive.google.com/file/d/1JH4dYmC-zmGRh-XjPG8Smq1Baqmr2MDI/view?usp=sharing" target="_blank">
+                View ↗
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <p class="section-label">
+        07 / CONTACT
+    </p>
+
+    <h2>
+        Have an idea?
+        <i>Let's build it!!😁</i>
+    </h2>
+
+
+    <a href="mailto:mohitha@example.com"
+       class="contact-email">
+
+        Get in touch →
+
+    </a>
+
+
+    <div class="contact-links">
+
+        <a href="mailto:mohitha@example.com">
+            Email
+        </a>
+
+        <a href="https://github.com/"
+           target="_blank">
+            GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/mohitha-sannareddy-22522b405/"
+           target="_blank">
+            LinkedIn
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <strong>
+        MOHITHA
+    </strong>
+
+    <p>
+        Designed & built by Mohitha Sannareddy
+    </p>
+
+    <span>
+        © 2026
+    </span>
+
+</footer>
+
+
+</body>
+</html>

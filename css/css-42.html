@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Breadcrumb Navigation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: white;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #4f46e5;
+        }
+
+        /* Main */
+        .container {
+            max-width: 900px;
+            margin: 70px auto;
+            padding: 20px;
+        }
+
+        .container h1 {
+            font-size: 38px;
+        }
+
+        .container p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: white;
+            padding: 18px 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin: 30px 0;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .separator {
+            margin: 0 12px;
+            color: #999;
+        }
+
+        .current {
+            color: #666;
+        }
+
+        /* Example Content */
+        .content-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-box h2 {
+            color: #4f46e5;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .container {
+                margin: 40px auto;
+            }
+
+            .breadcrumb {
+                line-height: 2.2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <nav>
+
+        <div class="logo">
+            CloudFlow
+        </div>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="../index.html">Main Home</a>
+        </div>
+
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <h1>Breadcrumb Navigation</h1>
+
+        <p>
+            Breadcrumb navigation shows the user's current
+            location within a website.
+        </p>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="#">Home</a>
+
+            <span class="separator">â€º</span>
+
+            <a href="#">Products</a>
+
+            <span class="separator">â€º</span>
+
+            <a href="#">Software</a>
+
+            <span class="separator">â€º</span>
+
+            <span class="current">Dashboard</span>
+
+        </div>
+
+        <!-- Content -->
+        <div class="content-box">
+
+            <h2>Dashboard</h2>
+
+            <p>
+                You are currently viewing the Dashboard page.
+                The breadcrumb above shows the path:
+                Home â†’ Products â†’ Software â†’ Dashboard.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

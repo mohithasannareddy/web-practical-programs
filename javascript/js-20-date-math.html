@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date and Math Objects</title>
+</head>
+<body>
+
+    <h1>Date and Math Objects</h1>
+
+    <script>
+        // Date Object
+        let today = new Date();
+
+        document.write("<h2>Date Object</h2>");
+        document.write("Current Date and Time: " + today + "<br>");
+        document.write("Year: " + today.getFullYear() + "<br>");
+        document.write("Month: " + (today.getMonth() + 1) + "<br>");
+        document.write("Day: " + today.getDate() + "<br><br>");
+
+        // Math Object
+        document.write("<h2>Math Object</h2>");
+        document.write("Square Root of 25: " + Math.sqrt(25) + "<br>");
+        document.write("Power: " + Math.pow(2, 3) + "<br>");
+        document.write("Maximum: " + Math.max(10, 20, 30) + "<br>");
+        document.write("Minimum: " + Math.min(10, 20, 30) + "<br>");
+        document.write("Random Number: " + Math.random());
+    </script>
+
+</body>
+</html>

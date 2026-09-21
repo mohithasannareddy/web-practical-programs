@@ -1,0 +1,687 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Practical Programs - 270</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #1e1b4b,
+                #312e81
+            );
+            color: white;
+            padding: 30px;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.10);
+            padding: 10px 18px;
+            border-radius: 25px;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #6366f1;
+            transform: translateY(-2px);
+        }
+
+        /* HEADER */
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: clamp(30px, 5vw, 50px);
+            margin-bottom: 12px;
+        }
+
+        .header h1 span {
+            color: #38bdf8;
+        }
+
+        .header p {
+            color: #cbd5e1;
+            font-size: 17px;
+            margin: 5px;
+        }
+
+        /* SEARCH */
+
+        .search-box {
+            max-width: 650px;
+            margin: 25px auto;
+        }
+
+        .search-box input {
+            width: 100%;
+
+            padding: 15px 20px;
+
+            border: 1px solid #64748b;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.10);
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: #cbd5e1;
+        }
+
+        .search-box input:focus {
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 0 15px rgba(56,189,248,0.3);
+        }
+
+        /* SECTION */
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 26px;
+
+            margin-bottom: 18px;
+
+            padding-left: 10px;
+
+            border-left: 5px solid #38bdf8;
+        }
+
+        /* PROGRAM GRID */
+
+        .program-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(300px, 1fr)
+                );
+
+            gap: 15px;
+
+            list-style: none;
+        }
+
+        .program-list li {
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .program-list li:hover {
+
+            transform:
+                translateY(-5px);
+
+            background:
+                rgba(255,255,255,0.15);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,0.25);
+        }
+
+        .program-list a {
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 18px;
+
+            color: #e2e8f0;
+
+            text-decoration: none;
+
+            line-height: 1.5;
+        }
+
+        .number {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 42px;
+
+            height: 42px;
+
+            margin-right: 12px;
+
+            background: #4f46e5;
+
+            border-radius: 50%;
+
+            font-weight: bold;
+
+            color: white;
+
+            flex-shrink: 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+
+            text-align: center;
+
+            margin-top: 40px;
+
+            padding: 25px;
+
+            color: #cbd5e1;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.15);
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .program-list {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 30px 15px;
+            }
+
+            nav a {
+                display: block;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="../index.html">
+            🏠 Home
+        </a>
+
+        <a href="../html/index.html">
+            🌐 HTML Programs
+        </a>
+
+        <a href="index.html">
+            🎨 CSS Programs
+        </a>
+
+        <a href="../javascript/index.html">
+            ⚡ JavaScript Programs
+        </a>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="icon">
+            🎨
+        </div>
+
+        <h1>
+            <span>CSS</span>
+            Practical Programs
+        </h1>
+
+        <p>
+            270 CSS Practical Programs
+        </p>
+
+        <p>
+            Click any program to open it.
+        </p>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="🔍 Search CSS programs..."
+                onkeyup="searchPrograms()"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- PROGRAMS -->
+
+    <div class="section">
+
+        <h2 class="section-title">
+            📚 All 270 CSS Programs
+        </h2>
+
+        <ol
+            class="program-list"
+            id="programList">
+        </ol>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 CSS Practical Programs
+        </p>
+
+        <p>
+            270 Programs • HTML • CSS • JavaScript
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+<script>
+
+
+/*
+==================================================
+FILE NAMES
+==================================================
+*/
+
+
+const files = [
+
+    /* 01 - 10 */
+
+    "css-01.html",
+    "css-02.html",
+    "css-03.html",
+    "css-04.html",
+    "css-05.html",
+    "css-06.html",
+    "css-07.html",
+    "css-08.html",
+    "css-09.html",
+    "css-10.html",
+
+
+    /* 11 - 20 */
+
+    "css-11-width-height.html",
+    "css-12-box-sizing.html",
+    "css-13-display-properties.html",
+    "css-14-visibility-opacity.html",
+    "css-15-overflow.html",
+    "css-16-border-radius.html",
+    "css-17-shadows.html",
+    "css-18-css-variables.html",
+    "css-19-inheritance-specificity.html",
+    "css-20-css-functions.html",
+
+
+    /* 21 - 30 */
+
+    "css-21-positioning.html",
+    "css-22-zindex.html",
+    "css-23-float-clear.html",
+    "css-24-cursors.html",
+    "css-25-outline.html",
+    "css-26-spacing.html",
+    "css-27-units.html",
+    "css-28-relative-units.html",
+    "css-29-object-fit.html",
+    "css-30-filters.html",
+
+
+    /* 31 - 40 */
+
+    "css-31.html",
+    "css-32.html",
+    "css-33.html",
+    "css-34.html",
+    "css-35.html",
+    "css-36.html",
+    "css-37.html",
+    "css-38.html",
+    "css-39.html",
+    "css-40.html",
+
+
+    /* 41 - 50 */
+
+    "css-41.html",
+    "css-42.html",
+    "css-43.html",
+    "css-44.html",
+    "css-45.html",
+    "css-46.html",
+    "css-47.html",
+    "css-48.html",
+    "css-49.html",
+    "css-50.html",
+
+
+    /* 51 - 60 */
+
+    "css-51-statistics-card.html",
+    "css-52-kpi-metric-card.html",
+    "css-53-dashboard-card.html",
+    "css-54-notification-card.html",
+    "css-55-activity-feed.html",
+    "css-56-testimonial-card.html",
+    "css-57-hero-section.html",
+    "css-58-landing-header.html",
+    "css-59-buttons.html",
+    "css-60-action-buttons.html",
+
+
+    /* 61 - 69 */
+
+    "css-61-badges-tags.html",
+    "css-62-avatars.html",
+    "css-63-dividers.html",
+    "css-64-alerts.html",
+    "css-65-toast.html",
+    "css-66-tooltip.html",
+    "css-67-popover.html",
+    "css-68-modal.html",
+    "css-69-confirmation-dialog.html"
+
+];
+
+
+/*
+==================================================
+PROGRAM 70 - 270
+==================================================
+*/
+
+for (
+    let i = 70;
+    i <= 270;
+    i++
+) {
+
+    files.push(
+        "css-" + i + ".html"
+    );
+
+}
+
+
+/*
+==================================================
+PROGRAM TITLES
+==================================================
+*/
+
+const programs = [];
+
+
+/*
+For the first 69 programs,
+use their number as the title.
+*/
+
+for (
+    let i = 1;
+    i <= 69;
+    i++
+) {
+
+    programs.push(
+        "CSS Practical Program " + i
+    );
+
+}
+
+
+/*
+Programs 70 - 270
+*/
+
+for (
+    let i = 70;
+    i <= 270;
+    i++
+) {
+
+    programs.push(
+        "CSS Practical Program " + i
+    );
+
+}
+
+
+/*
+==================================================
+CREATE PROGRAM LINKS
+==================================================
+*/
+
+const programList =
+    document.getElementById(
+        "programList"
+    );
+
+
+for (
+    let i = 0;
+    i < files.length;
+    i++
+) {
+
+    const li =
+        document.createElement("li");
+
+
+    const link =
+        document.createElement("a");
+
+
+    /*
+    CORRECT FILE NAME
+    */
+
+    link.href = files[i];
+
+
+    /*
+    PROGRAM NUMBER
+    */
+
+    const number =
+        document.createElement("span");
+
+    number.className =
+        "number";
+
+    number.textContent =
+        i + 1;
+
+
+    /*
+    PROGRAM TITLE
+    */
+
+    const text =
+        document.createTextNode(
+            programs[i]
+        );
+
+
+    /*
+    ADD CONTENT
+    */
+
+    link.appendChild(number);
+
+    link.appendChild(text);
+
+    li.appendChild(link);
+
+    programList.appendChild(li);
+
+}
+
+
+/*
+==================================================
+SEARCH
+==================================================
+*/
+
+function searchPrograms() {
+
+    const searchText =
+        document
+            .getElementById("search")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const items =
+        document.querySelectorAll(
+            "#programList li"
+        );
+
+
+    items.forEach(
+        function(item) {
+
+            const text =
+                item.textContent
+                    .toLowerCase();
+
+
+            if (
+                text.includes(searchText)
+            ) {
+
+                item.style.display = "";
+
+            }
+            else {
+
+                item.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

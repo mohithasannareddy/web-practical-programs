@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Words</title>
+</head>
+<body>
+
+    <h1>Count Number of Words</h1>
+
+    <label>Enter a sentence:</label>
+    <br><br>
+
+    <textarea id="textInput" rows="4" cols="40"
+        placeholder="Enter your sentence here"></textarea>
+
+    <br><br>
+
+    <button onclick="countWords()">Count Words</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function countWords() {
+            let text = document.getElementById("textInput").value.trim();
+
+            if (text === "") {
+                document.getElementById("result").innerHTML =
+                    "Number of words = 0";
+                return;
+            }
+
+            let words = text.split(/\s+/);
+
+            document.getElementById("result").innerHTML =
+                "Number of words = " + words.length;
+        }
+    </script>
+
+</body>
+</html>

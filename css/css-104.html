@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revenue Chart Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .dashboard {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart {
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            border-bottom: 2px solid #333;
+            padding: 20px;
+        }
+
+        .bar {
+            width: 60px;
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            padding-top: 10px;
+        }
+
+        .jan {
+            height: 100px;
+        }
+
+        .feb {
+            height: 150px;
+        }
+
+        .mar {
+            height: 190px;
+        }
+
+        .apr {
+            height: 240px;
+        }
+
+        .month {
+            text-align: center;
+            margin-top: 8px;
+            color: #333;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            background: #222;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Revenue Chart Dashboard</h1>
+
+    <div class="dashboard">
+
+        <div class="chart">
+
+            <div>
+                <div class="bar jan">₹20K</div>
+                <div class="month">Jan</div>
+            </div>
+
+            <div>
+                <div class="bar feb">₹30K</div>
+                <div class="month">Feb</div>
+            </div>
+
+            <div>
+                <div class="bar mar">₹40K</div>
+                <div class="month">Mar</div>
+            </div>
+
+            <div>
+                <div class="bar apr">₹50K</div>
+                <div class="month">Apr</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </div>
+
+</body>
+</html>

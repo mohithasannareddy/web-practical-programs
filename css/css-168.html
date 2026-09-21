@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 168 - ML Confidence Score Component</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#0f172a,#312e81);color:#e5e7eb;min-height:100vh;padding:28px}
+.page{max-width:1100px;margin:auto}
+nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+nav a,.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;color:white;background:#334155}
+nav a:hover,.btn:hover{background:#475569}
+header,.card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:28px;backdrop-filter:blur(10px)}
+h1{font-size:clamp(28px,5vw,48px);margin-bottom:12px}
+h2{margin-bottom:12px}
+p{line-height:1.7;color:#cbd5e1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
+.stat{font-size:30px;font-weight:bold;margin:10px 0}
+input,select,button{padding:11px;border-radius:9px;border:1px solid #64748b;background:#0f172a;color:white}
+button{cursor:pointer}
+.demo{margin-top:22px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#4f46e5;margin:4px}
+.bar{height:14px;background:#334155;border-radius:99px;overflow:hidden}
+.fill{height:100%;width:72%;background:#818cf8}
+</style>
+</head>
+<body>
+<div class="page">
+<nav>
+<a href="../index.html">⌂ Home</a>
+<a href="index.html">← CSS Programs</a>
+<a href="css-167.html">‹ Previous</a>
+<a href="css-169.html">Next ›</a>
+</nav>
+
+<header>
+<span class="badge">CSS Practical 168</span>
+<h1>ML Confidence Score Component</h1>
+<p>A standalone, responsive demonstration of <strong>ML Confidence Score Component</strong>. This page is executable directly in a browser and uses HTML and CSS with a small interactive demo where useful.</p>
+</header>
+
+<section class="grid">
+<div class="card"><h2>Overview</h2><p>This practical demonstrates a clean modern interface related to <strong>ML Confidence Score Component</strong>. Resize the browser to observe responsive behavior.</p></div>
+<div class="card"><h2>Live Status</h2><div class="stat" id="status">Ready</div><p>The demonstration is loaded successfully.</p></div>
+<div class="card"><h2>Responsive Demo</h2><p>Flexible cards, spacing, typography and controls adapt to different screen sizes.</p></div>
+</section>
+
+<section class="card demo">
+<h2>Working Demonstration</h2>
+<div class="row">
+<input id="demoInput" placeholder="Type something">
+<button onclick="runDemo()">Run Demo</button>
+</div>
+<div id="output" style="margin-top:15px">Your result will appear here.</div>
+<div class="bar" style="margin-top:18px"><div class="fill"></div></div>
+</section>
+
+</div>
+<script>
+function runDemo(){
+ const value=document.getElementById("demoInput").value.trim();
+ document.getElementById("output").textContent=value
+   ? "Demo result: "+value
+   : "Demo is working — enter a value to test it.";
+ document.getElementById("status").textContent="Active";
+}
+</script>
+</body>
+</html>

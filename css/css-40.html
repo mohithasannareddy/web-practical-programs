@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dropdown Navigation Menu</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: white;
+            padding: 18px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .nav-links a,
+        .dropbtn {
+            text-decoration: none;
+            color: #333;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .dropdown:hover .dropbtn {
+            background: #4f46e5;
+            color: white;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            min-width: 190px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            z-index: 5;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 13px 18px;
+            color: #333;
+            border-radius: 0;
+        }
+
+        .dropdown-content a:hover {
+            background: #f0efff;
+            color: #4f46e5;
+        }
+
+        /* Show Dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            color: #222;
+        }
+
+        .hero h1 span {
+            color: #4f46e5;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .dropdown-content {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+
+        <div class="logo">
+            CloudFlow
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#">Home</a>
+
+            <!-- Dropdown -->
+            <div class="dropdown">
+
+                <button class="dropbtn">
+                    Products â–¾
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="#">Project Management</a>
+                    <a href="#">Team Collaboration</a>
+                    <a href="#">Analytics</a>
+                    <a href="#">Automation</a>
+                </div>
+
+            </div>
+
+            <a href="#">Pricing</a>
+
+            <a href="#">About</a>
+
+            <a href="#">Contact</a>
+
+            <a href="../index.html">Home</a>
+
+        </div>
+
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>
+            Welcome to <span>CloudFlow</span>
+        </h1>
+
+        <p>
+            Hover over the Products menu to see the
+            dropdown navigation options.
+        </p>
+
+    </section>
+
+</body>
+</html>

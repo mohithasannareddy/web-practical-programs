@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Program 02 - Lists</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #16a34a, #059669);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 38px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 950px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+        }
+
+        .card h2 {
+            color: #15803d;
+            margin-top: 0;
+            border-bottom: 2px solid #bbf7d0;
+            padding-bottom: 10px;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        dl {
+            line-height: 1.6;
+        }
+
+        dt {
+            font-weight: bold;
+            color: #15803d;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        dd {
+            margin-left: 25px;
+            color: #4b5563;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 12px 22px;
+            margin: 5px;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navigation a:hover {
+            background: #15803d;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>HTML Program 02</h1>
+        <p>Ordered, Unordered and Description Lists</p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Ordered List -->
+        <section class="card">
+
+            <h2>1. Ordered List</h2>
+
+            <p>
+                An ordered list displays items in a specific sequence.
+            </p>
+
+            <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+                <li>GitHub</li>
+            </ol>
+
+        </section>
+
+
+        <!-- Unordered List -->
+        <section class="card">
+
+            <h2>2. Unordered List</h2>
+
+            <p>
+                An unordered list displays items using bullet points.
+            </p>
+
+            <ul>
+                <li>Web Development</li>
+                <li>Data Structures</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>Database</li>
+            </ul>
+
+        </section>
+
+
+        <!-- Description List -->
+        <section class="card">
+
+            <h2>3. Description List</h2>
+
+            <p>
+                A description list contains terms and their descriptions.
+            </p>
+
+            <dl>
+
+                <dt>HTML</dt>
+                <dd>
+                    HTML is used to create the structure of a webpage.
+                </dd>
+
+                <dt>CSS</dt>
+                <dd>
+                    CSS is used to style and design webpages.
+                </dd>
+
+                <dt>JavaScript</dt>
+                <dd>
+                    JavaScript is used to add functionality and
+                    interactivity to webpages.
+                </dd>
+
+            </dl>
+
+        </section>
+
+
+        <!-- Combined Example -->
+        <section class="card">
+
+            <h2>4. Combined Example</h2>
+
+            <h3>My Learning Plan</h3>
+
+            <ol>
+                <li>
+                    Learn HTML
+                    <ul>
+                        <li>Headings</li>
+                        <li>Tables</li>
+                        <li>Forms</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Learn CSS
+                    <ul>
+                        <li>Selectors</li>
+                        <li>Layouts</li>
+                        <li>Animations</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Learn JavaScript
+                    <ul>
+                        <li>Variables</li>
+                        <li>Functions</li>
+                        <li>DOM</li>
+                    </ul>
+                </li>
+            </ol>
+
+        </section>
+
+
+        <!-- Navigation -->
+        <div class="navigation">
+
+            <a href="../index.html">
+                🏠 Home
+            </a>
+
+            <a href="index.html">
+                📚 HTML Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>HTML • CSS • JavaScript Practical Programs</p>
+        <p>Program 02</p>
+    </footer>
+
+</body>
+
+</html>
+

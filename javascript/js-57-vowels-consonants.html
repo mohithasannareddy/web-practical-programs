@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowels and Consonants</title>
+</head>
+<body>
+
+    <h1>Count Vowels and Consonants</h1>
+
+    <label>Enter a string:</label>
+    <input type="text" id="textInput" placeholder="Hello World">
+
+    <br><br>
+
+    <button onclick="countLetters()">Count</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function countLetters() {
+            let text = document.getElementById("textInput").value;
+
+            let vowels = 0;
+            let consonants = 0;
+
+            text = text.toLowerCase();
+
+            for (let i = 0; i < text.length; i++) {
+                let ch = text[i];
+
+                if (ch >= 'a' && ch <= 'z') {
+                    if (
+                        ch === 'a' ||
+                        ch === 'e' ||
+                        ch === 'i' ||
+                        ch === 'o' ||
+                        ch === 'u'
+                    ) {
+                        vowels++;
+                    } else {
+                        consonants++;
+                    }
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "Vowels = " + vowels +
+                "<br>Consonants = " + consonants;
+        }
+    </script>
+
+</body>
+</html>

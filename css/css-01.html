@@ -1,0 +1,169 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Types</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Internal CSS -->
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #eef2ff,
+                #e0f2fe
+            );
+
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e1b4b;
+        }
+
+        .box {
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .internal {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 2px solid #f59e0b;
+        }
+
+        .inline {
+            background-color: #dcfce7;
+            border: 2px solid #16a34a;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: white;
+            background-color: #334155;
+            padding: 12px 22px;
+            margin: 5px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        .navigation a:hover {
+            background-color: #475569;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>ðŸŽ¨ CSS Types</h1>
+
+        <p style="text-align:center; color:#64748b;">
+            Demonstration of Inline, Internal and External CSS
+        </p>
+
+
+        <!-- Inline CSS -->
+
+        <div
+            class="box inline"
+            style="color: #166534; font-size: 20px;"
+        >
+
+            <h2>1. Inline CSS</h2>
+
+            <p>
+                This section uses CSS directly inside
+                the HTML element using the style attribute.
+            </p>
+
+        </div>
+
+
+        <!-- Internal CSS -->
+
+        <div class="box internal">
+
+            <h2>2. Internal CSS</h2>
+
+            <p>
+                This section is styled using CSS written
+                inside the style tag in the head section.
+            </p>
+
+        </div>
+
+
+        <!-- External CSS -->
+
+        <div class="box external">
+
+            <h2>3. External CSS</h2>
+
+            <p>
+                This section is styled using a separate
+                external style.css file.
+            </p>
+
+            <button class="external-button">
+                External CSS Button
+            </button>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="../index.html">
+                ðŸ  Home
+            </a>
+
+            <a href="index.html">
+                ðŸŽ¨ CSS Programs
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+

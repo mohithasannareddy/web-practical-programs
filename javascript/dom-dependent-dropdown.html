@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dependent Dropdown</title></head>
+<body>
+  <select id="country" onchange="populateStates()">
+    <option value="">Select Country</option>
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+  </select>
+
+  <select id="state" onchange="populateCities()"></select>
+  <select id="city"></select>
+
+<script>
+function populateStates() {
+  let country = document.getElementById("country").value;
+  let state = document.getElementById("state");
+  state.innerHTML = "";
+  let options = country === "India" ? ["Tamil Nadu","Andhra Pradesh"] : ["California","New York"];
+  options.forEach(opt => {
+    let o = document.createElement("option");
+    o.text = opt;
+    state.add(o);
+  });
+  document.getElementById("city").innerHTML = "";
+}
+
+function populateCities() {
+  let state = document.getElementById("state").value;
+  let city = document.getElementById("city");
+  city.innerHTML = "";
+  let options = [];
+  if (state === "Tamil Nadu") options = ["Chennai","Coimbatore"];
+  else if (state === "Andhra Pradesh") options = ["Vijayawada","Visakhapatnam"];
+  else if (state === "California") options = ["Los Angeles","San Francisco"];
+  else if (state === "New York") options = ["New York City","Buffalo"];
+  options.forEach(opt => {
+    let o = document.createElement("option");
+    o.text = opt;
+    city.add(o);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 75 - Success State</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0fdf4;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #166534;
+            margin-bottom: 35px;
+        }
+
+        .success-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 50px 30px;
+            text-align: center;
+            background: white;
+            border: 2px solid #bbf7d0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .success-box h2 {
+            color: #15803d;
+            margin-bottom: 12px;
+        }
+
+        .success-box p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #15803d;
+            transform: translateY(-3px);
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #16a34a;
+            margin: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>✅ Success State</h1>
+
+    <div class="success-box">
+        <div class="icon">🎉</div>
+
+        <h2>Success!</h2>
+
+        <p>
+            Your request has been completed successfully.
+            Everything is ready to continue.
+        </p>
+
+        <a href="#" class="btn">Continue</a>
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

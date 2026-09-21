@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semantic HTML Elements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+
+        header {
+            background: #064e3b;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background: #047857;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        article {
+            background: #ecfdf5;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #059669;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #047857;
+        }
+
+        article h3 {
+            color: #065f46;
+        }
+
+        footer {
+            background: #064e3b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: #065f46;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+        <h1>🌐 My College Website</h1>
+        <p>Learning HTML Semantic Elements</p>
+    </header>
+
+
+    <!-- Navigation -->
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+    </nav>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- Section -->
+
+        <section id="home">
+
+            <h2>🏠 Home</h2>
+
+            <p>
+                Welcome to our college website.
+                This page demonstrates semantic HTML elements.
+            </p>
+
+        </section>
+
+
+        <!-- Section with Articles -->
+
+        <section id="courses">
+
+            <h2>📚 Courses</h2>
+
+            <article>
+                <h3>💻 Computer Science</h3>
+
+                <p>
+                    Computer Science focuses on programming,
+                    algorithms, data structures and software development.
+                </p>
+            </article>
+
+
+            <article>
+                <h3>🤖 Artificial Intelligence</h3>
+
+                <p>
+                    Artificial Intelligence focuses on machine learning,
+                    data analysis and intelligent systems.
+                </p>
+            </article>
+
+        </section>
+
+
+        <!-- About Section -->
+
+        <section id="about">
+
+            <h2>ℹ️ About</h2>
+
+            <p>
+                Semantic HTML makes the structure of a webpage
+                meaningful and easier to understand.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Navigation Buttons -->
+
+    <div class="navigation">
+
+        <a href="../index.html">
+            🏠 Home
+        </a>
+
+        <a href="index.html">
+            📋 HTML Programs
+        </a>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 HTML & CSS Practical Programs</p>
+    </footer>
+
+</body>
+</html>

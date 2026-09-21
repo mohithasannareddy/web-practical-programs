@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dividers</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 50px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .line {
+            border-top: 2px solid #ddd;
+            margin: 30px 0;
+        }
+
+        .text-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .text-divider::before,
+        .text-divider::after {
+            content: "";
+            flex: 1;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Section One</h1>
+
+    <p>This is the first section.</p>
+
+    <div class="line"></div>
+
+    <div class="text-divider">
+        OR
+    </div>
+
+    <div class="line"></div>
+
+    <h1>Section Two</h1>
+
+    <p>This is the second section.</p>
+
+</body>
+</html>

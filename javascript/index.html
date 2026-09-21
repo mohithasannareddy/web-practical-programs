@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Practical Programs</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      color: #1f2937;
+    }
+
+    header {
+      background: #111827;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      color: #d1d5db;
+      font-size: 1rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+
+    .home-btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .home-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      margin: 0 0 18px;
+      font-size: 1.5rem;
+      color: #111827;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 8px;
+    }
+
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: #1f2937;
+      line-height: 1.4;
+    }
+
+    .card a {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.92rem;
+    }
+
+    .card a:hover {
+      background: #15803d;
+    }
+
+    footer {
+      text-align: center;
+      background: #111827;
+      color: white;
+      padding: 18px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>JavaScript Practical Programs</h1>
+    <p>All JavaScript exercises available in this folder</p>
+  </header>
+
+  <div class="container">
+    <a href="../index.html" class="home-btn">← Back to Home</a>
+
+    <div class="section">
+      <h2>Basic JavaScript Programs</h2>
+      <div class="programs">
+        <div class="card"><h3>01 - Hello World</h3><a href="js-01-hello-world.html">Open Program</a></div>
+        <div class="card"><h3>02 - Arithmetic Operations</h3><a href="js-02-arithmetic.html">Open Program</a></div>
+        <div class="card"><h3>03 - Largest of Three Numbers</h3><a href="js-03-largest-three.html">Open Program</a></div>
+        <div class="card"><h3>04 - Even or Odd</h3><a href="js-04-even-odd.html">Open Program</a></div>
+        <div class="card"><h3>05 - Positive / Negative / Zero</h3><a href="js-05-positive-negative-zero.html">Open Program</a></div>
+        <div class="card"><h3>06 - Factorial</h3><a href="js-06-factorial.html">Open Program</a></div>
+        <div class="card"><h3>07 - Fibonacci Series</h3><a href="js-07-fibonacci.html">Open Program</a></div>
+        <div class="card"><h3>08 - Prime Number</h3><a href="js-08-prime-number.html">Open Program</a></div>
+        <div class="card"><h3>09 - Number Palindrome</h3><a href="js-09-number-palindrome.html">Open Program</a></div>
+        <div class="card"><h3>10 - Reverse Number</h3><a href="js-10-reverse-number.html">Open Program</a></div>
+        <div class="card"><h3>11 - Sum of Digits</h3><a href="js-11-sum-of-digits.html">Open Program</a></div>
+        <div class="card"><h3>12 - Largest and Smallest in Array</h3><a href="js-12-largest-smallest-array.html">Open Program</a></div>
+        <div class="card"><h3>13 - Sort Array</h3><a href="js-13-sort-array.html">Open Program</a></div>
+        <div class="card"><h3>14 - Sum and Average of Array</h3><a href="js-14-sum-average-array.html">Open Program</a></div>
+        <div class="card"><h3>15 - Functions</h3><a href="js-15-functions.html">Open Program</a></div>
+        <div class="card"><h3>16 - Arrow Functions</h3><a href="js-16-arrow-functions.html">Open Program</a></div>
+        <div class="card"><h3>17 - String Methods</h3><a href="js-17-strings-methods.html">Open Program</a></div>
+        <div class="card"><h3>18 - Array Methods</h3><a href="js-18-arrays-methods.html">Open Program</a></div>
+        <div class="card"><h3>19 - Objects</h3><a href="js-19-objects.html">Open Program</a></div>
+        <div class="card"><h3>20 - Date and Math</h3><a href="js-20-date-math.html">Open Program</a></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>DOM and Browser Programs</h2>
+      <div class="programs">
+        <div class="card"><h3>21 - Change Text</h3><a href="js-21-dom-change-text.html">Open Program</a></div>
+        <div class="card"><h3>22 - Background Color</h3><a href="js-22-background-color.html">Open Program</a></div>
+        <div class="card"><h3>23 - Button Click</h3><a href="js-23-button-click.html">Open Program</a></div>
+        <div class="card"><h3>24 - Show/Hide</h3><a href="js-24-show-hide.html">Open Program</a></div>
+        <div class="card"><h3>25 - Change Image</h3><a href="js-25-change-image.html">Open Program</a></div>
+        <div class="card"><h3>26 - Digital Clock</h3><a href="js-26-digital-clock.html">Open Program</a></div>
+        <div class="card"><h3>27 - Calculator</h3><a href="js-27-simple-calculator.html">Open Program</a></div>
+        <div class="card"><h3>28 - Number Guessing Game</h3><a href="js-28-number-guessing-game.html">Open Program</a></div>
+        <div class="card"><h3>29 - Form Validation</h3><a href="js-29-form-validation.html">Open Program</a></div>
+        <div class="card"><h3>30 - Form Validation</h3><a href="js-30-form-validation.html">Open Program</a></div>
+        <div class="card"><h3>31 - To-Do List</h3><a href="js-31-todo-list.html">Open Program</a></div>
+        <div class="card"><h3>32 - Simple Quiz</h3><a href="js-32-simple-quiz.html">Open Program</a></div>
+        <div class="card"><h3>33 - Counter</h3><a href="js-33-counter.html">Open Program</a></div>
+        <div class="card"><h3>34 - Stopwatch</h3><a href="js-34-stopwatch.html">Open Program</a></div>
+        <div class="card"><h3>35 - Countdown Timer</h3><a href="js-35-countdown-timer.html">Open Program</a></div>
+        <div class="card"><h3>36 - ES6 Features</h3><a href="js-36-es6-features.html">Open Program</a></div>
+        <div class="card"><h3>37 - Spread and Rest</h3><a href="js-37-spread-rest.html">Open Program</a></div>
+        <div class="card"><h3>38 - Classes and Objects</h3><a href="js-38-classes-objects.html">Open Program</a></div>
+        <div class="card"><h3>39 - Inheritance</h3><a href="js-39-inheritance.html">Open Program</a></div>
+        <div class="card"><h3>40 - Callback / Promise / Async</h3><a href="js-40-callback-promise-async.html">Open Program</a></div>
+        <div class="card"><h3>41 - Fetch API</h3><a href="js-41-fetch-api.html">Open Program</a></div>
+        <div class="card"><h3>42 - Fetch API</h3><a href="js-42-fetch-api.html">Open Program</a></div>
+        <div class="card"><h3>43 - GCD</h3><a href="js-43-gcd.html">Open Program</a></div>
+        <div class="card"><h3>44 - LCM</h3><a href="js-44-lcm.html">Open Program</a></div>
+        <div class="card"><h3>45 - Armstrong Number</h3><a href="js-45-armstrong-number.html">Open Program</a></div>
+        <div class="card"><h3>46 - Perfect Number</h3><a href="js-46-perfect-number.html">Open Program</a></div>
+        <div class="card"><h3>47 - Multiplication Table</h3><a href="js-47-multiplication-table.html">Open Program</a></div>
+        <div class="card"><h3>48 - Power</h3><a href="js-48-power.html">Open Program</a></div>
+        <div class="card"><h3>49 - Count Digits</h3><a href="js-49-count-digits.html">Open Program</a></div>
+        <div class="card"><h3>50 - Second Largest</h3><a href="js-50-second-largest.html">Open Program</a></div>
+        <div class="card"><h3>51 - Remove Duplicates</h3><a href="js-51-remove-duplicates.html">Open Program</a></div>
+        <div class="card"><h3>52 - Merge Arrays</h3><a href="js-52-merge-arrays.html">Open Program</a></div>
+        <div class="card"><h3>53 - Array Frequency</h3><a href="js-53-array-frequency.html">Open Program</a></div>
+        <div class="card"><h3>54 - Common Elements</h3><a href="js-54-common-elements.html">Open Program</a></div>
+        <div class="card"><h3>55 - Reverse String</h3><a href="js-55-reverse-string.html">Open Program</a></div>
+        <div class="card"><h3>56 - String Palindrome</h3><a href="js-56-string-palindrome.html">Open Program</a></div>
+        <div class="card"><h3>57 - Vowels and Consonants</h3><a href="js-57-vowels-consonants.html">Open Program</a></div>
+        <div class="card"><h3>58 - Count Words</h3><a href="js-58-count-words.html">Open Program</a></div>
+        <div class="card"><h3>59 - Character Frequency</h3><a href="js-59-character-frequency.html">Open Program</a></div>
+        <div class="card"><h3>60 - Regular Expressions</h3><a href="js-60-regular-expressions.html">Open Program</a></div>
+        <div class="card"><h3>61 - Validate Email</h3><a href="js-61-validate-email.html">Open Program</a></div>
+        <div class="card"><h3>62 - Count Digits</h3><a href="js-62-count-digits.html">Open Program</a></div>
+        <div class="card"><h3>63 - Character Frequency</h3><a href="js-63-character-frequency.html">Open Program</a></div>
+        <div class="card"><h3>64 - Regular Expressions</h3><a href="js-64-regular-expressions.html">Open Program</a></div>
+        <div class="card"><h3>65 - Email Validation</h3><a href="js-65-email-validation.html">Open Program</a></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>DOM Projects and Browser Features</h2>
+      <div class="programs">
+        <div class="card"><h3>DOM Basics</h3><a href="dom.html">Open Program</a></div>
+        <div class="card"><h3>Add Elements</h3><a href="dom-01-add-elements.html">Open Program</a></div>
+        <div class="card"><h3>Remove Elements</h3><a href="dom-02-remove-elements.html">Open Program</a></div>
+        <div class="card"><h3>DOM Style</h3><a href="dom-style.html">Open Program</a></div>
+        <div class="card"><h3>DOM Multiple</h3><a href="dom-multiple.html">Open Program</a></div>
+        <div class="card"><h3>DOM Get</h3><a href="dom-get.html">Open Program</a></div>
+        <div class="card"><h3>DOM Query</h3><a href="dom-query.html">Open Program</a></div>
+        <div class="card"><h3>DOM Class</h3><a href="dom-class.html">Open Program</a></div>
+        <div class="card"><h3>DOM Table</h3><a href="dom-table.html">Open Program</a></div>
+        <div class="card"><h3>DOM Rows</h3><a href="dom-rows.html">Open Program</a></div>
+        <div class="card"><h3>DOM Password</h3><a href="dom-password.html">Open Program</a></div>
+        <div class="card"><h3>DOM Dropdown</h3><a href="dom-dropdown.html">Open Program</a></div>
+        <div class="card"><h3>Dependent Dropdown</h3><a href="dom-dependent-dropdown.html">Open Program</a></div>
+        <div class="card"><h3>Slideshow</h3><a href="dom-slideshow.html">Open Program</a></div>
+        <div class="card"><h3>Browser Features</h3><a href="browser-features.html">Open Program</a></div>
+        <div class="card"><h3>Browser Storage</h3><a href="browser-storage.html">Open Program</a></div>
+        <div class="card"><h3>Events</h3><a href="events.html">Open Program</a></div>
+        <div class="card"><h3>Events Demo</h3><a href="events-demo.html">Open Program</a></div>
+        <div class="card"><h3>Events Showcase</h3><a href="events-showcase.html">Open Program</a></div>
+        <div class="card"><h3>Form Validation</h3><a href="forms-validation.html">Open Program</a></div>
+        <div class="card"><h3>Form Validation Showcase</h3><a href="forms-validation-showcase.html">Open Program</a></div>
+        <div class="card"><h3>Mini Project</h3><a href="mini project.html">Open Program</a></div>
+        <div class="card"><h3>Web Storage</h3><a href="webstorage.html">Open Program</a></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>JavaScript Practical Programs</p>
+  </footer>
+
+</body>
+</html>

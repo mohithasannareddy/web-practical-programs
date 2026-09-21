@@ -1,0 +1,39 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expressions</title>
+</head>
+<body>
+
+    <h1>Regular Expression Demo</h1>
+
+    <label>Enter a string:</label>
+    <input type="text" id="textInput">
+
+    <br><br>
+
+    <button onclick="checkPattern()">Check Pattern</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function checkPattern() {
+            let text = document.getElementById("textInput").value;
+
+            // Regular expression to check whether the string
+            // contains only letters
+            let pattern = /^[A-Za-z]+$/;
+
+            if (pattern.test(text)) {
+                document.getElementById("result").innerHTML =
+                    "The string contains only letters.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "The string contains numbers, spaces, or special characters.";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events Showcase</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:20px; background:#f4f6f8; }
+    h2 { color:#007bff; margin-top:30px; }
+    .box { width:150px; height:100px; background:lightblue; margin:10px; text-align:center; line-height:100px; }
+    #movingBox { width:50px; height:50px; background:red; position:absolute; top:200px; left:200px; }
+    #reactionBox { width:100px; height:100px; background:orange; margin:10px; text-align:center; line-height:100px; }
+  </style>
+</head>
+<body>
+
+<h1>JavaScript Events Showcase</h1>
+
+<h2>Click & Double Click</h2>
+<button onclick="alert('Button clicked!')">Click Me</button>
+<button ondblclick="alert('Button double-clicked!')">Double Click Me</button>
+
+<h2>Mouse Events</h2>
+<div class="box" onmouseover="this.style.background='yellow'" onmouseout="this.style.background='lightblue'">Hover Me</div>
+<div class="box" onmousedown="this.textContent='Mouse Down'" onmouseup="this.textContent='Mouse Up'">Click Hold</div>
+<div class="box" onmousemove="this.textContent='Moving Mouse'">Move Mouse</div>
+
+<h2>Keyboard Events</h2>
+<input type="text" id="keyInput" placeholder="Type something">
+<p id="keyDisplay"></p>
+<p id="keyCount">Key presses: 0</p>
+
+<h2>Focus, Blur, Change, Input</h2>
+<input type="text" id="focusInput" placeholder="Focus me" onfocus="this.style.background='lightyellow'" onblur="this.style.background='white'">
+<select onchange="alert('Selection changed!')"><option>A</option><option>B</option></select>
+<input type="text" oninput="document.getElementById('liveInput').textContent=this.value" placeholder="Type live">
+<p id="liveInput"></p>
+
+<h2>Form Submit & Reset</h2>
+<form onsubmit="alert('Form submitted!'); return false;" onreset="alert('Form reset!')">
+  <input type="text" placeholder="Name">
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+
+<h2>Dynamic Buttons</h2>
+<button onclick="document.body.style.background='lightgreen'">Change Background</button>
+<button onclick="document.body.style.fontSize='20px'">Change Font Size</button>
+<button onclick="alert('Different handler!')">Another Button</button>
+
+<h2>Event Listeners</h2>
+<button id="listenerBtn">Click with addEventListener</button>
+
+<h2>Event Bubbling & Capturing</h2>
+<div id="outer" style="padding:20px; background:lightgreen;">
+  Outer Div
+  <div id="inner" style="padding:20px; background:lightcoral;">Inner Div</div>
+</div>
+
+<h2>Event Delegation</h2>
+<ul id="list"><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>
+
+<h2>Drag and Drop</h2>
+<div id="dragItem" draggable="true" style="width:100px;height:100px;background:orange;">Drag me</div>
+<div id="dropZone" style="width:200px;height:200px;background:lightgray;">Drop here</div>
+
+<h2>Mouse Coordinate Tracker</h2>
+<p id="coords">Move mouse to see coordinates</p>
+
+<h2>Keyboard Controlled Object</h2>
+<div id="movingBox"></div>
+
+<h2>Click & Double-Click Counter</h2>
+<button id="clickCounter">Click Counter</button>
+<p id="clickCount">Clicks: 0</p>
+<button id="dblClickCounter">Double-Click Counter</button>
+<p id="dblClickCount">Double Clicks: 0</p>
+
+<h2>Reaction Time Game</h2>
+<div id="reactionBox">Wait...</div>
+<p id="reactionResult"></p>
+<button onclick="startReaction()">Start Game</button>
+
+<h2>Typing Test</h2>
+<textarea id="typingArea" placeholder="Type here..."></textarea>
+<p id="typingResult"></p>
+
+<script>
+// Keyboard events
+let keyPresses=0;
+document.getElementById("keyInput").addEventListener("keydown", e=>{
+  document.getElementById("keyDisplay").textContent="Key down: "+e.key;
+  keyPresses++;
+  document.getElementById("keyCount").textContent="Key presses: "+keyPresses;
+});
+document.getElementById("keyInput").addEventListener("keyup", e=>{
+  document.getElementById("keyDisplay").textContent="Key up: "+e.key;
+});
+
+// Event listeners
+function listenerAlert(){alert("Event listener triggered!");}
+document.getElementById("listenerBtn").addEventListener("click", listenerAlert);
+// Remove after 5 clicks
+let listenerClicks=0;
+document.getElementById("listenerBtn").addEventListener("click", ()=>{
+  listenerClicks++;
+  if(listenerClicks>=5){
+    document.getElementById("listenerBtn").removeEventListener("click", listenerAlert);
+    alert("Event listener removed!");
+  }
+});
+
+// Bubbling & Capturing
+document.getElementById("outer").addEventListener("click", ()=>alert("Outer bubble"));
+document.getElementById("inner").addEventListener("click", ()=>alert("Inner bubble"));
+document.getElementById("outer").addEventListener("click", ()=>alert("Outer capture"), true);
+
+// Delegation
+document.getElementById("list").addEventListener("click", e=>{
+  if(e.target.tagName==="LI") alert("Clicked "+e.target.textContent);
+});
+
+// Drag and Drop
+const dragItem=document.getElementById("dragItem");
+const dropZone=document.getElementById("dropZone");
+dragItem.addEventListener("dragstart", e=>e.dataTransfer.setData("text", e.target.id));
+dropZone.addEventListener("dragover", e=>e.preventDefault());
+dropZone.addEventListener("drop", e=>{
+  e.preventDefault();
+  const id=e.dataTransfer.getData("text");
+  dropZone.appendChild(document.getElementById(id));
+});
+
+// Mouse coordinates
+document.addEventListener("mousemove", e=>{
+  document.getElementById("coords").textContent="X:"+e.clientX+" Y:"+e.clientY;
+});
+
+// Keyboard controlled object
+let posX=200,posY=200;
+document.addEventListener("keydown", e=>{
+  if(e.key==="ArrowUp") posY-=10;
+  if(e.key==="ArrowDown") posY+=10;
+  if(e.key==="ArrowLeft") posX-=10;
+  if(e.key==="ArrowRight") posX+=10;
+  document.getElementById("movingBox").style.left=posX+"px";
+  document.getElementById("movingBox").style.top=posY+"px";
+});
+
+// Click counters
+let clicks=0,dblClicks=0;
+document.getElementById("clickCounter").addEventListener("click", ()=>{
+  clicks++;
+  document.getElementById("clickCount").textContent="Clicks: "+clicks;
+});
+document.getElementById("dblClickCounter").addEventListener("dblclick", ()=>{
+  dblClicks++;
+  document.getElementById("dblClickCount").textContent="Double Clicks: "+dblClicks;
+});
+
+// Reaction time game
+let startTime;
+function startReaction(){
+  document.getElementById("reactionBox").textContent="Wait...";
+  setTimeout(()=>{
+    document.getElementById("reactionBox").textContent="Click!";
+    startTime=Date.now();
+    document.getElementById("reactionBox").onclick=function(){
+      let reaction=Date.now()-startTime;
+      document.getElementById("reactionResult").textContent="Reaction time: "+reaction+" ms";
+    };
+  },Math.random()*3000+1000);
+}
+
+// Typing test
+document.getElementById("typingArea").addEventListener("input", e=>{
+  document.getElementById("typingResult").textContent="Characters typed: "+e.target.value.length;
+});
+</script>
+
+</body>
+</html>

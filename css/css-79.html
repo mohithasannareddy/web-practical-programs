@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 79 - Progress Stepper</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 50px;
+        }
+
+        .stepper {
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            width: 100%;
+            height: 4px;
+            background: #2563eb;
+            z-index: 1;
+        }
+
+        .step p {
+            margin-top: 15px;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .step small {
+            display: block;
+            margin-top: 5px;
+            color: #64748b;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .stepper {
+                flex-direction: column;
+                gap: 35px;
+            }
+
+            .step {
+                width: 100%;
+            }
+
+            .step:not(:last-child)::after {
+                top: 50px;
+                left: 50%;
+                width: 4px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📈 Progress Stepper</h1>
+
+    <div class="stepper">
+
+        <div class="step">
+            <div class="circle">1</div>
+            <p>Account</p>
+            <small>Completed</small>
+        </div>
+
+        <div class="step">
+            <div class="circle">2</div>
+            <p>Profile</p>
+            <small>Completed</small>
+        </div>
+
+        <div class="step">
+            <div class="circle">3</div>
+            <p>Payment</p>
+            <small>In Progress</small>
+        </div>
+
+        <div class="step">
+            <div class="circle">4</div>
+            <p>Complete</p>
+            <small>Pending</small>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to CSS Programs</a>
+    </nav>
+
+</body>
+</html>

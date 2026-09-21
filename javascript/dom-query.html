@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Query Selector</title></head>
+<body>
+  <p class="query">Query 1</p>
+  <p class="query">Query 2</p>
+  <button onclick="demoQuery()">Demo Query</button>
+
+<script>
+function demoQuery() {
+  alert(document.querySelector(".query").textContent);
+  let all = document.querySelectorAll(".query");
+  alert("Query count: " + all.length);
+}
+</script>
+</body>
+</html>

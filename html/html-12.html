@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selectors and Styling</title>
+
+    <style>
+
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Element Selector */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        /* ID Selector */
+        #main-title {
+            text-align: center;
+            color: #1e3a8a;
+            font-size: 40px;
+            margin-top: 30px;
+        }
+
+        /* Class Selector */
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Grouping Selector */
+        h2, p {
+            line-height: 1.6;
+        }
+
+        /* Main Card */
+        .card {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+
+            background-color: white;
+
+            border: 3px solid #2563eb;
+            border-radius: 15px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            font-size: 28px;
+        }
+
+        .card p {
+            color: #475569;
+            font-size: 17px;
+        }
+
+        /* Special Box */
+        .highlight {
+            background-color: #dbeafe;
+            color: #1e40af;
+
+            padding: 20px;
+            margin-top: 20px;
+
+            border-left: 6px solid #2563eb;
+            border-radius: 8px;
+        }
+
+        /* Button */
+        .button {
+            display: inline-block;
+
+            margin-top: 20px;
+            padding: 12px 25px;
+
+            background-color: #2563eb;
+            color: white;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            border: 2px solid #1d4ed8;
+            border-radius: 25px;
+        }
+
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Navigation */
+        .navigation {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+
+            padding: 10px 20px;
+            margin: 5px;
+
+            background-color: #0f172a;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        .navigation a:hover {
+            background-color: #334155;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+
+            #main-title {
+                font-size: 30px;
+            }
+
+            .card {
+                width: 95%;
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Main Heading -->
+
+    <h1 id="main-title">
+        CSS Styling Demonstration
+    </h1>
+
+    <p class="subtitle">
+        Selectors • Colors • Fonts • Margins • Padding • Borders
+    </p>
+
+
+    <!-- Main Card -->
+
+    <div class="card">
+
+        <h2>
+            CSS Selectors and Properties
+        </h2>
+
+        <p>
+            This webpage demonstrates different CSS properties
+            including colors, fonts, margins, padding and borders.
+        </p>
+
+        <p>
+            CSS selectors are used to select HTML elements
+            and apply different styles to them.
+        </p>
+
+
+        <!-- Highlight Box -->
+
+        <div class="highlight">
+
+            <strong>Highlighted Section</strong>
+
+            <p>
+                This box demonstrates background color,
+                text color, padding, margin and border styling.
+            </p>
+
+        </div>
+
+
+        <!-- Button -->
+
+        <a href="#" class="button">
+            CSS Button
+        </a>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <div class="navigation">
+
+        <a href="../index.html">
+            🏠 Home
+        </a>
+
+        <a href="index.html">
+            📚 HTML Programs
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>
+

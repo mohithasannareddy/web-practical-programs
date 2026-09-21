@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 123 - AI Prompt Suggestions</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+        }
+
+        .header {
+            background: #4f46e5;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h2 {
+            text-align: center;
+            color: #1e293b;
+            margin-top: 0;
+        }
+
+        .card > p {
+            text-align: center;
+            color: #64748b;
+        }
+
+        .category {
+            margin-top: 25px;
+        }
+
+        .category h3 {
+            color: #4338ca;
+            margin-bottom: 12px;
+        }
+
+        .prompt-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .prompt {
+            padding: 16px;
+            border: 1px solid #dbeafe;
+            border-radius: 12px;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .prompt:hover {
+            transform: translateY(-3px);
+            border-color: #6366f1;
+            background: #eef2ff;
+        }
+
+        .prompt strong {
+            display: block;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .prompt span {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .custom {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 12px;
+        }
+
+        .custom h3 {
+            margin-top: 0;
+            color: #334155;
+        }
+
+        .custom input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .custom button {
+            margin-top: 12px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            cursor: pointer;
+        }
+
+        .custom button:hover {
+            background: #3730a3;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 5px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background: #3730a3;
+        }
+
+        @media (max-width: 650px) {
+            .prompt-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>AI Prompt Suggestions</h1>
+        <p>CSS Practical Program 123</p>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>✨ What would you like to do?</h2>
+
+            <p>
+                Choose a prompt suggestion to get started with AI.
+            </p>
+
+            <div class="category">
+                <h3>💻 Coding</h3>
+
+                <div class="prompt-list">
+
+                    <div class="prompt">
+                        <strong>Write Code</strong>
+                        <span>Generate a simple HTML and CSS program.</span>
+                    </div>
+
+                    <div class="prompt">
+                        <strong>Fix Code</strong>
+                        <span>Find and explain errors in my code.</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>📚 Learning</h3>
+
+                <div class="prompt-list">
+
+                    <div class="prompt">
+                        <strong>Explain Topic</strong>
+                        <span>Explain a difficult topic in simple words.</span>
+                    </div>
+
+                    <div class="prompt">
+                        <strong>Create Notes</strong>
+                        <span>Create short notes for exam preparation.</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>✍️ Writing</h3>
+
+                <div class="prompt-list">
+
+                    <div class="prompt">
+                        <strong>Write Paragraph</strong>
+                        <span>Generate a clear paragraph about a topic.</span>
+                    </div>
+
+                    <div class="prompt">
+                        <strong>Summarize</strong>
+                        <span>Summarize the given content briefly.</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="custom">
+
+                <h3>➕ Custom Prompt</h3>
+
+                <input
+                    type="text"
+                    placeholder="Enter your own prompt..."
+                >
+
+                <button>Use Prompt</button>
+
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">🏠 Home</a>
+            <a href="index.html">⬅ CSS Programs</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

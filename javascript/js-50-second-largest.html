@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Largest Element</title>
+</head>
+<body>
+
+    <h1>Find Second-Largest Element</h1>
+
+    <label>Enter array elements:</label>
+    <input type="text" id="arrayInput"
+           placeholder="10, 25, 5, 40, 30">
+
+    <br><br>
+
+    <button onclick="findSecondLargest()">Find Second Largest</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function findSecondLargest() {
+            let input = document.getElementById("arrayInput").value;
+
+            let arr = input.split(",").map(Number);
+
+            if (arr.length < 2 || arr.some(isNaN)) {
+                document.getElementById("result").innerHTML =
+                    "Please enter at least two valid numbers.";
+                return;
+            }
+
+            let uniqueArray = [...new Set(arr)];
+
+            if (uniqueArray.length < 2) {
+                document.getElementById("result").innerHTML =
+                    "There is no second-largest element.";
+                return;
+            }
+
+            uniqueArray.sort(function(a, b) {
+                return b - a;
+            });
+
+            let secondLargest = uniqueArray[1];
+
+            document.getElementById("result").innerHTML =
+                "Array: " + arr.join(", ") +
+                "<br>Second-largest element = " + secondLargest;
+        }
+    </script>
+
+</body>
+</html>

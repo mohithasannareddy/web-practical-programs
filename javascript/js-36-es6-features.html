@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ES6 Features</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        .output {
+            padding: 15px;
+            border: 2px solid black;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ES6 Features</h1>
+
+    <div class="output" id="output"></div>
+
+    <script>
+
+        // 1. let
+        let name = "Mohitha";
+
+        // 2. const
+        const age = 20;
+
+        // 3. Template Literal
+        let message = `My name is ${name} and I am ${age} years old.`;
+
+        // 4. Destructuring
+        let student = ["Mohitha", "CSE", 2];
+
+        let [studentName, branch, year] = student;
+
+        document.getElementById("output").innerHTML =
+            "<b>let:</b> " + name + "<br><br>" +
+
+            "<b>const:</b> " + age + "<br><br>" +
+
+            "<b>Template Literal:</b> " + message + "<br><br>" +
+
+            "<b>Destructuring:</b><br>" +
+            "Name: " + studentName + "<br>" +
+            "Branch: " + branch + "<br>" +
+            "Year: " + year;
+
+    </script>
+
+</body>
+</html>

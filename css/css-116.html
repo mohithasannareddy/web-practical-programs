@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 116 - AI Assistant Interface</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+        }
+
+        .header {
+            background: #4f46e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .assistant {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .assistant-header {
+            padding: 20px;
+            background: #6366f1;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: #4f46e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .assistant-header h2 {
+            margin: 0;
+        }
+
+        .status {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .chat {
+            padding: 25px;
+            min-height: 350px;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 14px 18px;
+            margin: 15px 0;
+            border-radius: 15px;
+            line-height: 1.5;
+        }
+
+        .ai-message {
+            background: #f1f5f9;
+            margin-right: auto;
+        }
+
+        .user-message {
+            background: #4f46e5;
+            color: white;
+            margin-left: auto;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .input-area button {
+            padding: 14px 22px;
+            border: none;
+            border-radius: 10px;
+            background: #4f46e5;
+            color: white;
+            cursor: pointer;
+        }
+
+        .input-area button:hover {
+            background: #3730a3;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #4f46e5;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background: #3730a3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>AI Assistant Interface</h1>
+        <p>CSS Practical Program 116</p>
+    </div>
+
+    <div class="container">
+
+        <div class="assistant">
+
+            <div class="assistant-header">
+                <div class="avatar">🤖</div>
+
+                <div>
+                    <h2>AI Assistant</h2>
+                    <div class="status">● Online</div>
+                </div>
+            </div>
+
+            <div class="chat">
+
+                <div class="message ai-message">
+                    Hello! 👋 How can I help you today?
+                </div>
+
+                <div class="message user-message">
+                    Explain CSS Flexbox.
+                </div>
+
+                <div class="message ai-message">
+                    Flexbox is a CSS layout system used to arrange
+                    elements in rows or columns easily.
+                </div>
+
+            </div>
+
+            <div class="input-area">
+                <input type="text" placeholder="Ask your AI assistant...">
+                <button>Send</button>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">🏠 Home</a>
+            <a href="index.html">⬅ CSS Programs</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

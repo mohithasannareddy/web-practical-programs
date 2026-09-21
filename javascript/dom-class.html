@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toggle Class</title>
+  <style>
+    .highlight { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <p id="classDemo">Toggle my class</p>
+  <button onclick="toggleClass()">Toggle Class</button>
+
+<script>
+function toggleClass() {
+  document.getElementById("classDemo").classList.toggle("highlight");
+}
+</script>
+</body>
+</html>

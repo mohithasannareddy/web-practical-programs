@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest of Three Numbers</title>
+</head>
+<body>
+
+    <h1>Largest of Three Numbers</h1>
+
+    <script>
+        let a = 25;
+        let b = 45;
+        let c = 30;
+
+        let largest;
+
+        if (a >= b && a >= c) {
+            largest = a;
+        } else if (b >= a && b >= c) {
+            largest = b;
+        } else {
+            largest = c;
+        }
+
+        document.write("First Number: " + a + "<br>");
+        document.write("Second Number: " + b + "<br>");
+        document.write("Third Number: " + c + "<br><br>");
+
+        document.write("Largest Number: " + largest);
+    </script>
+
+</body>
+</html>

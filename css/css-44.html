@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Pill Navigation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        .pill-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .pill-nav a {
+            text-decoration: none;
+            color: #334155;
+            background: #e2e8f0;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .pill-nav a:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .pill-nav a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .info {
+            margin-top: 35px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .info h2 {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">CSS Programs</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Pill Navigation</h1>
+
+        <div class="pill-nav">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="info">
+            <h2>Welcome!</h2>
+            <p>
+                This is an example of a modern pill-style
+                navigation component created using CSS.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

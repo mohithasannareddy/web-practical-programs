@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toast Notification</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .toast {
+            visibility: hidden;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #111827;
+            color: white;
+            padding: 18px 25px;
+            border-radius: 10px;
+        }
+
+        .toast.show {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Toast Notification</h1>
+
+    <button onclick="showToast()">
+        Show Notification
+    </button>
+
+    <div id="toast" class="toast">
+        ✓ Saved successfully!
+    </div>
+
+    <script>
+        function showToast() {
+            let toast = document.getElementById("toast");
+
+            toast.classList.add("show");
+
+            setTimeout(function() {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>

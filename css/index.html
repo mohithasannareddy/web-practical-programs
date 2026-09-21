@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Practical Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+            color: white;
+            padding: 30px;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 10px 18px;
+            border-radius: 25px;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #6366f1;
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: clamp(30px, 5vw, 50px);
+            margin-bottom: 12px;
+        }
+
+        .header h1 span {
+            color: #38bdf8;
+        }
+
+        .header p {
+            color: #cbd5e1;
+            font-size: 17px;
+            margin: 6px;
+        }
+
+        /* Search */
+
+        .search-box {
+            margin: 25px auto;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+
+            border: 1px solid #64748b;
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: #cbd5e1;
+        }
+
+        .search-box input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Section */
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 18px;
+            padding-left: 10px;
+            border-left: 5px solid #38bdf8;
+        }
+
+        /* Program List */
+
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+
+            list-style: none;
+        }
+
+        .program-list li {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 15px;
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .program-list li:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .program-list a {
+            display: flex;
+            align-items: center;
+
+            padding: 18px;
+
+            color: #e2e8f0;
+            text-decoration: none;
+
+            line-height: 1.5;
+        }
+
+        .number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 38px;
+            height: 38px;
+
+            margin-right: 12px;
+
+            background: #4f46e5;
+            border-radius: 50%;
+
+            font-weight: bold;
+            color: white;
+
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+
+            color: #cbd5e1;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .program-list {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 30px 15px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Navigation -->
+
+        <nav>
+            <a href="../index.html">🏠 Home</a>
+            <a href="../html/index.html">🌐 HTML Programs</a>
+            <a href="../css/index.html">🎨 CSS Programs</a>
+            <a href="../javascript/index.html">⚡ JavaScript Programs</a>
+        </nav>
+
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div class="icon">🎨</div>
+
+            <h1>
+                <span>CSS</span> Practical Programs
+            </h1>
+
+            <p>
+                Explore and practice all CSS programs.
+            </p>
+
+            <p>
+                Select any program to open its working demonstration.
+            </p>
+
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="🔍 Search CSS programs..."
+                    onkeyup="searchPrograms()"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- Program List -->
+
+        <div class="section">
+
+            <h2 class="section-title">
+                📚 All CSS Programs
+            </h2>
+
+            <ol
+                class="program-list"
+                id="programList">
+            </ol>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+                © 2026 CSS Practical Programs
+            </p>
+
+            <p>
+                HTML • CSS • JavaScript
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        /* ==============================
+           CSS PROGRAMS
+        ============================== */
+
+        const programs = [
+
+            "Create a webpage using Inline, Internal, and External CSS.",
+            "Create a webpage using Universal, Element, Class, ID, Attribute, and Grouping selectors.",
+            "Create a webpage using Descendant, Child, Adjacent Sibling, and General Sibling selectors.",
+            "Create a webpage using CSS colors for text, backgrounds, borders, and UI elements.",
+            "Create a webpage using background images, background colors, background positioning, sizing, repeat, and attachment.",
+            "Create a webpage using different CSS border styles, widths, colors, and border-radius properties.",
+            "Create a webpage using Linear and Radial CSS gradients.",
+            "Create a webpage using CSS font-family, font-size, font-weight, font-style, and font-variant properties.",
+            "Create a webpage using CSS text alignment, decoration, transformation, indentation, spacing, and line-height.",
+            "Create a webpage using the CSS box model with content, padding, border, and margin.",
+            "Create a webpage using different width, height, min-width, max-width, min-height, and max-height properties.",
+            "Create a webpage using the CSS box-sizing property with content-box and border-box.",
+            "Create a webpage using CSS display properties such as block, inline, inline-block, flex, grid, and none.",
+            "Create a webpage using CSS visibility and opacity properties.",
+            "Create a webpage using CSS overflow, overflow-x, and overflow-y properties.",
+            "Create a webpage using border-radius to create rounded cards, circles, pills, and custom shapes.",
+            "Create a webpage using CSS box-shadow and text-shadow properties.",
+            "Create a webpage using CSS variables and custom properties.",
+            "Create a webpage using CSS inheritance, specificity, and the cascade.",
+            "Create a webpage using CSS calc(), min(), max(), and clamp() functions.",
+            "Create a webpage using static, relative, absolute, fixed, and sticky positioning.",
+            "Create a webpage using z-index and CSS stacking order.",
+            "Create a webpage using float and clear properties.",
+            "Create a webpage using different CSS cursor styles and pointer interactions.",
+            "Create a webpage using CSS outline and outline-offset properties.",
+            "Create a webpage using CSS margin, padding, and spacing utilities.",
+            "Create a webpage using CSS width and height percentages, viewport units, and rem units.",
+            "Create a webpage using CSS em, rem, vw, vh, and percentage units.",
+            "Create a webpage using CSS object-fit and object-position properties.",
+            "Create a webpage using CSS filters such as blur, grayscale, brightness, contrast, and opacity.",
+            "Create a webpage using CSS transitions for colors, sizes, shadows, and positions.",
+            "Create a webpage using CSS 2D transformations such as rotate, scale, translate, and skew.",
+            "Create a webpage using CSS 3D transformations and perspective effects.",
+            "Create a webpage using CSS keyframe animations.",
+            "Create a webpage using a CSS loading spinner and loading animation.",
+
+            "Create a webpage for a navigation bar.",
+            "Create a webpage for a sidebar navigation.",
+            "Create a webpage for a responsive navigation menu.",
+            "Create a webpage for a mobile sidebar navigation drawer.",
+            "Create a webpage for a dropdown navigation menu.",
+            "Create a webpage for a mega navigation menu.",
+            "Create a webpage for a breadcrumb navigation component.",
+            "Create a webpage for a tab navigation component.",
+            "Create a webpage for a pill navigation component.",
+            "Create a webpage for a pagination component.",
+            "Create a webpage for a card component.",
+            "Create a webpage for a profile card component.",
+            "Create a webpage for a product card component.",
+            "Create a webpage for a feature card component.",
+            "Create a webpage for a pricing card component.",
+            "Create a webpage for a statistics card component.",
+            "Create a webpage for a KPI and metric card component.",
+            "Create a webpage for a dashboard card component.",
+            "Create a webpage for a notification card component.",
+            "Create a webpage for a testimonial card component.",
+            "Create a webpage for a hero section.",
+            "Create a webpage for a landing page header.",
+            "Create a webpage for primary, secondary, outline, and destructive buttons.",
+            "Create a webpage for icon buttons and action buttons.",
+            "Create a webpage for badges, labels, tags, and chips.",
+            "Create a webpage for user avatars and avatar groups.",
+            "Create a webpage for dividers and section separators.",
+            "Create a webpage for alert and notification components.",
+            "Create a webpage for toast notification components.",
+            "Create a webpage for tooltip components.",
+            "Create a webpage for popover components.",
+            "Create a webpage for modal and dialog components.",
+            "Create a webpage for confirmation dialog components.",
+            "Create a webpage for a drawer and slide-out panel.",
+            "Create a webpage for a command palette interface.",
+            "Create a webpage for an accordion component.",
+            "Create a webpage for an empty-state component.",
+            "Create a webpage for an error-state component.",
+            "Create a webpage for a success-state component.",
+            "Create a webpage for a loading-state component.",
+            "Create a webpage for a skeleton-loading component.",
+            "Create a webpage for a progress bar component.",
+            "Create a webpage for a progress stepper component.",
+            "Create a webpage for a timeline and activity history component.",
+            "Create a webpage for a login form.",
+            "Create a webpage for a signup form.",
+            "Create a webpage for a forgot-password form.",
+            "Create a webpage for a reset-password form.",
+            "Create a webpage for a registration form.",
+            "Create a webpage for a contact form.",
+            "Create a webpage for a multi-step form.",
+            "Create a webpage for form validation and error messages.",
+
+            "Create a webpage for a SaaS dashboard.",
+            "Create a webpage for an admin dashboard.",
+            "Create a webpage for an analytics dashboard.",
+            "Create a webpage for a KPI analytics dashboard.",
+            "Create a webpage for a revenue analytics dashboard.",
+            "Create a webpage for a sales analytics dashboard.",
+            "Create a webpage for user analytics.",
+            "Create a webpage for customer analytics.",
+            "Create a webpage for product analytics.",
+            "Create a webpage for marketing analytics.",
+            "Create a webpage for financial analytics.",
+            "Create a webpage for real-time analytics.",
+            "Create a webpage for SaaS usage analytics.",
+            "Create a webpage for a conversion funnel dashboard.",
+            "Create a webpage for a retention and cohort analytics dashboard.",
+            "Create a webpage for a revenue chart dashboard.",
+            "Create a webpage for a line chart analytics component.",
+            "Create a webpage for a bar chart analytics component.",
+            "Create a webpage for an area chart analytics component.",
+            "Create a webpage for a pie and donut chart analytics component.",
+            "Create a webpage for a heatmap analytics component.",
+            "Create a webpage for data visualization cards.",
+            "Create a webpage for an analytics date-range filter.",
+            "Create a webpage for an analytics filter and sorting panel.",
+            "Create a webpage for customizable dashboard widgets.",
+            "Create a webpage for a customizable analytics dashboard.",
+            "Create a webpage for an analytics report and export interface.",
+            "Create a webpage for an AI assistant interface.",
+            "Create a webpage for an AI chat interface.",
+            "Create a webpage for an AI chat sidebar.",
+            "Create a webpage for an AI command bar.",
+            "Create a webpage for an AI-powered search interface.",
+            "Create a webpage for AI search results.",
+            "Create a webpage for an AI prompt input interface.",
+            "Create a webpage for AI prompt suggestions.",
+            "Create a webpage for an AI response card.",
+            "Create a webpage for an AI-generated content card.",
+            "Create a webpage for an AI summary card.",
+            "Create a webpage for an AI recommendation card.",
+            "Create a webpage for an AI insight card.",
+            "Create a webpage for an AI copilot interface.",
+            "Create a webpage for an AI autocomplete interface.",
+            "Create a webpage for AI smart suggestions.",
+            "Create a webpage for an AI content generator.",
+            "Create a webpage for an AI document summarizer.",
+            "Create a webpage for an AI data analysis interface.",
+            "Create a webpage for a natural-language query interface.",
+            "Create a webpage for an Ask Your Data interface.",
+            "Create a webpage for a text-to-chart analytics interface.",
+            "Create a webpage for an AI report generator.",
+            "Create a webpage for an AI-powered analytics dashboard.",
+            "Create a webpage for an AI prediction card.",
+            "Create a webpage for an AI forecasting dashboard.",
+            "Create a webpage for an anomaly detection dashboard.",
+            "Create a webpage for an AI confidence score component.",
+            "Create a webpage for an AI sources and citations component.",
+            "Create a webpage for an AI explanation interface.",
+            "Create a webpage for an AI agent dashboard.",
+            "Create a webpage for an AI agent list.",
+            "Create a webpage for an AI agent profile.",
+            "Create a webpage for AI agent status monitoring.",
+            "Create a webpage for an AI agent task queue.",
+            "Create a webpage for an AI agent activity log.",
+            "Create a webpage for an AI agent execution history.",
+            "Create a webpage for an AI agent workflow.",
+            "Create a webpage for an AI agent builder.",
+            "Create a webpage for AI agent configuration settings.",
+            "Create a webpage for AI agent permissions management.",
+            "Create a webpage for an AI agent approval interface.",
+            "Create a webpage for a human-in-the-loop AI workflow.",
+            "Create a webpage for an AI agent error and retry interface.",
+            "Create a webpage for AI agent monitoring.",
+            "Create a webpage for multi-agent workflow management.",
+            "Create a webpage for an automation workflow builder.",
+            "Create a webpage for a trigger and action workflow.",
+            "Create a webpage for an ML prediction dashboard.",
+            "Create a webpage for an ML forecast chart.",
+            "Create a webpage for an ML probability score component.",
+            "Create a webpage for an ML confidence score component.",
+            "Create a webpage for an ML risk score dashboard.",
+            "Create a webpage for a recommendation engine interface.",
+            "Create a webpage for an ML anomaly alert.",
+            "Create a webpage for an ML outlier detection interface.",
+            "Create a webpage for an ML classification result.",
+            "Create a webpage for an ML prediction comparison dashboard.",
+            "Create a webpage for an ML model performance dashboard.",
+            "Create a webpage for ML model metrics.",
+            "Create a webpage for ML model version management.",
+            "Create a webpage for ML model monitoring.",
+            "Create a webpage for ML data drift monitoring.",
+            "Create a webpage for ML feature importance visualization.",
+            "Create a webpage for ML prediction explanation.",
+            "Create a webpage for an ML experiment dashboard.",
+
+            "Create a webpage for account settings.",
+            "Create a webpage for profile settings.",
+            "Create a webpage for team management.",
+            "Create a webpage for user management.",
+            "Create a webpage for role and permission management.",
+            "Create a webpage for organization settings.",
+            "Create a webpage for API key management.",
+            "Create a webpage for API usage analytics.",
+            "Create a webpage for integrations management.",
+            "Create a webpage for webhook management.",
+            "Create a webpage for developer settings.",
+            "Create a webpage for security settings.",
+            "Create a webpage for two-factor authentication settings.",
+            "Create a webpage for active sessions and device management.",
+            "Create a webpage for an audit log.",
+            "Create a webpage for SaaS pricing plans.",
+            "Create a webpage for pricing plan comparison.",
+            "Create a webpage for subscription management.",
+            "Create a webpage for subscription upgrade and downgrade.",
+            "Create a webpage for a SaaS billing dashboard.",
+            "Create a webpage for payment method management.",
+            "Create a webpage for invoice management.",
+            "Create a webpage for invoice details.",
+            "Create a webpage for usage-based billing.",
+            "Create a webpage for usage and consumption meters.",
+            "Create a webpage for AI token and credit usage.",
+            "Create a webpage for AI spending limits.",
+            "Create a webpage for billing alerts.",
+
+            "Create a webpage for a responsive Flexbox layout.",
+            "Create a webpage for a responsive CSS Grid layout.",
+            "Create a webpage for a responsive SaaS dashboard.",
+            "Create a webpage for a responsive data table.",
+            "Create a webpage for responsive SaaS cards.",
+            "Create a webpage for a responsive SaaS form.",
+            "Create a webpage for a responsive analytics dashboard.",
+            "Create a webpage for responsive charts and data visualization.",
+            "Create a webpage for a responsive pricing page.",
+            "Create a webpage for a responsive login page.",
+            "Create a webpage for a responsive signup page.",
+            "Create a webpage for a mobile-first SaaS layout.",
+            "Create a webpage for a mobile bottom navigation.",
+            "Create a webpage for a sticky SaaS header.",
+            "Create a webpage for a fixed SaaS sidebar.",
+            "Create a webpage for a responsive SaaS footer.",
+            "Create a webpage for a responsive photo and media gallery.",
+            "Create a webpage for CSS hover effects and micro-interactions.",
+            "Create a webpage for animated SaaS cards and components.",
+            "Create a webpage for a CSS sliding card animation.",
+            "Create a webpage for a CSS-only modal and popup interface.",
+            "Create a webpage for a dark-mode SaaS interface using CSS variables.",
+            "Create a webpage for a light and dark theme switcher.",
+            "Create a webpage for responsive SaaS typography.",
+            "Create a webpage for a glassmorphism SaaS interface.",
+            "Create a webpage for a gradient-based SaaS interface.",
+            "Create a webpage for a SaaS command palette with keyboard shortcuts.",
+            "Create a webpage for an AI notification center.",
+            "Create a webpage for a SaaS user profile menu.",
+            "Create a webpage for a SaaS onboarding workflow.",
+            "Create a webpage for a SaaS help and support interface.",
+            "Create a webpage for a SaaS documentation interface.",
+            "Create a webpage for a SaaS search and filter interface.",
+            "Create a webpage for a SaaS calendar and scheduling interface.",
+            "Create a webpage for a SaaS file management interface.",
+            "Create a webpage for a SaaS collaboration and team workspace.",
+            "Create a webpage for a complete SaaS landing page.",
+            "Create a webpage for a SaaS login page.",
+            "Create a webpage for a SaaS signup page.",
+            "Create a webpage for a SaaS onboarding page.",
+            "Create a webpage for a complete SaaS dashboard.",
+            "Create a webpage for a complete analytics dashboard.",
+            "Create a webpage for an AI-powered SaaS dashboard.",
+            "Create a webpage for an AI agent management dashboard.",
+            "Create a webpage for a SaaS user management system.",
+            "Create a webpage for a SaaS team management system.",
+            "Create a webpage for a SaaS account settings page.",
+            "Create a webpage for a SaaS security settings page.",
+            "Create a webpage for a SaaS integrations page.",
+            "Create a webpage for a SaaS billing management page.",
+            "Create a webpage for a SaaS pricing page.",
+            "Create a webpage for a SaaS checkout page.",
+            "Create a webpage for a SaaS invoice management page.",
+            "Create a webpage for a SaaS help center.",
+            "Create a webpage for a SaaS documentation website.",
+            "Create a webpage for a SaaS blog and news website.",
+            "Create a webpage for a SaaS 404 error page.",
+            "Create a webpage for a SaaS 500 error page.",
+            "Create a webpage for a complete responsive SaaS website using HTML5, CSS3, Flexbox, Grid, media queries, analytics, AI/ML interfaces, dashboards, and modern SaaS components."
+
+        ];
+
+
+        /* ==============================
+           CREATE PROGRAM LIST
+        ============================== */
+
+        const programList = document.getElementById("programList");
+
+        programs.forEach(function(program, index) {
+
+            const number = index + 1;
+
+            const li = document.createElement("li");
+
+            const link = document.createElement("a");
+
+            /*
+                If your files are named:
+                css-001.html
+                css-002.html
+                css-003.html
+                etc.
+            */
+
+            link.href = "css-" + String(number).padStart(3, "0") + ".html";
+
+            const numberSpan = document.createElement("span");
+
+            numberSpan.className = "number";
+
+            numberSpan.textContent = number;
+
+            link.appendChild(numberSpan);
+
+            link.appendChild(
+                document.createTextNode(program)
+            );
+
+            li.appendChild(link);
+
+            programList.appendChild(li);
+
+        });
+
+
+        /* ==============================
+           SEARCH FUNCTION
+        ============================== */
+
+        function searchPrograms() {
+
+            const searchText =
+                document.getElementById("search").value.toLowerCase().trim();
+
+            const items =
+                document.querySelectorAll("#programList li");
+
+            items.forEach(function(item) {
+
+                const text =
+                    item.textContent.toLowerCase();
+
+                if (text.includes(searchText)) {
+
+                    item.style.display = "";
+
+                } else {
+
+                    item.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

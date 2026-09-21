@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmation Dialog</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #dc2626;
+            color: white;
+            cursor: pointer;
+        }
+
+        .dialog {
+            display: none;
+            width: 320px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px #aaa;
+        }
+
+        .dialog.show {
+            display: block;
+        }
+
+        .yes {
+            background: #16a34a;
+        }
+
+        .no {
+            background: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Confirmation Dialog</h1>
+
+    <button onclick="openDialog()">
+        Delete Account
+    </button>
+
+    <div id="dialog" class="dialog">
+
+        <h2>Are you sure?</h2>
+
+        <p>Do you want to continue?</p>
+
+        <button class="yes" onclick="confirmAction()">
+            Yes
+        </button>
+
+        <button class="no" onclick="closeDialog()">
+            No
+        </button>
+
+    </div>
+
+    <script>
+        function openDialog() {
+            document.getElementById("dialog")
+                .classList.add("show");
+        }
+
+        function closeDialog() {
+            document.getElementById("dialog")
+                .classList.remove("show");
+        }
+
+        function confirmAction() {
+            alert("Action confirmed!");
+            closeDialog();
+        }
+    </script>
+
+</body>
+</html>

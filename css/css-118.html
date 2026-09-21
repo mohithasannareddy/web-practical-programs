@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 118 - AI Chat Sidebar</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+        }
+
+        .header {
+            background: #312e81;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .layout {
+            display: flex;
+            width: 90%;
+            max-width: 1000px;
+            height: 550px;
+            margin: 35px auto;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .sidebar {
+            width: 280px;
+            background: #1e1b4b;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .new-chat {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #818cf8;
+            background: transparent;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .new-chat:hover {
+            background: #3730a3;
+        }
+
+        .chat-item {
+            padding: 14px;
+            margin-top: 12px;
+            background: #312e81;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .chat-item:hover {
+            background: #4338ca;
+        }
+
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 25px;
+        }
+
+        .message {
+            max-width: 65%;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            line-height: 1.5;
+        }
+
+        .ai {
+            background: #f1f5f9;
+        }
+
+        .user {
+            background: #4f46e5;
+            color: white;
+            margin-left: auto;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            padding: 18px;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .input-area button {
+            padding: 13px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            cursor: pointer;
+        }
+
+        .input-area button:hover {
+            background: #3730a3;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 5px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background: #3730a3;
+        }
+
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .message {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>AI Chat Sidebar</h1>
+        <p>CSS Practical Program 118</p>
+    </div>
+
+    <div class="layout">
+
+        <div class="sidebar">
+            <h2>🤖 AI Chat</h2>
+
+            <button class="new-chat">+ New Chat</button>
+
+            <div class="chat-item">💬 CSS Basics</div>
+            <div class="chat-item">💬 HTML Questions</div>
+            <div class="chat-item">💬 JavaScript Help</div>
+            <div class="chat-item">💬 Web Design</div>
+        </div>
+
+        <div class="chat-area">
+
+            <div class="chat-header">
+                AI Assistant
+            </div>
+
+            <div class="messages">
+
+                <div class="message ai">
+                    Hello! 👋 How can I help you?
+                </div>
+
+                <div class="message user">
+                    Explain CSS Grid.
+                </div>
+
+                <div class="message ai">
+                    CSS Grid is a layout system that helps arrange
+                    elements into rows and columns.
+                </div>
+
+            </div>
+
+            <div class="input-area">
+                <input type="text" placeholder="Type your message...">
+                <button>Send ➤</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="navigation">
+        <a href="../index.html">🏠 Home</a>
+        <a href="index.html">⬅ CSS Programs</a>
+    </div>
+
+</body>
+</html>

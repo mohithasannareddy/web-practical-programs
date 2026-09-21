@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Palindrome</title>
+</head>
+<body>
+
+    <h1>String Palindrome Checker</h1>
+
+    <label>Enter a string:</label>
+    <input type="text" id="textInput" placeholder="madam">
+
+    <br><br>
+
+    <button onclick="checkPalindrome()">Check</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function checkPalindrome() {
+            let text = document.getElementById("textInput").value;
+
+            // Convert to lowercase and remove spaces
+            let cleanedText = text.toLowerCase().replace(/\s/g, "");
+
+            // Reverse the string
+            let reversedText = cleanedText.split("").reverse().join("");
+
+            if (cleanedText === reversedText) {
+                document.getElementById("result").innerHTML =
+                    text + " is a palindrome.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    text + " is not a palindrome.";
+            }
+        }
+    </script>
+
+</body>
+</html>
